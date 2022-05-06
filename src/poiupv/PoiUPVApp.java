@@ -22,11 +22,13 @@ public class PoiUPVApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
         
         Scene scene = new Scene(root);
-        stage.setTitle("Puntos de interes UPV");
+       
+        stage.setTitle("AppNavegacion");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
