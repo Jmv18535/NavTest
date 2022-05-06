@@ -8,8 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
-
 
 <AnchorPane maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
    <children>
@@ -22,14 +20,14 @@
          <center>
             <VBox prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0">
                      <children>
-                        <Button fx:id="botonInicio" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" text="Iniciar Sesión" />
+                        <Button fx:id="botonInicio" minWidth="200.0" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" prefHeight="35.0" prefWidth="107.0" text="Iniciar Sesión" />
                      </children>
                   </HBox>
                   <HBox>
                      <children>
-                        <Button fx:id="botonRegistro" mnemonicParsing="false" onAction="#pulsadoRegistrarse" text="Registrarse" />
+                        <Button fx:id="botonRegistro" minWidth="200.0" mnemonicParsing="false" onAction="#pulsadoRegistrarse" prefHeight="48.0" prefWidth="131.0" text="Registrarse" />
                      </children>
                   </HBox>
                </children>
@@ -41,13 +39,6 @@
                </padding>
             </VBox>
          </center>
-         <top>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AppNavegacion" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-            </Text>
-         </top>
       </BorderPane>
    </children>
 </AnchorPane>
