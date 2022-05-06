@@ -2,39 +2,52 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="200.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" stylesheets="@pantallainicial.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
-   <center>
-      <VBox prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+
+<AnchorPane maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="409.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/FondoPrincipal.png" />
+         </image>
+      </ImageView>
+      <BorderPane layoutX="9.0" minHeight="200.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" stylesheets="@pantallainicial.css">
+         <center>
+            <VBox prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="botonInicio" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" text="Iniciar Sesión" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="botonInicio" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" text="Iniciar Sesión" />
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Button fx:id="botonRegistro" mnemonicParsing="false" onAction="#pulsadoRegistrarse" text="Registrarse" />
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Button fx:id="botonRegistro" mnemonicParsing="false" onAction="#pulsadoRegistrarse" text="Registrarse" />
-               </children>
-            </HBox>
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-         </BorderPane.margin>
-         <padding>
-            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
-         </padding>
-      </VBox>
-   </center>
-   <top>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AppNavegacion" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </Text>
-   </top>
-</BorderPane>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+               </padding>
+            </VBox>
+         </center>
+         <top>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AppNavegacion" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </Text>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

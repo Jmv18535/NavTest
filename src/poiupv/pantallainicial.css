@@ -1,7 +1,6 @@
-/*
- * Empty Stylesheet file.
- */
 
-.mainFxmlClass {
-
-}
+.button { /* Set style for all buttons */
+-fx-text-fill: #dddddd; /* Sets font colour (hex) */
+-fx-background-color: #444349; /* Sets background colour */
+-fx-padding: 5px; /* Inner spacing on all sides */
+} 
