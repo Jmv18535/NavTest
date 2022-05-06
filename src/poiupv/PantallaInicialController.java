@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -18,6 +19,11 @@ import javafx.stage.Stage;
  * @author javie
  */
 public class PantallaInicialController implements Initializable {
+
+    @FXML
+    private Button botonInicio;
+    @FXML
+    private Button botonRegistro;
 
     /**
      * Initializes the controller class.
@@ -37,6 +43,7 @@ public class PantallaInicialController implements Initializable {
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
+        ventana.setResizable(true);
         ventana.show();
         
         //

@@ -12,6 +12,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +28,8 @@ public class PoiUPVApp extends Application {
         Scene scene = new Scene(root);
        
         stage.setTitle("AppNavegacion");
+        stage.getIcons().add(new Image("/resources/barquito.png"));
+        
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

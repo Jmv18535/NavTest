@@ -7,19 +7,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane minHeight="200.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" stylesheets="@pantallainicial.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
    <center>
       <VBox prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#pulsadoIniciarSesion" text="Iniciar Sesión" />
+                  <Button fx:id="botonInicio" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" text="Iniciar Sesión" />
                </children>
             </HBox>
             <HBox>
                <children>
-                  <Button mnemonicParsing="false" onAction="#pulsadoRegistrarse" text="Registrarse" />
+                  <Button fx:id="botonRegistro" mnemonicParsing="false" onAction="#pulsadoRegistrarse" text="Registrarse" />
                </children>
             </HBox>
          </children>
