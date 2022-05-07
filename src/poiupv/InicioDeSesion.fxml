@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.InicioDeSesionController">
     <stylesheets>
@@ -39,13 +40,14 @@
                         <TextField fx:id="texto_password" prefHeight="25.0" prefWidth="178.0" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
+                        <Text fx:id="mensaje_error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="377.0" />
                         <Button mnemonicParsing="false" onAction="#PulsadoCancelar" prefHeight="40.0" prefWidth="77.0" text="Cancelar" />
-                        <Button mnemonicParsing="false" onAction="#PulsadoEntrar" prefHeight="40.0" prefWidth="77.0" text="Entrar" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#PulsadoEntrar" prefHeight="40.0" prefWidth="77.0" text="Entrar" />
                      </children>
                      <padding>
-                        <Insets left="400.0" top="40.0" />
+                        <Insets right="20.0" top="40.0" />
                      </padding>
                   </HBox>
                </children>

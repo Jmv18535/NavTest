@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -29,6 +30,8 @@ public class InicioDeSesionController implements Initializable {
     private TextField texto_usuario;
     @FXML
     private TextField texto_password;
+    @FXML
+    private Text mensaje_error;
     /**
      * Initializes the controller class.
      */
