@@ -37,7 +37,7 @@ public class PantallaInicialController implements Initializable {
     private void pulsadoIniciarSesion(ActionEvent event) throws IOException {
         //Codigo para Cambiar el Stage Inicial->Inicio de Sesion
         
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("InicioDeSesion.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
