@@ -23,5 +23,5 @@ public class RegistroController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    //asdasdasdas d
 }
