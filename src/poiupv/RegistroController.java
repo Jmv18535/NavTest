@@ -9,6 +9,7 @@ import DBAccess.NavegacionDAOException;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -31,11 +33,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Navegacion;
 import model.User;
 import static model.User.checkEmail;
 import static model.User.checkPassword;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.DateCell;
+import javafx.scene.control.DatePicker;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
         
 /**
@@ -52,7 +63,10 @@ public class RegistroController implements Initializable {
     @FXML
     private PasswordField contraUsuario;
     @FXML
-    private DatePicker edadUsuario;
+    DatePicker edadUsuario = new DatePicker();
+       
+    
+  
     @FXML
     private ImageView avatar1;
     @FXML
@@ -70,10 +84,7 @@ public class RegistroController implements Initializable {
     @FXML
     private ImageView avatarElegido;
     private Text errorUsuario;
-    
-    private BooleanProperty validPassword;
-    
-    private BooleanProperty validEmail;
+   
     @FXML
     private TextArea mensajeError;
     @FXML
@@ -82,8 +93,12 @@ public class RegistroController implements Initializable {
     private Label falloEmail;
     @FXML
     private Label falloPassword;
+    
+    @FXML
+    private Label falloFecha;
         
-
+   
+    
     /**
      * Initializes the controller class.
      */
@@ -152,6 +167,19 @@ public class RegistroController implements Initializable {
             }
             
             LocalDate birthdate = edadUsuario.getValue();
+            
+            LocalDate edadMinima= LocalDate.now().minusYears(16);
+            
+            if(birthdate.compareTo(edadMinima)<1||birthdate.equals(null)){
+                falloFecha.visibleProperty().set(true);
+                mensajeError.setText("El usuario debe tener mas de 16 años");
+                mensajeError.visibleProperty().set(true);
+                return;
+            } else{
+                falloFecha.visibleProperty().set(false);
+                mensajeError.visibleProperty().set(false);
+            }
+            
             
             
             Image avatar= avatar1.getImage();

@@ -58,6 +58,7 @@
                            <HBox.margin>
                               <Insets left="7.0" />
                            </HBox.margin></DatePicker>
+                        <Label fx:id="falloFecha" text="*" textFill="RED" visible="false" />
                      </children></HBox>
                </children>
                <padding>
