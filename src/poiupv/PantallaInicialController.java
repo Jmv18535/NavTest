@@ -50,7 +50,16 @@ public class PantallaInicialController implements Initializable {
     }
 
     @FXML
-    private void pulsadoRegistrarse(ActionEvent event) {
+    private void pulsadoRegistrarse(ActionEvent event) throws IOException {
+        
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("Registro.fxml"));
+         
+        Scene inicioDeSesion = new Scene(inicioSesionParent);
+        
+        Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+        ventana.setScene(inicioDeSesion);
+        ventana.setResizable(true);
+        ventana.show();
     }
     
 }
