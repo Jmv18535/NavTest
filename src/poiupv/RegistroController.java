@@ -5,14 +5,22 @@
  */
 package poiupv;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -35,6 +43,10 @@ public class RegistroController implements Initializable {
     private ImageView avatar2;
     @FXML
     private ImageView avatar3;
+    @FXML
+    private Button cancelarRegistro;
+    @FXML
+    private Button registrarse;
 
     /**
      * Initializes the controller class.
@@ -44,4 +56,21 @@ public class RegistroController implements Initializable {
         // TODO
     }    
     //asdasdasdas d
+
+    @FXML
+    private void cancelEvent(ActionEvent event) throws IOException{
+        Parent cancelarParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+         
+        Scene menuInicio = new Scene(cancelarParent);
+        
+        Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+        ventana.setScene(menuInicio);
+        ventana.setResizable(false);
+        ventana.show();
+        
+    }
+
+    @FXML
+    private void registEvent(ActionEvent event) {
+    }
 }

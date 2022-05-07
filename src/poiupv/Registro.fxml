@@ -75,8 +75,8 @@
          <bottom>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@pantallainicial.css" BorderPane.alignment="TOP_RIGHT">
                <children>
-                  <Button mnemonicParsing="false" text="Cancelar" />
-                  <Button mnemonicParsing="false" text="Registrarse" />
+                  <Button fx:id="cancelarRegistro" mnemonicParsing="false" onAction="#cancelEvent" text="Cancelar" />
+                  <Button fx:id="registrarse" mnemonicParsing="false" onAction="#registEvent" text="Registrarse" />
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="50.0" top="20.0" />
