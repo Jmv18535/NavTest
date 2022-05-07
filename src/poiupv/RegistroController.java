@@ -63,7 +63,7 @@ public class RegistroController implements Initializable {
     @FXML
     private PasswordField contraUsuario;
     @FXML
-    DatePicker edadUsuario;
+    DatePicker edadUsuario=new DatePicker(LocalDate.now());
     @FXML
     private ImageView avatar1;
     @FXML
@@ -101,11 +101,8 @@ public class RegistroController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-       
-        
+  
     }    
-    //asdasdasdas d
 
     @FXML
     private void cancelEvent(ActionEvent event) throws IOException{
@@ -123,70 +120,87 @@ public class RegistroController implements Initializable {
 
     @FXML
     private void registEvent(ActionEvent event) {
-         try {
-            Navegacion navegacion= Navegacion.getSingletonNavegacion();
-
+        try {
+            
+            Navegacion navegacion = Navegacion.getSingletonNavegacion();
+            //Nombre de usuario
+            
             String nickname = nombreUsuario.getText();
-            if(nickname.equalsIgnoreCase("")){
+            if (nickname.equalsIgnoreCase("")) {
                 falloUsuario.visibleProperty().set(true);
                 mensajeError.setText("El campo usuario esta vacio");
                 mensajeError.visibleProperty().set(true);
                 return;
-            } else{
-            falloUsuario.visibleProperty().set(false);
-            mensajeError.visibleProperty().set(false);
+            } else {
+                falloUsuario.visibleProperty().set(false);
+                mensajeError.visibleProperty().set(false);
             }
-       
+            if(navegacion.exitsNickName(nickname)){
+                falloUsuario.visibleProperty().set(true);
+                mensajeError.setText("Ese nombre de usuario ya esta escogido");
+                mensajeError.visibleProperty().set(true);
+                return;
+            }else {
+                falloUsuario.visibleProperty().set(false);
+                mensajeError.visibleProperty().set(false);
+            }
+            
+            //Correo electronico
+            
             String email = correoUsuario.getText();
-            if(!checkEmail(email)){
+            if (!checkEmail(email)) {
                 falloEmail.visibleProperty().set(true);
                 mensajeError.setText("El campo email no cumple el formato");
                 mensajeError.visibleProperty().set(true);
                 return;
-            } else{
-            falloEmail.visibleProperty().set(false);
-            mensajeError.visibleProperty().set(false);
+            } else {
+                falloEmail.visibleProperty().set(false);
+                mensajeError.visibleProperty().set(false);
             }
             
-            /*La contraseña debe tener de 8 a 20 caracteres con un@: 
-              Mayuscula, miniscula, digito, caracter especial(!@#~€)*/
+            //Contraseña
             
             String password = contraUsuario.getText();
-            if(!checkPassword(password)){
+            if (!checkPassword(password)) {
                 falloPassword.visibleProperty().set(true);
-                mensajeError.setText("La contraseña debe tener de 8 a 20 caracteres con un@: \n" +
-                                         "Mayuscula, miniscula, digito, caracter especial(!@#~€)");
+                mensajeError.setText("La contraseña debe tener de 8 a 20 caracteres con un@: \n"
+                        + "Mayuscula, miniscula, digito, caracter especial(!@#~€)");
                 mensajeError.visibleProperty().set(true);
                 return;
-            } else{
-            falloPassword.visibleProperty().set(false);
-            mensajeError.visibleProperty().set(false);
+            } else {
+                falloPassword.visibleProperty().set(false);
+                mensajeError.visibleProperty().set(false);
             }
             
+            //Fecha nacimiento
+            
             LocalDate birthdate = edadUsuario.getValue();
-            
-            LocalDate edadMinima= LocalDate.now().minusYears(16);
-            
-            if(birthdate.isAfter(edadMinima)){
+            LocalDate edadMinima = LocalDate.now().minusYears(16);
+            if (birthdate.isAfter(edadMinima)) {
                 falloFecha.visibleProperty().set(true);
                 mensajeError.setText("El usuario debe tener mas de 16 años");
                 mensajeError.visibleProperty().set(true);
                 return;
-            } else{
+            } else {
                 falloFecha.visibleProperty().set(false);
                 mensajeError.visibleProperty().set(false);
             }
             
+            //Avatar
+            Image avatar = avatar1.getImage();
             
-            
-            Image avatar= avatar1.getImage();
-            
-            User resultado = navegacion.registerUser(nickname, email, password,avatar, birthdate);
-            
-            
-            
-            
-            // TODO
+            //Creacion Usuario
+            User resultado = navegacion.registerUser(nickname, email, password, avatar, birthdate);
+            mensajeError.setText("Usuario registrado correctamente");
+            try {
+                wait(5000);
+                //Cambio a escena principal
+                
+                
+                // TODO
+            } catch (InterruptedException ex) {
+                Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (NavegacionDAOException ex) {
             Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
         }
