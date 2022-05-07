@@ -6,6 +6,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,41 +14,54 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="719.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
     <stylesheets>
         <URL value="@registro.css" />
     </stylesheets>
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@pantallainicial.css">
+      <BorderPane layoutX="-1.0" prefHeight="492.0" prefWidth="719.0" stylesheets="@pantallainicial.css">
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Usuario" />
-                        <TextField fx:id="nombreUsuario" />
-                        <Text fx:id="errorUsuario" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+                        <TextField fx:id="nombreUsuario" promptText="Tu Nombre de usuario">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin></TextField>
+                        <Label fx:id="falloUsuario" text="*" textFill="RED" visible="false" />
                      </children></HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Correo" />
-                        <TextField fx:id="correoUsuario" />
+                        <TextField fx:id="correoUsuario" prefHeight="26.0" prefWidth="147.0" promptText="tucorreo@dominio.com">
+                           <HBox.margin>
+                              <Insets left="37.0" />
+                           </HBox.margin></TextField>
+                        <Label fx:id="falloEmail" text="*" textFill="RED" visible="false" />
                      </children></HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Contraseña" />
-                        <PasswordField fx:id="contraUsuario" />
+                        <PasswordField fx:id="contraUsuario">
+                           <HBox.margin>
+                              <Insets left="9.0" />
+                           </HBox.margin></PasswordField>
+                        <Label fx:id="falloPassword" text="*" textFill="RED" visible="false" />
                      </children></HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Nacimiento" />
-                        <DatePicker fx:id="edadUsuario" />
+                        <DatePicker fx:id="edadUsuario">
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin></DatePicker>
                      </children></HBox>
                </children>
                <padding>
-                  <Insets bottom="30.0" left="80.0" right="60.0" top="70.0" />
+                  <Insets bottom="30.0" left="20.0" right="60.0" top="70.0" />
                </padding>
             </VBox>
          </center>
@@ -128,6 +142,7 @@
          <bottom>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@pantallainicial.css" BorderPane.alignment="TOP_RIGHT">
                <children>
+                  <TextArea fx:id="mensajeError" editable="false" prefHeight="71.0" prefWidth="408.0" visible="false" />
                   <Button fx:id="cancelarRegistro" mnemonicParsing="false" onAction="#cancelEvent" text="Cancelar" />
                   <Button fx:id="registrarse" mnemonicParsing="false" onAction="#registEvent" text="Registrarse" />
                </children>

@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.BooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +22,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,6 +33,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Navegacion;
 import model.User;
+import static model.User.checkEmail;
+import static model.User.checkPassword;
 
 
         
@@ -64,10 +69,19 @@ public class RegistroController implements Initializable {
     private ImageView avatar311;
     @FXML
     private ImageView avatarElegido;
-    @FXML
     private Text errorUsuario;
     
- 
+    private BooleanProperty validPassword;
+    
+    private BooleanProperty validEmail;
+    @FXML
+    private TextArea mensajeError;
+    @FXML
+    private Label falloUsuario;
+    @FXML
+    private Label falloEmail;
+    @FXML
+    private Label falloPassword;
         
 
     /**
@@ -101,15 +115,44 @@ public class RegistroController implements Initializable {
             Navegacion navegacion= Navegacion.getSingletonNavegacion();
 
             String nickname = nombreUsuario.getText();
-            if(nickname.equalsIgnoreCase("")){errorUsuario.setText("Nombre usuario");} //error
-            
-            
+            if(nickname.equalsIgnoreCase("")){
+                falloUsuario.visibleProperty().set(true);
+                mensajeError.setText("El campo usuario esta vacio");
+                mensajeError.visibleProperty().set(true);
+                return;
+            } else{
+            falloUsuario.visibleProperty().set(false);
+            mensajeError.visibleProperty().set(false);
+            }
+       
             String email = correoUsuario.getText();
+            if(!checkEmail(email)){
+                falloEmail.visibleProperty().set(true);
+                mensajeError.setText("El campo email no cumple el formato");
+                mensajeError.visibleProperty().set(true);
+                return;
+            } else{
+            falloEmail.visibleProperty().set(false);
+            mensajeError.visibleProperty().set(false);
+            }
             
+            /*La contraseña debe tener de 8 a 20 caracteres con un@: 
+              Mayuscula, miniscula, digito, caracter especial(!@#~€)*/
             
             String password = contraUsuario.getText();
+            if(!checkPassword(password)){
+                falloPassword.visibleProperty().set(true);
+                mensajeError.setText("La contraseña debe tener de 8 a 20 caracteres con un@: \n" +
+                                         "Mayuscula, miniscula, digito, caracter especial(!@#~€)");
+                mensajeError.visibleProperty().set(true);
+                return;
+            } else{
+            falloPassword.visibleProperty().set(false);
+            mensajeError.visibleProperty().set(false);
+            }
             
             LocalDate birthdate = edadUsuario.getValue();
+            
             
             Image avatar= avatar1.getImage();
             
