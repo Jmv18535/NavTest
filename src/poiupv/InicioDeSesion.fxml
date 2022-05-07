@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.InicioDeSesionController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="poiupv.InicioDeSesionController">
     <stylesheets>
-        <URL value="@iniciodesesion.css"/>
+        <URL value="@iniciodesesion.css" />
     </stylesheets>
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <center>
+            <VBox prefHeight="400.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="108.0" prefWidth="600.0">
+                     <children>
+                        <Label prefHeight="152.0" prefWidth="623.0" text="                                                                               REGISTRO" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="88.0" prefWidth="600.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="121.0" text="Nombre de usuario" />
+                        <TextField />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="119.0" text="Contraseña" />
+                        <TextField prefHeight="25.0" prefWidth="178.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
