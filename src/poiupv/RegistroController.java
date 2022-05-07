@@ -5,9 +5,13 @@
  */
 package poiupv;
 
+import DBAccess.NavegacionDAOException;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,9 +23,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Navegacion;
+import model.User;
 
+
+        
 /**
  * FXML Controller class
  *
@@ -47,13 +58,26 @@ public class RegistroController implements Initializable {
     private Button cancelarRegistro;
     @FXML
     private Button registrarse;
+    @FXML
+    private ImageView avatar31;
+    @FXML
+    private ImageView avatar311;
+    @FXML
+    private ImageView avatarElegido;
+    @FXML
+    private Text errorUsuario;
+    
+ 
+        
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+       
+        
     }    
     //asdasdasdas d
 
@@ -69,8 +93,45 @@ public class RegistroController implements Initializable {
         ventana.show();
         
     }
+    
 
     @FXML
     private void registEvent(ActionEvent event) {
+         try {
+            Navegacion navegacion= Navegacion.getSingletonNavegacion();
+
+            String nickname = nombreUsuario.getText();
+            if(nickname.equalsIgnoreCase("")){errorUsuario.setText("Nombre usuario");} //error
+            
+            
+            String email = correoUsuario.getText();
+            
+            
+            String password = contraUsuario.getText();
+            
+            LocalDate birthdate = edadUsuario.getValue();
+            
+            Image avatar= avatar1.getImage();
+            
+            User resultado = navegacion.registerUser(nickname, email, password,avatar, birthdate);
+            
+            
+            
+            
+            // TODO
+        } catch (NavegacionDAOException ex) {
+            Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    
+    }
+
+    @FXML
+    private void seleccionarAvatar(MouseEvent event) {
+        
+    }
+
+    @FXML
+    private void seleccionDeAvatar(ActionEvent event) {
     }
 }

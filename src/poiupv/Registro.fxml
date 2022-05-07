@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
     <stylesheets>
@@ -27,6 +28,7 @@
                      <children>
                         <Label text="Usuario" />
                         <TextField fx:id="nombreUsuario" />
+                        <Text fx:id="errorUsuario" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
                      </children></HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
@@ -50,23 +52,74 @@
             </VBox>
          </center>
          <right>
-            <VBox prefHeight="300.0" prefWidth="189.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="300.0" prefWidth="185.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fx:id="avatar1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/avatars/avatar2.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="avatar2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/avatars/avatar3.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="avatar3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/avatars/avatar4.png" />
-                     </image>
-                  </ImageView>
+                  <HBox prefHeight="261.0" prefWidth="169.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                           <children>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatar1" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/default.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatar2" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/avatar1.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatar31" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/avatar2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatar311" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/avatar3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatar3" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/avatar4.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#seleccionDeAvatar" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatarElegido" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/masavatar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets left="20.0" top="60.0" />
