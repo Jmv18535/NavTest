@@ -47,6 +47,7 @@ import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import static model.User.checkNickName;
 
         
 /**
@@ -126,9 +127,10 @@ public class RegistroController implements Initializable {
             //Nombre de usuario
             
             String nickname = nombreUsuario.getText();
-            if (nickname.equalsIgnoreCase("")) {
+            if (!checkNickName(nickname)) {
                 falloUsuario.visibleProperty().set(true);
-                mensajeError.setText("El campo usuario esta vacio");
+                mensajeError.setText("El campo usuario debe contener de 6 a 15 caracteres :\n"+""
+                        + "o digitos sin espacios,pudiendo usar guiones");
                 mensajeError.visibleProperty().set(true);
                 return;
             } else {
