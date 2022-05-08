@@ -13,26 +13,30 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="719.0" styleClass="mainFxmlClass" stylesheets="@registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" stylesheets="@registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
    <children>
-      <BorderPane layoutX="-1.0" prefHeight="492.0" prefWidth="719.0" stylesheets="@registro.css">
+      <BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@registro.css">
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="     Usuario" textAlignment="CENTER" />
-                        <TextField fx:id="nombreUsuario" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Tu Nombre de usuario">
+                        <TextField fx:id="nombreUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="TuNombreDeUsuario">
                            <HBox.margin>
                               <Insets left="20.0" />
-                           </HBox.margin></TextField>
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font></TextField>
                         <Label fx:id="falloUsuario" text="*" textFill="RED" visible="false" />
                      </children></HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="      Correo" textAlignment="CENTER" />
-                        <TextField fx:id="correoUsuario" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="147.0" promptText="tucorreo@dominio.com">
+                        <TextField fx:id="correoUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="tucorreo@dominio.com">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin></TextField>
@@ -41,7 +45,7 @@
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="  Contraseña" textAlignment="CENTER" />
-                        <PasswordField fx:id="contraUsuario" maxHeight="30.0" minHeight="30.0" prefHeight="30.0">
+                        <PasswordField fx:id="contraUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin></PasswordField>
@@ -50,7 +54,7 @@
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="  Nacimiento" textAlignment="CENTER" />
-                        <DatePicker fx:id="edadUsuario" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="22/01/2022">
+                        <DatePicker fx:id="edadUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="22/01/2022">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin></DatePicker>
@@ -58,7 +62,7 @@
                      </children></HBox>
                </children>
                <padding>
-                  <Insets bottom="20.0" left="30.0" right="60.0" top="70.0" />
+                  <Insets bottom="10.0" left="60.0" right="30.0" top="70.0" />
                </padding>
             </VBox>
          </center>
@@ -139,7 +143,7 @@
          <bottom>
             <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@pantallainicial.css" BorderPane.alignment="TOP_RIGHT">
                <children>
-                  <TextArea fx:id="mensajeError" editable="false" prefHeight="71.0" prefWidth="408.0" visible="false">
+                  <TextArea fx:id="mensajeError" editable="false" maxHeight="60.0" maxWidth="400.0" minHeight="60.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" visible="false">
                      <HBox.margin>
                         <Insets bottom="10.0" right="20.0" />
                      </HBox.margin></TextArea>

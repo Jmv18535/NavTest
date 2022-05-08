@@ -30,3 +30,48 @@ Label { -fx-background-color: #6e6e69;
          -fx-background-radius: 10 10 10 10;
          -fx-border-radius: 10 10 10 10;
 }
+TextField{
+    -fx-background-color: #ffffff;
+         -fx-border-color: #853203;
+         -fx-border-width: 1.5;
+         -fx-text-fill: #000000;
+         -fx-font-family: "Comic Sans MS";
+         -fx-font-style: italic;
+         -fx-font-size: 14px;
+         -fx-background-radius: 5 5 5 5;
+         -fx-border-radius: 5 5 5 5;
+}
+PasswordField{
+    -fx-background-color: #ffffff;
+         -fx-border-color: #853203;
+         -fx-border-width: 1.5;
+         -fx-text-fill: #000000;
+         -fx-font-family: "Comic Sans MS";
+         -fx-font-style: italic;
+         -fx-font-size: 14px;
+         -fx-background-radius: 5 5 5 5;
+         -fx-border-radius: 5 5 5 5;
+}
+DatePicker{
+    -fx-background-color: #ffffff;
+         -fx-border-color: #853203;
+         -fx-border-width: 1.5;
+         -fx-text-fill: #000000;
+         -fx-font-family: "Comic Sans MS";
+         -fx-font-style: italic;
+         -fx-font-size: 14px;
+         -fx-background-radius: 5 5 5 5;
+         -fx-border-radius: 5 5 5 5;
+         
+}
+TextArea{
+    -fx-background-color: #ffffff;
+         -fx-border-color: #853203;
+         -fx-border-width: 1.5;
+         -fx-text-fill: #000000;
+         -fx-font-family: "Comic Sans MS";
+         -fx-font-style: italic;
+         -fx-font-size: 14px;
+         -fx-background-radius: 5 5 5 5;
+         -fx-border-radius: 5 5 5 5;
+}
