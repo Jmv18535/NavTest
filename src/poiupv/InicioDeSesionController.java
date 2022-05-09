@@ -5,6 +5,7 @@
  */
 package poiupv;
 
+import DBAccess.NavegacionDAOException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,10 +16,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import model.Navegacion;
+import model.User;
 /**
  * FXML Controller class
  *
@@ -27,7 +31,11 @@ import javafx.stage.Stage;
 public class InicioDeSesionController implements Initializable {
 
     @FXML
-    private TextField texto_usuario;
+    private TextArea textoError;
+    @FXML
+    private TextField nomUsuario;
+    @FXML
+    private PasswordField contraUsuario;
     /**
      * Initializes the controller class.
      */
@@ -49,10 +57,19 @@ public class InicioDeSesionController implements Initializable {
     }
 
     @FXML
-    private void PulsadoEntrar(ActionEvent event) throws IOException {
+    private void PulsadoEntrar(ActionEvent event) throws IOException, NavegacionDAOException {
         
-        
-        
+
+        String nickname = nomUsuario.getText();
+        String password = contraUsuario.getText();
+        Navegacion navegacion = Navegacion.getSingletonNavegacion();
+        User user = navegacion.loginUser(nickname, password);
+        if( user == null){
+         textoError.setText("No coinciden el usuario y la contraseña");
+                textoError.visibleProperty().set(true);
+                return;
+        }
+        else{
         
         
         
@@ -67,6 +84,7 @@ public class InicioDeSesionController implements Initializable {
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(true);
         ventana.show();
-    }
+    }}
+
     
 }
