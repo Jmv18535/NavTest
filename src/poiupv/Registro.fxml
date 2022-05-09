@@ -73,29 +73,29 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                            <children>
-                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsaravatar1" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
                                     <ImageView fx:id="avatar1" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/avatars/default.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fx:id="avatar2" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar1.gif" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsaravatar2" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar31" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="avatar2" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pulsaravatar3" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fx:id="avatar3" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/default.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -104,27 +104,27 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsaravatar4" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar311" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="avatar4" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar3.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsaravatar5" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar3" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="avatar5" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar4.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#seleccionDeAvatar" prefHeight="50.0" prefWidth="50.0">
+                              <Button layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#pulsaravatararchivo" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatarElegido" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="avatarelegir" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/masavatar.png" />
                                        </image>
@@ -133,6 +133,20 @@
                               </Button>
                            </children>
                         </VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="76.0" prefWidth="280.0">
+                     <children>
+                        <VBox prefHeight="102.0" prefWidth="129.0">
+                           <children>
+                              <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="22.0" prefWidth="129.0" text="Avatar actual:" />
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="avatarelegido" fitHeight="105.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
                      </children>
                   </HBox>
                </children>
