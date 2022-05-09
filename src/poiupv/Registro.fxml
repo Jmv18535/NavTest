@@ -73,25 +73,28 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#pulsaravatar1" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsarAvatar1" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar1" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar1.gif" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#pulsaravatar2" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsarAvatar2" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar2" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/avatars/avatar2.png" />
+                                       </image></ImageView>
                                  </graphic>
                               </Button>
-                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pulsaravatar3" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsarAvatarArchivo" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar3" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/default.png" />
+                                          <Image url="@../resources/avatars/masavatar.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -100,29 +103,20 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#pulsaravatar4" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsarAvatar3" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar4" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar3.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#pulsaravatar5" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsarAvatar4" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar5" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../resources/avatars/avatar4.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#pulsaravatararchivo" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fx:id="avatarelegir" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/avatars/masavatar.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -142,6 +136,9 @@
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
+                           <image>
+                              <Image url="@../resources/avatars/default.png" />
+                           </image>
                         </ImageView>
                      </children>
                   </HBox>
