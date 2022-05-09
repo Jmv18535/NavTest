@@ -28,10 +28,6 @@ public class InicioDeSesionController implements Initializable {
 
     @FXML
     private TextField texto_usuario;
-    @FXML
-    private TextField texto_password;
-    @FXML
-    private Text mensaje_error;
     /**
      * Initializes the controller class.
      */
@@ -54,6 +50,14 @@ public class InicioDeSesionController implements Initializable {
 
     @FXML
     private void PulsadoEntrar(ActionEvent event) throws IOException {
+        
+        
+        
+        
+        
+        
+        
+        
         
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
          

@@ -192,12 +192,19 @@ public class RegistroController implements Initializable {
             User resultado = navegacion.registerUser(nickname, email, password, avatar, birthdate);
             mensajeError.setText("Usuario registrado correctamente");
             try {
-                wait(5000);
-                //Cambio a escena principal
                 
+                //Cambio a escena principal
+                Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
+         
+                Scene inicioDeSesion = new Scene(inicioSesionParent);
+        
+                Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+                ventana.setScene(inicioDeSesion);
+                ventana.setResizable(true);
+                ventana.show();
                 
                 // TODO
-            } catch (InterruptedException ex) {
+            } catch (IOException ex) {
                 Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (NavegacionDAOException ex) {

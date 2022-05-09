@@ -4,55 +4,61 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.InicioDeSesionController">
     <stylesheets>
         <URL value="@iniciodesesion.css" />
     </stylesheets>
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0">
+      <BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@registro.css">
          <center>
-            <VBox prefHeight="400.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="400.0" prefWidth="184.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="108.0" prefWidth="600.0">
+                  <HBox prefHeight="108.0" prefWidth="600.0" spacing="20.0">
                      <children>
-                        <Label prefHeight="152.0" prefWidth="623.0" text="INICIAR SESIÓN">
+                        <Label prefHeight="70.0" prefWidth="427.0" text="INICIAR SESIÓN" textAlignment="CENTER">
                            <padding>
                               <Insets left="250.0" />
                            </padding></Label>
                      </children>
                   </HBox>
-                  <HBox prefHeight="88.0" prefWidth="600.0">
+                  <HBox prefHeight="88.0" prefWidth="600.0" spacing="20.0">
                      <children>
-                        <Label prefHeight="27.0" prefWidth="121.0" text="Usuario" />
-                        <TextField fx:id="texto_usuario" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="     Usuario" />
+                        <TextField fx:id="nomUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label prefHeight="23.0" prefWidth="119.0" text="Contraseña" />
-                        <TextField fx:id="texto_password" prefHeight="25.0" prefWidth="178.0" />
+                        <Label prefHeight="30.0" prefWidth="100.0" text="   Contraseña" />
+                        <PasswordField fx:id="contraUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
                      </children>
-                  </HBox>
-                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-                     <children>
-                        <Text fx:id="mensaje_error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="377.0" />
-                        <Button mnemonicParsing="false" onAction="#PulsadoCancelar" prefHeight="40.0" prefWidth="77.0" text="Cancelar" />
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#PulsadoEntrar" prefHeight="40.0" prefWidth="77.0" text="Entrar" />
-                     </children>
-                     <padding>
-                        <Insets right="20.0" top="40.0" />
-                     </padding>
                   </HBox>
                </children>
+               <padding>
+                  <Insets bottom="10.0" left="60.0" right="30.0" top="70.0" />
+               </padding>
             </VBox>
          </center>
+         <bottom>
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea fx:id="textoError" prefHeight="200.0" prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#PulsadoCancelar" prefHeight="40.0" prefWidth="120.0" text="Cancelar" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#PulsadoEntrar" prefHeight="40.0" prefWidth="120.0" text="Entrar" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="50.0" top="20.0" />
+               </padding>
+            </HBox>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>
