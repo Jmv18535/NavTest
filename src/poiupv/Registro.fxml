@@ -84,11 +84,7 @@
                               </Button>
                               <Button mnemonicParsing="false" onAction="#pulsaravatar2" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
-                                    <ImageView fx:id="avatar2" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/avatars/avatar2.png" />
-                                       </image>
-                                    </ImageView>
+                                    <ImageView fx:id="avatar2" fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true" />
                                  </graphic>
                               </Button>
                               <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pulsaravatar3" prefHeight="50.0" prefWidth="50.0">
@@ -142,7 +138,7 @@
                               <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="22.0" prefWidth="129.0" text="Avatar actual:" />
                            </children>
                         </VBox>
-                        <ImageView fx:id="avatarelegido" fitHeight="105.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="avatarElegido" fitHeight="105.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>

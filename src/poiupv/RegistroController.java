@@ -6,7 +6,11 @@
 package poiupv;
 
 import DBAccess.NavegacionDAOException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -88,7 +92,6 @@ public class RegistroController implements Initializable {
     
     @FXML
     private Label falloFecha;
-    @FXML
     private ImageView avatarelegido;
     @FXML
     private ImageView avatar4;
@@ -96,6 +99,8 @@ public class RegistroController implements Initializable {
     private ImageView avatar5;
     @FXML
     private ImageView avatarelegir;
+    @FXML
+    private ImageView avatarElegido;
         
    
     
@@ -219,33 +224,30 @@ public class RegistroController implements Initializable {
     }
 
     @FXML
-    private void pulsaravatar1(ActionEvent event) {
-        Image image1 = new Image(getClass().getResourceAsStream("/resources.avatars/avatar1.gif"));
-        avatarelegido.setImage(image1);
+    private void pulsaravatar1(ActionEvent event){
+        
     }
 
     @FXML
-    private void pulsaravatar2(ActionEvent event) {
-        Image image2 = new Image(getClass().getResourceAsStream("/resources.avatars/avatar2.png"));
-        avatarelegido.setImage(image2);
+    private void pulsaravatar2(ActionEvent event) throws FileNotFoundException{
+        File img = new File("src/resources/avatar2.png");
+        InputStream isImage = (InputStream) new FileInputStream(img);
+        avatarElegido.setImage(new Image(isImage));
     }
 
     @FXML
     private void pulsaravatar3(ActionEvent event) {
-         Image image3 = new Image(getClass().getResourceAsStream("/resources.avatars/avatar3.png"));
-        avatarelegido.setImage(image3);
+         
     }
 
     @FXML
     private void pulsaravatar4(ActionEvent event) {
-         Image image4 = new Image(getClass().getResourceAsStream("/resources.avatars/avatar4.png"));
-        avatarelegido.setImage(image4);
+      
     }
 
     @FXML
     private void pulsaravatar5(ActionEvent event) {
-         Image image5 = new Image(getClass().getResourceAsStream("/resources.avatars/default.png"));
-        avatarelegido.setImage(image5);
+        
     }
 
     @FXML
