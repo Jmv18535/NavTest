@@ -70,7 +70,8 @@ public class RegistroController implements Initializable {
     @FXML
     private PasswordField contraUsuario;
     @FXML
-    DatePicker edadUsuario=new DatePicker(LocalDate.now());
+    private DatePicker edadUsuario=new DatePicker(LocalDate.now());
+    
     @FXML
     private Button cancelarRegistro;
     @FXML
@@ -177,7 +178,7 @@ public class RegistroController implements Initializable {
             LocalDate edadMinima = LocalDate.now().minusYears(16);
             if (birthdate.isAfter(edadMinima)) {
                 falloFecha.visibleProperty().set(true);
-                mensajeError.setText("El usuario debe tener mas de 16 años");
+                mensajeError.setText("El usuario debe tener mas de 16 años\n"+"Si pones la fecha manual dale al intro al acabar");
                 mensajeError.visibleProperty().set(true);
                 return;
             } else {
