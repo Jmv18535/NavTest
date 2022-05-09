@@ -176,6 +176,12 @@ public class RegistroController implements Initializable {
             
             LocalDate birthdate = edadUsuario.getValue();
             LocalDate edadMinima = LocalDate.now().minusYears(16);
+            if(birthdate == null){
+                falloFecha.visibleProperty().set(true);
+                mensajeError.setText("Selecciona nacimiento");
+                mensajeError.visibleProperty().set(true);
+                return;
+            }
             if (birthdate.isAfter(edadMinima)) {
                 falloFecha.visibleProperty().set(true);
                 mensajeError.setText("El usuario debe tener mas de 16 años\n"+"Si pones la fecha manual dale al intro al acabar");
