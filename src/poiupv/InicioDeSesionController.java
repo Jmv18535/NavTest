@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -37,12 +38,21 @@ public class InicioDeSesionController implements Initializable {
     private TextField nomUsuario;
     @FXML
     private PasswordField contraUsuario;
+    @FXML
+    private TextField textoContraseña;
+    @FXML
+    private CheckBox checkBox;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        textoContraseña.managedProperty().bind(checkBox.selectedProperty());
+        textoContraseña.visibleProperty().bind(checkBox.selectedProperty());
+        contraUsuario.managedProperty().bind(checkBox.selectedProperty().not());
+        contraUsuario.visibleProperty().bind(checkBox.selectedProperty().not());
+        textoContraseña.textProperty().bindBidirectional(contraUsuario.textProperty());
     }    
 
     @FXML
