@@ -8,6 +8,7 @@ package poiupv;
 import DBAccess.NavegacionDAOException;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +21,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Navegacion;
@@ -116,4 +118,11 @@ public class InicioDeSesionController implements Initializable {
         return user;
     }
         
+    public void setUser(String email,String password,Image avatar,LocalDate birthdate) throws NavegacionDAOException{
+        user.setEmail(email);
+        user.setAvatar(avatar);
+        user.setBirthdate(birthdate);
+        user.setPassword(password);
+    
+    }
 }
