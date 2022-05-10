@@ -5,12 +5,18 @@
  */
 package poiupv;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -44,6 +50,18 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoMostrarResultados(ActionEvent event) {
+    }
+
+    @FXML
+    private void pulsadoModPerfil(ActionEvent event) throws IOException {
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ModificarPerfil.fxml"));
+         
+        Scene inicioDeSesion = new Scene(inicioSesionParent);
+        
+        Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+        ventana.setScene(inicioDeSesion);
+        ventana.setResizable(true);
+        ventana.show();
     }
     
 }

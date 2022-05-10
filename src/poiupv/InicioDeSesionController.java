@@ -42,6 +42,8 @@ public class InicioDeSesionController implements Initializable {
     private TextField textoContraseña;
     @FXML
     private CheckBox checkBox;
+    
+    public static User user;
     /**
      * Initializes the controller class.
      */
@@ -75,7 +77,7 @@ public class InicioDeSesionController implements Initializable {
         String vacio="";
         String password = contraUsuario.getText();
         Navegacion navegacion = Navegacion.getSingletonNavegacion();
-        User user = navegacion.loginUser(nickname, password);
+        user = navegacion.loginUser(nickname, password);
         if( user == null){
             if(nickname.equals(vacio)){
                 textoError.setText("Ingresa usuario");
@@ -100,7 +102,7 @@ public class InicioDeSesionController implements Initializable {
         }
         
         
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -109,6 +111,9 @@ public class InicioDeSesionController implements Initializable {
         ventana.setResizable(true);
         ventana.show();
     }
-
+    
+    public User getUser(){
+        return user;
+    }
         
 }
