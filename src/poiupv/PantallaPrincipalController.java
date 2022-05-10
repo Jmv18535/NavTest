@@ -7,7 +7,10 @@ package poiupv;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -16,6 +19,13 @@ import javafx.fxml.Initializable;
  */
 public class PantallaPrincipalController implements Initializable {
 
+    @FXML
+    private Button listaDeProblemas;
+    @FXML
+    private Button problemaAleatorio;
+    @FXML
+    private Button mostrarResultados;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +33,17 @@ public class PantallaPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void pulsadoListaDeProblemas(ActionEvent event) {
+    }
+
+    @FXML
+    private void pulsadoProblemaAleatorio(ActionEvent event) {
+    }
+
+    @FXML
+    private void pulsadoMostrarResultados(ActionEvent event) {
+    }
     
 }
