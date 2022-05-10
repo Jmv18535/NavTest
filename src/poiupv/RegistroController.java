@@ -47,6 +47,7 @@ import java.time.LocalDate;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.StackPane;
@@ -94,6 +95,10 @@ public class RegistroController implements Initializable {
     
     @FXML
     private ImageView avatarElegido;
+    @FXML
+    private TextField textoContraseña;
+    @FXML
+    private CheckBox checkBox;
       
     /**
      * Initializes the controller class.
@@ -108,7 +113,11 @@ public class RegistroController implements Initializable {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+        textoContraseña.managedProperty().bind(checkBox.selectedProperty());
+        textoContraseña.visibleProperty().bind(checkBox.selectedProperty());
+        contraUsuario.managedProperty().bind(checkBox.selectedProperty().not());
+        contraUsuario.visibleProperty().bind(checkBox.selectedProperty().not());
+        textoContraseña.textProperty().bindBidirectional(contraUsuario.textProperty());
     }    
 
     @FXML

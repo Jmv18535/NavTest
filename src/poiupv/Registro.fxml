@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -45,11 +47,17 @@
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="  Contraseña" textAlignment="CENTER" />
-                        <PasswordField fx:id="contraUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0">
+                        <StackPane>
                            <HBox.margin>
                               <Insets left="20.0" />
-                           </HBox.margin></PasswordField>
+                           </HBox.margin>
+                           <children>
+                              <TextField fx:id="textoContraseña" />
+                              <PasswordField fx:id="contraUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
+                           </children>
+                        </StackPane>
                         <Label fx:id="falloPassword" text="*" textFill="RED" visible="false" />
+                        <CheckBox fx:id="checkBox" mnemonicParsing="false" />
                      </children></HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
