@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -40,6 +41,10 @@ public class PantallaPrincipalController implements Initializable {
     private Button modPerfil;
     @FXML
     private Button cerrarSesion;
+    @FXML
+    private AnchorPane anchorPane;
+
+    
 
     /**
      * Initializes the controller class.
@@ -103,8 +108,8 @@ public class PantallaPrincipalController implements Initializable {
         alerta.initStyle(StageStyle.UTILITY);
         alerta.setTitle("Cerrar Sesión");
         alerta.setHeaderText("¿Estás segur@ de que quieres cerrar la sesión?");
-        alerta.setX(0);
-        alerta.setY(0);
+        
+        
         Optional <ButtonType> result = alerta.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
