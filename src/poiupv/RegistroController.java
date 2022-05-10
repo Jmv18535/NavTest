@@ -51,8 +51,10 @@ import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import static model.User.checkNickName;
 
         
@@ -92,15 +94,21 @@ public class RegistroController implements Initializable {
     
     @FXML
     private ImageView avatarElegido;
-        
-   
-    
+      
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-  
+        File img = new File("src/resources/avatars/default.png");
+        InputStream isImage;
+        try {
+            isImage = (InputStream) new FileInputStream(img);
+            avatarElegido.setImage(new Image(isImage,100,100,false,false));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }    
 
     @FXML
@@ -178,7 +186,7 @@ public class RegistroController implements Initializable {
             LocalDate edadMinima = LocalDate.now().minusYears(16);
             if(birthdate == null){
                 falloFecha.visibleProperty().set(true);
-                mensajeError.setText("Selecciona nacimiento");
+                mensajeError.setText("Selecciona nacimiento\n"+"Si pones la fecha manual dale al intro al acabar");
                 mensajeError.visibleProperty().set(true);
                 return;
             }
@@ -230,35 +238,44 @@ public class RegistroController implements Initializable {
     private void pulsarAvatar1(ActionEvent event) throws FileNotFoundException {
         File img = new File("src/resources/avatars/avatar1.gif");
         InputStream isImage = (InputStream) new FileInputStream(img);
-        avatarElegido.setImage(new Image(isImage));
+        avatarElegido.setImage(new Image(isImage,100,100,false,false));
     }
 
     @FXML
     private void pulsarAvatar2(ActionEvent event) throws FileNotFoundException {
         File img = new File("src/resources/avatars/avatar2.png");
         InputStream isImage = (InputStream) new FileInputStream(img);
-        avatarElegido.setImage(new Image(isImage));
+        avatarElegido.setImage(new Image(isImage,100,100,false,false));
     }
 
     @FXML
     private void pulsarAvatarArchivo(ActionEvent event) throws FileNotFoundException {
         FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Images","*.jpg", "*.png","*.gif","*.jpeg"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png"),
+                new FileChooser.ExtensionFilter("GIF", "*.gif"),
+                new FileChooser.ExtensionFilter("JPEG", "*.jpeg")
+            );
+        
         File f=fc.showOpenDialog(null);
         InputStream isImage = (InputStream) new FileInputStream(f);
-        avatarElegido.setImage(new Image(isImage));
+        Image perfilEscogido=new Image(isImage,100,100,false,false);
+        avatarElegido.setImage(perfilEscogido);
     }
 
     @FXML
     private void pulsarAvatar3(ActionEvent event) throws FileNotFoundException {
         File img = new File("src/resources/avatars/avatar3.png");
         InputStream isImage = (InputStream) new FileInputStream(img);
-        avatarElegido.setImage(new Image(isImage));
+        avatarElegido.setImage(new Image(isImage,100,100,false,false));
     }
 
     @FXML
     private void pulsarAvatar4(ActionEvent event) throws FileNotFoundException {
         File img = new File("src/resources/avatars/avatar4.png");
         InputStream isImage = (InputStream) new FileInputStream(img);
-         avatarElegido.setImage(new Image(isImage));
+         avatarElegido.setImage(new Image(isImage,100,100,false,false));
     }
 }

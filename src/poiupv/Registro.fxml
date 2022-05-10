@@ -132,7 +132,7 @@
                               <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="22.0" prefWidth="129.0" text="Avatar actual:" />
                            </children>
                         </VBox>
-                        <ImageView fx:id="avatarElegido" fitHeight="105.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="avatarElegido" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
