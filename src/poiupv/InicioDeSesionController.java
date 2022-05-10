@@ -23,6 +23,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Navegacion;
 import model.User;
+import static model.User.checkNickName;
 /**
  * FXML Controller class
  *
@@ -61,19 +62,32 @@ public class InicioDeSesionController implements Initializable {
         
 
         String nickname = nomUsuario.getText();
+        String vacio="";
         String password = contraUsuario.getText();
         Navegacion navegacion = Navegacion.getSingletonNavegacion();
         User user = navegacion.loginUser(nickname, password);
         if( user == null){
-         textoError.setText("No coinciden el usuario y la contraseña");
+            if(nickname.equals(vacio)){
+                textoError.setText("Ingresa usuario");
                 textoError.visibleProperty().set(true);
                 return;
+            }
+            if (!checkNickName(nickname)) {                
+                textoError.setText("El usuario no existe");
+                textoError.visibleProperty().set(true);
+                return;
+            }
+            if(password.equals(vacio)){
+                textoError.setText("Ingresa contraseña");
+                textoError.visibleProperty().set(true);
+                return;
+            }
+            else{
+                textoError.setText("Contraseña Incorrecta");
+                textoError.visibleProperty().set(true);
+                return;  
+             }
         }
-        else{
-        
-        
-        
-        
         
         
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
@@ -84,7 +98,7 @@ public class InicioDeSesionController implements Initializable {
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(true);
         ventana.show();
-    }}
+    }
 
-    
+        
 }
