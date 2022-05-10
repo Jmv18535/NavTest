@@ -52,8 +52,8 @@
                         <Insets left="400.0" />
                      </HBox.margin>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#pulsadoModPerfil" text="Modificar Perfil" />
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Cerrar Sesión">
+                        <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" text="Modificar Perfil" />
+                        <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="25.0" prefWidth="97.0" text="Cerrar Sesión">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>

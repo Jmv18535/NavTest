@@ -31,6 +31,10 @@ public class PantallaPrincipalController implements Initializable {
     private Button problemaAleatorio;
     @FXML
     private Button mostrarResultados;
+    @FXML
+    private Button modPerfil;
+    @FXML
+    private Button cerrarSesion;
 
     /**
      * Initializes the controller class.
@@ -62,6 +66,10 @@ public class PantallaPrincipalController implements Initializable {
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(true);
         ventana.show();
+    }
+
+    @FXML
+    private void pulsadoCerrarSesion(ActionEvent event) {
     }
     
 }
