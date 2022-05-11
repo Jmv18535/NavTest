@@ -44,9 +44,12 @@ import static model.User.checkEmail;
 import static model.User.checkPassword;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.Optional;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
@@ -54,6 +57,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import static model.User.checkNickName;
@@ -99,6 +103,8 @@ public class RegistroController implements Initializable {
     private TextField textoContraseña;
     @FXML
     private CheckBox checkBox;
+    
+    LocalDate edadMinima = LocalDate.now().minusYears(16);
       
     /**
      * Initializes the controller class.
@@ -135,13 +141,13 @@ public class RegistroController implements Initializable {
     
 
     @FXML
-    private void registEvent(ActionEvent event) {
+    private void registEvent(ActionEvent event) throws IOException {
         try {
             
-            Navegacion navegacion = Navegacion.getSingletonNavegacion();
-            //Nombre de usuario
+        Navegacion navegacion = Navegacion.getSingletonNavegacion();
+        //Nombre de usuario
             
-            String nickname = nombreUsuario.getText();
+        String nickname = nombreUsuario.getText();
             if (!checkNickName(nickname)) {
                 falloUsuario.visibleProperty().set(true);
                 mensajeError.setText("El campo usuario debe contener de 6 a 15 caracteres :\n"+""
@@ -162,9 +168,7 @@ public class RegistroController implements Initializable {
                 mensajeError.visibleProperty().set(false);
             }
             
-            //Correo electronico
-            
-            String email = correoUsuario.getText();
+        String email = correoUsuario.getText();
             if (!checkEmail(email)) {
                 falloEmail.visibleProperty().set(true);
                 mensajeError.setText("El campo email no cumple el formato");
@@ -174,10 +178,8 @@ public class RegistroController implements Initializable {
                 falloEmail.visibleProperty().set(false);
                 mensajeError.visibleProperty().set(false);
             }
-            
-            //Contraseña
-            
-            String password = contraUsuario.getText();
+             
+        String password = contraUsuario.getText();
             if (!checkPassword(password)) {
                 falloPassword.visibleProperty().set(true);
                 mensajeError.setText("La contraseña debe tener de 8 a 20 caracteres con un@: \n"
@@ -191,8 +193,7 @@ public class RegistroController implements Initializable {
             
             //Fecha nacimiento
             
-            LocalDate birthdate = edadUsuario.getValue();
-            LocalDate edadMinima = LocalDate.now().minusYears(16);
+        LocalDate birthdate = edadUsuario.getValue();
             if(birthdate == null){
                 falloFecha.visibleProperty().set(true);
                 mensajeError.setText("Selecciona nacimiento\n"+"Si pones la fecha manual dale al intro al acabar");
@@ -208,29 +209,30 @@ public class RegistroController implements Initializable {
                 falloFecha.visibleProperty().set(false);
                 mensajeError.visibleProperty().set(false);
             }
-            
-            //Avatar
-            Image avatar = avatarElegido.getImage();
-           
-            //Creacion Usuario
-            User resultado = navegacion.registerUser(nickname, email, password, avatar, birthdate);
-            mensajeError.setText("Usuario registrado correctamente");
-            try {
-                
-                //Cambio a escena principal
-                Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
-         
-                Scene inicioDeSesion = new Scene(inicioSesionParent);
+
+        Image avatar = avatarElegido.getImage();
         
-                Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
-                ventana.setScene(inicioDeSesion);
-                ventana.setResizable(true);
-                ventana.show();
-                
-                // TODO
-            } catch (IOException ex) {
-                Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        User resultado = navegacion.registerUser(nickname, email, password, avatar, birthdate);
+           
+        
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.initStyle(StageStyle.UTILITY);
+        alerta.setTitle("Creación Perfil");
+        alerta.setHeaderText("Perfil creado correctamente");
+        
+        
+        Optional <ButtonType> result = alerta.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK){
+            System.out.println("Aceptar");
+            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+         
+            Scene inicioDeSesion = new Scene(inicioSesionParent);
+        
+            Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+            ventana.setScene(inicioDeSesion);
+            ventana.setResizable(true);
+            ventana.show();       
+        } 
         } catch (NavegacionDAOException ex) {
             Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
         }

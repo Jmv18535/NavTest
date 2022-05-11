@@ -17,7 +17,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" stylesheets="@registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ModificarPerfilController">
    <children>
       <BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@registro.css">
@@ -57,12 +56,12 @@
                               <Insets left="20.0" />
                            </HBox.margin>
                            <children>
-                              <TextField fx:id="textoContraseña" />
+                              <TextField fx:id="textoContraseña" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
                               <PasswordField fx:id="contraUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
                            </children>
                         </StackPane>
-                        <Label fx:id="falloPassword" text="*" textFill="RED" visible="false" />
                         <CheckBox fx:id="checkBox" mnemonicParsing="false" />
+                        <Label fx:id="falloPassword" text="*" textFill="RED" visible="false" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
@@ -174,7 +173,7 @@
                      </HBox.margin>
                   </TextArea>
                   <Button fx:id="cancelarRegistro" maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#cancelEvent" prefHeight="40.0" prefWidth="120.0" text="Cancelar" />
-                  <Button fx:id="registrarse" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onAction="#registEvent" prefHeight="40.0" prefWidth="120.0" text="Registrarse" />
+                  <Button fx:id="registrarse" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onAction="#registEvent" prefHeight="40.0" prefWidth="120.0" text="Modificar" />
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="50.0" top="20.0" />
