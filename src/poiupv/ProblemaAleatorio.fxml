@@ -13,14 +13,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ProblemaAleatorioController">
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ProblemaAleatorioController">
     <stylesheets>
         <URL value="@problemaaleatorio.css" />
     </stylesheets>
    <children>
-      <VBox layoutX="1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
+      <VBox layoutX="1.0" layoutY="-1.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0">
+            <SplitPane dividerPositions="0.29797979797979796">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="172.0">
                      <children>
@@ -51,23 +51,23 @@
                         </HBox>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="403.0">
+                <AnchorPane>
                      <children>
-                        <HBox prefHeight="40.0" prefWidth="417.0">
+                        <HBox>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
+                              <Button mnemonicParsing="false" text="Button" />
                            </children>
                         </HBox>
-                        <ScrollPane layoutY="40.0" prefHeight="276.0" prefWidth="417.0">
+                        <ScrollPane layoutY="40.0">
                            <content>
                               <ImageView fitHeight="294.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -76,9 +76,10 @@
                               </ImageView>
                            </content>
                         </ScrollPane>
-                        <HBox layoutY="316.0" prefHeight="84.0" prefWidth="417.0">
+                        <HBox layoutY="316.0">
                            <children>
-                              <Button fx:id="salirPrincipio" mnemonicParsing="false" onAction="#pulsarSalirprincipio" prefHeight="51.0" prefWidth="142.0" text="Salir a pantalla principal" />
+                              <Button fx:id="salirPrincipio" mnemonicParsing="false" onAction="#pulsarSalirprincipio" text="Salir a pantalla principal" />
+                              <Button mnemonicParsing="false" onAction="#corregirRespuestas" text="Button" />
                            </children></HBox>
                      </children></AnchorPane>
               </items>

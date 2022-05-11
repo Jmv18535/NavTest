@@ -123,6 +123,5 @@ public class InicioDeSesionController implements Initializable {
         user.setAvatar(avatar);
         user.setBirthdate(birthdate);
         user.setPassword(password);
-    
     }
 }

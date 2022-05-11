@@ -4,9 +4,14 @@
  */
 package poiupv;
 
+import DBAccess.NavegacionDAOException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +24,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import model.Answer;
+import model.Navegacion;
+import model.Problem;
 
 /**
  * FXML Controller class
@@ -48,16 +56,42 @@ public class ProblemaAleatorioController implements Initializable {
     @FXML
     private Button salirPrincipio;
 
+    private int problemaAleatorio=1;
+    private List<Problem> listaProblemas;
+    private Problem problemaElegido;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        try {
+            Navegacion navegacion = Navegacion.getSingletonNavegacion();
+            listaProblemas=navegacion.getProblems();
+            problemaAleatorio = (int) (Math.random()*listaProblemas.size());
+           
+            problemaElegido=listaProblemas.get(problemaAleatorio);
+            enunciadoProblema.setText(problemaElegido.getText());
+            List<Answer> respuestas = problemaElegido.getAnswers();
+            Answer a=respuestas.get(0);
+            Answer b=respuestas.get(1);
+            Answer c=respuestas.get(2);
+            Answer d=respuestas.get(3);
+            
+            enunciadoA.setText(a.getText());
+            enunciadoB.setText(b.getText());
+            enunciadoC.setText(c.getText());
+            enunciadoD.setText(d.getText());
+            
+        } catch (NavegacionDAOException ex) {
+            Logger.getLogger(ProblemaAleatorioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }    
 
     @FXML
     private void marcarA(ActionEvent event) {
+        
     }
 
     @FXML
@@ -82,6 +116,10 @@ public class ProblemaAleatorioController implements Initializable {
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(true);
         ventana.show();
+    }
+
+    @FXML
+    private void corregirRespuestas(ActionEvent event) {
     }
     
 }
