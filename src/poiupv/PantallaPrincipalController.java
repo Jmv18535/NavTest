@@ -20,9 +20,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.User;
 
 /**
  * FXML Controller class
@@ -44,7 +47,13 @@ public class PantallaPrincipalController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
 
+    InicioDeSesionController inicio= new InicioDeSesionController();
+    @FXML
+    private ImageView fotoUsuario;
+    @FXML
+    private Label nomUsuario;
     
+    User usuario;
 
     /**
      * Initializes the controller class.
@@ -52,6 +61,9 @@ public class PantallaPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        usuario = inicio.getUser();
+        nomUsuario.setText(usuario.getNickName());
+        fotoUsuario.setImage(usuario.getAvatar());
     }    
 
     @FXML
