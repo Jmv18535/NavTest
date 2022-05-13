@@ -68,7 +68,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoListaDeProblemas(ActionEvent event) throws IOException {
-       Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ProblemaAleatorio.fxml"));
+       Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ListaProblemas.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
