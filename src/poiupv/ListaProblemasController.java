@@ -51,7 +51,7 @@ public class ListaProblemasController implements Initializable {
         try {
             navegacion = Navegacion.getSingletonNavegacion();
             listaProblemas=navegacion.getProblems();
-            E1=listaProblemas.get(0);
+            E1=listaProblemas.get(1);
             E2=listaProblemas.get(1);
             E3=listaProblemas.get(2);
             E4=listaProblemas.get(3);

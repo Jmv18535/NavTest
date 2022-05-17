@@ -18,32 +18,32 @@
         <URL value="@problemaaleatorio.css" />
     </stylesheets>
    <children>
-      <VBox layoutX="1.0" layoutY="-1.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="1.0" layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <SplitPane dividerPositions="0.29797979797979796">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="172.0">
                      <children>
-                        <TextArea fx:id="enunciadoProblema" prefHeight="99.0" prefWidth="175.0" />
-                        <HBox layoutY="110.0" prefHeight="60.0" prefWidth="175.0">
+                        <TextArea fx:id="enunciadoProblema" prefColumnCount="10" prefHeight="100.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <HBox layoutY="110.0" prefHeight="60.0" prefWidth="175.0" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="100.0">
                            <children>
                               <Label fx:id="enunciadoA" prefHeight="60.0" prefWidth="120.0" text="Label" />
                               <RadioButton fx:id="aSolucion" mnemonicParsing="false" onAction="#marcarA" prefHeight="60.0" prefWidth="63.0" text="A" />
                            </children>
                         </HBox>
-                        <HBox layoutY="176.0" prefHeight="60.0" prefWidth="175.0">
+                        <HBox layoutY="176.0" prefHeight="60.0" prefWidth="175.0" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="200.0">
                            <children>
                               <Label fx:id="enunciadoB" prefHeight="60.0" prefWidth="120.0" text="Label" />
                               <RadioButton fx:id="bSolucion" mnemonicParsing="false" onAction="#marcarB" prefHeight="59.0" prefWidth="53.0" text="B" />
                            </children>
                         </HBox>
-                        <HBox layoutY="246.0" prefHeight="60.0" prefWidth="175.0">
+                        <HBox layoutY="246.0" prefHeight="60.0" prefWidth="175.0" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="275.0">
                            <children>
                               <Label fx:id="enunciadoC" prefHeight="60.0" prefWidth="120.0" text="Label" />
                               <RadioButton fx:id="cSolucion" mnemonicParsing="false" onAction="#marcarC" prefHeight="60.0" prefWidth="63.0" text="C" />
                            </children>
                         </HBox>
-                        <HBox layoutY="314.0" prefHeight="60.0" prefWidth="175.0">
+                        <HBox layoutY="314.0" prefHeight="60.0" prefWidth="175.0" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="330.0">
                            <children>
                               <Label fx:id="enunciadoD" prefHeight="60.0" prefWidth="120.0" text="Label" />
                               <RadioButton fx:id="dSolucion" mnemonicParsing="false" onAction="#marcarD" prefHeight="63.0" prefWidth="67.0" text="D" />
@@ -53,7 +53,7 @@
                   </AnchorPane>
                 <AnchorPane>
                      <children>
-                        <HBox>
+                        <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Button mnemonicParsing="false" text="Button" />
                               <Button mnemonicParsing="false" text="Button" />
@@ -67,7 +67,7 @@
                               <Button mnemonicParsing="false" text="Button" />
                            </children>
                         </HBox>
-                        <ScrollPane fx:id="scrollPane" layoutY="40.0" stylesheets="@problemaaleatorio.css">
+                        <ScrollPane fx:id="scrollPane" layoutY="40.0" stylesheets="@problemaaleatorio.css" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="40.0">
                            <content>
                               <ImageView fx:id="mapa" fitHeight="294.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -76,7 +76,7 @@
                               </ImageView>
                            </content>
                         </ScrollPane>
-                        <HBox layoutY="316.0">
+                        <HBox layoutY="316.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="293.0" AnchorPane.topAnchor="316.0">
                            <children>
                               <Button fx:id="salirPrincipio" mnemonicParsing="false" onAction="#pulsarSalirprincipio" text="Salir a pantalla principal" />
                               <Button mnemonicParsing="false" onAction="#corregirRespuestas" text="Button" />

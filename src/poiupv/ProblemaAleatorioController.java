@@ -77,6 +77,7 @@ public class ProblemaAleatorioController implements Initializable {
             problemaAleatorio = (int) (Math.random()*listaProblemas.size());
            
             problemaElegido=listaProblemas.get(problemaAleatorio);
+            
             enunciadoProblema.setText(problemaElegido.getText());
             List<Answer> respuestas = problemaElegido.getAnswers();
             Answer a=respuestas.get(0);
