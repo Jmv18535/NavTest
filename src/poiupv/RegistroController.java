@@ -128,7 +128,7 @@ public class RegistroController implements Initializable {
 
     @FXML
     private void cancelEvent(ActionEvent event) throws IOException{
-        Parent cancelarParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+        Parent cancelarParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          
         Scene menuInicio = new Scene(cancelarParent);
         
@@ -224,7 +224,7 @@ public class RegistroController implements Initializable {
         Optional <ButtonType> result = alerta.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
-            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          
             Scene inicioDeSesion = new Scene(inicioSesionParent);
         

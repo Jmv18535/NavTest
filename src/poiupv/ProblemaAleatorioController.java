@@ -115,7 +115,7 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void pulsarSalirprincipio(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         

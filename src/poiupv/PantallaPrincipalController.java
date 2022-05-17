@@ -5,6 +5,7 @@
  */
 package poiupv;
 
+import poiupv.InicioDeSesionController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -86,7 +87,7 @@ public class PantallaPrincipalController implements Initializable {
     @FXML
    
     private void pulsadoListaDeProblemas(ActionEvent event) throws IOException {
-       Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ListaProblemas.fxml"));
+       Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ListaProblemas.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -98,7 +99,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoProblemaAleatorio(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ProblemaAleatorio.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -111,7 +112,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoMostrarResultados(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ProblemaAleatorio.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -123,7 +124,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoModPerfil(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ModificarPerfil.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ModificarPerfil.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -144,7 +145,7 @@ public class PantallaPrincipalController implements Initializable {
         Optional <ButtonType> result = alerta.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
-            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          
             Scene inicioDeSesion = new Scene(inicioSesionParent);
         

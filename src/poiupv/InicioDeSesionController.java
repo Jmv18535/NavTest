@@ -61,7 +61,7 @@ public class InicioDeSesionController implements Initializable {
 
     @FXML
     private void PulsadoCancelar(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaInicial.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -104,7 +104,7 @@ public class InicioDeSesionController implements Initializable {
         }
         
         
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         

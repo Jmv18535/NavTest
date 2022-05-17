@@ -111,7 +111,7 @@ public class ModificarPerfilController implements Initializable {
     @FXML
     private void cancelEvent(ActionEvent event) throws IOException {
         //Volver a Pantalla Principal
-        Parent cancelarParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
+        Parent cancelarParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
         Scene menuInicio = new Scene(cancelarParent);
         
@@ -179,7 +179,7 @@ public class ModificarPerfilController implements Initializable {
         Optional <ButtonType> result = alerta.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
-            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("PantallaPrincipal.fxml"));
+            Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
             Scene inicioDeSesion = new Scene(inicioSesionParent);
         
