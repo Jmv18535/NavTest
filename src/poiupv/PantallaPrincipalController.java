@@ -81,25 +81,6 @@ public class PantallaPrincipalController implements Initializable {
         fotoUsuario.setImage(usuario.getAvatar());
         
         
-        borderPanePrincipal.widthProperty().addListener((obs, oldV, newV) -> {
-            boxMenus.setPrefWidth((double) newV );
-        });
-        borderPanePrincipal.heightProperty().addListener((obs, oldV, newV) -> {
-            boxMenus.setPrefWidth((double) newV );
-        });
-        borderPanePrincipal.widthProperty().addListener((obs, oldV, newV) -> {
-            hBox2.setPrefWidth((double) newV );
-        });
-        borderPanePrincipal.heightProperty().addListener((obs, oldV, newV) -> {
-            hBox2.setPrefWidth((double) newV );
-        });
-        hBox2.widthProperty().addListener((obs, oldV, newV) -> {
-            problemaAleatorio.setPrefWidth((double) newV );
-        });
-        hBox2.heightProperty().addListener((obs, oldV, newV) -> {
-            problemaAleatorio.setPrefWidth((double) newV );
-        });
-        
     }    
 
     @FXML

@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxWidth="750.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" styleClass="mainFxmlClass" stylesheets="@registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
+<AnchorPane id="AnchorPane" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" styleClass="mainFxmlClass" stylesheets="@registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
    <children>
       <BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@registro.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>

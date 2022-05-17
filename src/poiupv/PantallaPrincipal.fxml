@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPanePrincipal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaPrincipalController">
+<BorderPane fx:id="borderPanePrincipal" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaPrincipalController">
    <center>
       <VBox fx:id="boxMenus" prefHeight="200.0" prefWidth="502.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox fx:id="hBox1" alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0">
+            <HBox fx:id="hBox1" alignment="BOTTOM_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="listaDeProblemas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pulsadoListaDeProblemas" prefHeight="45.0" prefWidth="260.0" text="Lista de problemas">
+                  <Button fx:id="listaDeProblemas" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pulsadoListaDeProblemas" prefHeight="55.0" prefWidth="275.0" text="Lista de problemas">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -24,7 +24,7 @@
             </HBox>
             <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="problemaAleatorio" mnemonicParsing="false" onAction="#pulsadoProblemaAleatorio" prefHeight="45.0" prefWidth="260.0" text="Problema aleatorio">
+                  <Button fx:id="problemaAleatorio" mnemonicParsing="false" onAction="#pulsadoProblemaAleatorio" prefHeight="55.0" prefWidth="275.0" text="Problema aleatorio">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -33,7 +33,7 @@
             </HBox>
             <HBox fx:id="hBox3" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="mostrarResultados" mnemonicParsing="false" onAction="#pulsadoMostrarResultados" prefHeight="45.0" prefWidth="260.0" text="Mostrar resultados">
+                  <Button fx:id="mostrarResultados" mnemonicParsing="false" onAction="#pulsadoMostrarResultados" prefHeight="55.0" prefWidth="275.0" text="Mostrar resultados">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -46,28 +46,40 @@
    <bottom>
       <HBox fx:id="boxCierreMod" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" fillWidth="false" prefHeight="100.0" prefWidth="200.0">
+            <VBox alignment="TOP_RIGHT" fillWidth="false" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <HBox.margin>
-                  <Insets left="400.0" />
+                  <Insets />
                </HBox.margin>
                <children>
-                  <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" text="Modificar Perfil" />
-                  <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="25.0" prefWidth="97.0" text="Cerrar Sesión">
+                  <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" prefHeight="35.0" prefWidth="100.0" text="Modificar Perfil" />
+                  <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="35.0" prefWidth="100.0" text="Cerrar Sesión">
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets />
                      </VBox.margin>
                   </Button>
                </children>
+               <padding>
+                  <Insets right="15.0" />
+               </padding>
             </VBox>
          </children>
+         <padding>
+            <Insets bottom="15.0" />
+         </padding>
       </HBox>
    </bottom>
    <right>
-      <VBox fx:id="boxImagen" BorderPane.alignment="CENTER">
+      <VBox fx:id="boxImagen" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="fotoUsuario" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="nomUsuario" />
+            <Label fx:id="nomUsuario" contentDisplay="CENTER">
+               <padding>
+                  <Insets left="50.0" />
+               </padding></Label>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" top="30.0" />
+         </BorderPane.margin>
       </VBox>
    </right>
 </BorderPane>
