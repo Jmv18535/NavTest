@@ -23,6 +23,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.User;
@@ -44,8 +47,6 @@ public class PantallaPrincipalController implements Initializable {
     private Button modPerfil;
     @FXML
     private Button cerrarSesion;
-    @FXML
-    private AnchorPane anchorPane;
 
     InicioDeSesionController inicio= new InicioDeSesionController();
     @FXML
@@ -54,6 +55,20 @@ public class PantallaPrincipalController implements Initializable {
     private Label nomUsuario;
     
     User usuario;
+    @FXML
+    private BorderPane borderPanePrincipal;
+    @FXML
+    private HBox boxCierreMod;
+    @FXML
+    private VBox boxMenus;
+    @FXML
+    private VBox boxImagen;
+    @FXML
+    private HBox hBox1;
+    @FXML
+    private HBox hBox2;
+    @FXML
+    private HBox hBox3;
 
     /**
      * Initializes the controller class.
@@ -64,9 +79,31 @@ public class PantallaPrincipalController implements Initializable {
         usuario = inicio.getUser();
         nomUsuario.setText(usuario.getNickName());
         fotoUsuario.setImage(usuario.getAvatar());
+        
+        
+        borderPanePrincipal.widthProperty().addListener((obs, oldV, newV) -> {
+            boxMenus.setPrefWidth((double) newV );
+        });
+        borderPanePrincipal.heightProperty().addListener((obs, oldV, newV) -> {
+            boxMenus.setPrefWidth((double) newV );
+        });
+        borderPanePrincipal.widthProperty().addListener((obs, oldV, newV) -> {
+            hBox2.setPrefWidth((double) newV );
+        });
+        borderPanePrincipal.heightProperty().addListener((obs, oldV, newV) -> {
+            hBox2.setPrefWidth((double) newV );
+        });
+        hBox2.widthProperty().addListener((obs, oldV, newV) -> {
+            problemaAleatorio.setPrefWidth((double) newV );
+        });
+        hBox2.heightProperty().addListener((obs, oldV, newV) -> {
+            problemaAleatorio.setPrefWidth((double) newV );
+        });
+        
     }    
 
     @FXML
+   
     private void pulsadoListaDeProblemas(ActionEvent event) throws IOException {
        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("ListaProblemas.fxml"));
          

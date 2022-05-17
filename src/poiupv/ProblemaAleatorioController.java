@@ -22,7 +22,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Answer;
 import model.Navegacion;
@@ -59,6 +61,10 @@ public class ProblemaAleatorioController implements Initializable {
     private int problemaAleatorio=1;
     private List<Problem> listaProblemas;
     private Problem problemaElegido;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private ImageView mapa;
     /**
      * Initializes the controller class.
      */

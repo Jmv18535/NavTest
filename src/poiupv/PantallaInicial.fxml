@@ -9,25 +9,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
+<AnchorPane maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="409.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="450.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../resources/FondoPrincipal.png" />
+            <Image url="@../resources/MapaAzul.png" />
          </image>
       </ImageView>
-      <BorderPane layoutX="9.0" minHeight="200.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" stylesheets="@pantallainicial.css">
+      <BorderPane layoutX="9.0" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="400.0" prefWidth="450.0" stylesheets="@pantallainicial.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0">
+                  <HBox alignment="CENTER" prefHeight="300.0" prefWidth="300.0">
                      <children>
-                        <Button fx:id="botonInicio" minWidth="200.0" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" prefHeight="35.0" prefWidth="107.0" text="Iniciar Sesión" />
+                        <Button fx:id="botonInicio" maxHeight="65.0" maxWidth="275.0" minHeight="65.0" minWidth="275.0" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" prefHeight="65.0" prefWidth="275.0" text="Iniciar Sesión" />
                      </children>
                   </HBox>
-                  <HBox>
+                  <HBox alignment="CENTER">
                      <children>
-                        <Button fx:id="botonRegistro" minWidth="200.0" mnemonicParsing="false" onAction="#pulsadoRegistrarse" prefHeight="48.0" prefWidth="131.0" text="Registrarse" />
+                        <Button fx:id="botonRegistro" maxHeight="65.0" maxWidth="275.0" minHeight="65.0" minWidth="275.0" mnemonicParsing="false" onAction="#pulsadoRegistrarse" prefHeight="65.0" prefWidth="275.0" text="Registrarse" />
                      </children>
                   </HBox>
                </children>

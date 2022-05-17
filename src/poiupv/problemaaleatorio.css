@@ -1,7 +1,9 @@
-/*
- * Empty Stylesheet file.
- */
 
-.mainFxmlClass {
-
+.scroll-pane {
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
+}
+ImageView{
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
 }

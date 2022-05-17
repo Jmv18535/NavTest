@@ -67,9 +67,9 @@
                               <Button mnemonicParsing="false" text="Button" />
                            </children>
                         </HBox>
-                        <ScrollPane layoutY="40.0">
+                        <ScrollPane fx:id="scrollPane" layoutY="40.0" stylesheets="@problemaaleatorio.css">
                            <content>
-                              <ImageView fitHeight="294.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="mapa" fitHeight="294.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../resources/carta_nautica.jpg" />
                                  </image>
