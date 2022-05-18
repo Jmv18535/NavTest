@@ -89,7 +89,7 @@ public class PantallaPrincipalController implements Initializable {
     @FXML
    
     private void pulsadoListaDeProblemas(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("FXML/ListaProblemas.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("poiupv/FXML/ListaProblemas.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -102,7 +102,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoProblemaAleatorio(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("FXML/ProblemaAleatorio.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("poiupv/FXML/ProblemaAleatorio.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -116,7 +116,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoMostrarResultados(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv.FXML/FXML/MostrarResultados.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/MostrarResultados.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
