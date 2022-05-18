@@ -6,7 +6,13 @@ package poiupv;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -15,6 +21,19 @@ import javafx.fxml.Initializable;
  */
 public class MostrarResultadosController implements Initializable {
 
+    @FXML
+    private DatePicker fechaABuscarDesde;
+    @FXML
+    private Text numeroExamenesRealizados;
+    @FXML
+    private Text numeroAciertos;
+    @FXML
+    private Text numeroFallos;
+    @FXML
+    private HBox porcentajeDeAciertos;
+    @FXML
+    private VBox vboxParaTarta;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +41,13 @@ public class MostrarResultadosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void pulsadoBuscarResultados(ActionEvent event) {
+    }
+
+    @FXML
+    private void salirALaPantallaPrincipalDesdeResultados(ActionEvent event) {
+    }
     
 }
