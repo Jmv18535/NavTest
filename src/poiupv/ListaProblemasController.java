@@ -40,6 +40,18 @@ public class ListaProblemasController implements Initializable {
     private Problem E5;
     private Problem E6;
     private Problem E7;
+    private Problem E8;
+    private Problem E9;
+    private Problem E10;
+    private Problem E11;  
+    private Problem E12;
+    private Problem E13;
+    private Problem E14;
+    private Problem E15;
+    private Problem E16;  
+    private Problem E17;
+    private Problem E18;
+   
 
     /**
      * Initializes the controller class.
@@ -51,13 +63,27 @@ public class ListaProblemasController implements Initializable {
         try {
             navegacion = Navegacion.getSingletonNavegacion();
             listaProblemas=navegacion.getProblems();
-            E1=listaProblemas.get(1);
+            E1=listaProblemas.get(0);
             E2=listaProblemas.get(1);
             E3=listaProblemas.get(2);
             E4=listaProblemas.get(3);
             E5=listaProblemas.get(4);
             E6=listaProblemas.get(5);
             E7=listaProblemas.get(6);
+            E8=listaProblemas.get(7);
+            E9=listaProblemas.get(8);
+            E10=listaProblemas.get(9);
+            E11=listaProblemas.get(10);
+            E12=listaProblemas.get(11);
+            E13=listaProblemas.get(12);
+            E14=listaProblemas.get(13);
+            E15=listaProblemas.get(14);
+            E16=listaProblemas.get(15);
+            E17=listaProblemas.get(16);
+            E18=listaProblemas.get(17);
+            
+            
+            
             
             
             
@@ -74,70 +100,87 @@ public class ListaProblemasController implements Initializable {
 
     @FXML
     private void pulsar4(ActionEvent event) {
+        textoEnunciados.setText(E4.getText());
     }
 
     @FXML
     private void pulsar7(ActionEvent event) {
+        textoEnunciados.setText(E7.getText());
     }
 
     @FXML
     private void pulsar2(ActionEvent event) {
+        textoEnunciados.setText(E2.getText());
     }
 
     @FXML
     private void pulsar5(ActionEvent event) {
+        textoEnunciados.setText(E5.getText());
     }
 
     @FXML
     private void pulsar8(ActionEvent event) {
+        textoEnunciados.setText(E8.getText());
     }
 
     @FXML
     private void pulsar10(ActionEvent event) {
+        textoEnunciados.setText(E10.getText());
     }
 
     @FXML
     private void pulsar13(ActionEvent event) {
+        textoEnunciados.setText(E13.getText());
     }
 
     @FXML
     private void pulsar16(ActionEvent event) {
+        textoEnunciados.setText(E16.getText());
     }
 
     @FXML
     private void pulsar11(ActionEvent event) {
+        textoEnunciados.setText(E11.getText());
     }
 
     @FXML
     private void pulsar14(ActionEvent event) {
+        textoEnunciados.setText(E14.getText());
     }
 
     @FXML
     private void pulsar17(ActionEvent event) {
+        textoEnunciados.setText(E17.getText());
     }
 
     @FXML
     private void pulsar3(ActionEvent event) {
+        textoEnunciados.setText(E3.getText());
     }
 
     @FXML
     private void pulsar6(ActionEvent event) {
+        textoEnunciados.setText(E6.getText());
     }
 
     @FXML
     private void pulsar9(ActionEvent event) {
+        textoEnunciados.setText(E9.getText());
     }
 
     @FXML
     private void pulsar12(ActionEvent event) {
+        textoEnunciados.setText(E12.getText());
     }
 
     @FXML
     private void pulsar15(ActionEvent event) {
+        textoEnunciados.setText(E15.getText());
     }
 
     @FXML
     private void pulsar18(ActionEvent event) {
+        textoEnunciados.setText(E18.getText());
     }
 
     @FXML
