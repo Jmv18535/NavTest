@@ -4,15 +4,22 @@
  */
 package poiupv;
 
+import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -22,7 +29,7 @@ import javafx.scene.text.Text;
 public class MostrarResultadosController implements Initializable {
 
     @FXML
-    private DatePicker fechaABuscarDesde;
+    private DatePicker fechaABuscarDesde=new DatePicker(LocalDate.now());
     @FXML
     private Text numeroExamenesRealizados;
     @FXML
@@ -44,10 +51,21 @@ public class MostrarResultadosController implements Initializable {
 
     @FXML
     private void pulsadoBuscarResultados(ActionEvent event) {
+        
     }
 
     @FXML
-    private void salirALaPantallaPrincipalDesdeResultados(ActionEvent event) {
+    private void salirALaPantallaPrincipalDesdeResultados(ActionEvent event) throws IOException {
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
+         
+        Scene inicioDeSesion = new Scene(inicioSesionParent);
+        
+        Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+        ventana.setScene(inicioDeSesion);
+        ventana.setResizable(false);
+        ventana.centerOnScreen();
+        ventana.setMaximized(false);
+        ventana.show();
     }
     
 }

@@ -89,19 +89,20 @@ public class PantallaPrincipalController implements Initializable {
     @FXML
    
     private void pulsadoListaDeProblemas(ActionEvent event) throws IOException {
-       Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ListaProblemas.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("FXML/ListaProblemas.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
-        ventana.setResizable(true);
+      
+        ventana.setResizable(false);
         ventana.show();
     }
 
     @FXML
     private void pulsadoProblemaAleatorio(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("FXML/ProblemaAleatorio.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -115,13 +116,13 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoMostrarResultados(ActionEvent event) throws IOException {
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("FXML/MostrarResultados.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
-        ventana.setResizable(true);
+        ventana.setResizable(false);
         ventana.show();
     }
 
