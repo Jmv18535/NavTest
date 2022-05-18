@@ -37,7 +37,7 @@ public class MostrarResultadosController implements Initializable {
     @FXML
     private Text numeroFallos;
     @FXML
-    private HBox porcentajeDeAciertos;
+    private Text porcentajeDeAciertos;
     @FXML
     private VBox vboxParaTarta;
 
