@@ -63,24 +63,24 @@ public class ListaProblemasController implements Initializable {
         try {
             navegacion = Navegacion.getSingletonNavegacion();
             listaProblemas=navegacion.getProblems();
-            E1=listaProblemas.get(0);
-            E2=listaProblemas.get(1);
-            E3=listaProblemas.get(2);
-            E4=listaProblemas.get(3);
-            E5=listaProblemas.get(4);
-            E6=listaProblemas.get(5);
-            E7=listaProblemas.get(6);
-            E8=listaProblemas.get(7);
-            E9=listaProblemas.get(8);
-            E10=listaProblemas.get(9);
-            E11=listaProblemas.get(10);
-            E12=listaProblemas.get(11);
-            E13=listaProblemas.get(12);
-            E14=listaProblemas.get(13);
-            E15=listaProblemas.get(14);
-            E16=listaProblemas.get(15);
-            E17=listaProblemas.get(16);
-            E18=listaProblemas.get(17);
+            E1=listaProblemas.get(1);
+            E2=listaProblemas.get(2);
+            E3=listaProblemas.get(3);
+            E4=listaProblemas.get(4);
+            E5=listaProblemas.get(5);
+            E6=listaProblemas.get(6);
+            E7=listaProblemas.get(7);
+            E8=listaProblemas.get(8);
+            E9=listaProblemas.get(9);
+            E10=listaProblemas.get(10);
+            E11=listaProblemas.get(11);
+            E12=listaProblemas.get(12);
+            E13=listaProblemas.get(13);
+            E14=listaProblemas.get(14);
+            E15=listaProblemas.get(15);
+            E16=listaProblemas.get(16);
+            E17=listaProblemas.get(17);
+            E18=listaProblemas.get(18);
             
             
             
