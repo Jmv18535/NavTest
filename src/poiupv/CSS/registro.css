@@ -26,7 +26,7 @@ Label { -fx-background-color: #6e6e69;
          -fx-text-fill: #d6d6d0;
          -fx-font-family: "Comic Sans MS";
          -fx-font-style: italic;
-         -fx-font-size: 14px;
+         -fx-font-size: 15px;
          -fx-background-radius: 10 10 10 10;
          -fx-border-radius: 10 10 10 10;
 }
@@ -37,7 +37,7 @@ TextField{
          -fx-text-fill: #000000;
          -fx-font-family: "Comic Sans MS";
          -fx-font-style: italic;
-         -fx-font-size: 14px;
+         -fx-font-size: 15px;
          -fx-background-radius: 5 5 5 5;
          -fx-border-radius: 5 5 5 5;
 }
@@ -48,7 +48,7 @@ PasswordField{
          -fx-text-fill: #000000;
          -fx-font-family: "Comic Sans MS";
          -fx-font-style: italic;
-         -fx-font-size: 14px;
+         -fx-font-size: 15px;
          -fx-background-radius: 5 5 5 5;
          -fx-border-radius: 5 5 5 5;
 }
@@ -59,7 +59,7 @@ DatePicker{
          -fx-text-fill: #000000;
          -fx-font-family: "Comic Sans MS";
          -fx-font-style: italic;
-         -fx-font-size: 14px;
+         -fx-font-size: 15px;
          -fx-background-radius: 5 5 5 5;
          -fx-border-radius: 5 5 5 5;
          

@@ -21,18 +21,18 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="108.0" prefWidth="600.0" spacing="20.0">
                      <children>
-                        <Label alignment="CENTER" maxHeight="70.0" maxWidth="400.0" minHeight="70.0" minWidth="400.0" prefHeight="70.0" prefWidth="400.0" text="INICIAR SESIÓN" textAlignment="CENTER" />
+                        <Label fx:id="titulo" alignment="CENTER" maxHeight="70.0" maxWidth="400.0" minHeight="70.0" minWidth="400.0" prefHeight="70.0" prefWidth="400.0" text="INICIAR SESIÓN" textAlignment="CENTER" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label prefHeight="40.0" prefWidth="100.0" text="     Usuario" />
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Usuario" />
                         <TextField fx:id="nomUsuario" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label prefHeight="40.0" prefWidth="100.0" text="   Contraseña" />
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Contraseña" textAlignment="CENTER" />
                         <StackPane maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0">
                            <children>
                               <TextField fx:id="textoContraseña" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" />

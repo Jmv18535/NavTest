@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -46,6 +47,8 @@ public class InicioDeSesionController implements Initializable {
     private CheckBox checkBox;
     
     public static User user;
+    @FXML
+    private Label titulo;
     /**
      * Initializes the controller class.
      */
@@ -57,6 +60,8 @@ public class InicioDeSesionController implements Initializable {
         contraUsuario.managedProperty().bind(checkBox.selectedProperty().not());
         contraUsuario.visibleProperty().bind(checkBox.selectedProperty().not());
         textoContraseña.textProperty().bindBidirectional(contraUsuario.textProperty());
+        
+        titulo.setId("titulo");
     }    
 
     @FXML

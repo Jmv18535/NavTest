@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,6 +28,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.User;
@@ -105,6 +107,7 @@ public class PantallaPrincipalController implements Initializable {
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
+      
         ventana.setResizable(true);
         ventana.setMaximized(true);
         ventana.show();

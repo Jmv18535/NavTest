@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Answer;
@@ -64,7 +65,7 @@ public class ProblemaAleatorioController implements Initializable {
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private ImageView mapa;
+    private ToggleGroup respuestas;
     /**
      * Initializes the controller class.
      */
@@ -125,6 +126,7 @@ public class ProblemaAleatorioController implements Initializable {
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(false);
         ventana.centerOnScreen();
+        ventana.setMaximized(false);
         ventana.show();
     }
 
