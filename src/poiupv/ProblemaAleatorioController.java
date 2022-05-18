@@ -71,6 +71,7 @@ public class ProblemaAleatorioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        
         try {
             Navegacion navegacion = Navegacion.getSingletonNavegacion();
             listaProblemas=navegacion.getProblems();
@@ -79,6 +80,7 @@ public class ProblemaAleatorioController implements Initializable {
             problemaElegido=listaProblemas.get(problemaAleatorio);
             
             enunciadoProblema.setText(problemaElegido.getText());
+            enunciadoProblema.setWrapText​(true);
             List<Answer> respuestas = problemaElegido.getAnswers();
             Answer a=respuestas.get(0);
             Answer b=respuestas.get(1);
