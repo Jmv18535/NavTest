@@ -109,7 +109,7 @@ public class InicioDeSesionController implements Initializable {
         }
         
         
-        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ListaProblemas.fxml"));
+        Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
