@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Navegacion;
@@ -30,8 +31,6 @@ import model.Problem;
  */
 public class ListaProblemasController implements Initializable {
 
-    @FXML
-    private TextField textoEnunciados;
     private List<Problem> listaProblemas;
     private Problem E1;
     private Problem E2;
@@ -50,7 +49,9 @@ public class ListaProblemasController implements Initializable {
     private Problem E15;
     private Problem E16;  
     private Problem E17;
-    private Problem E18;
+
+    @FXML
+    private TextArea enunciadoLista;
    
 
     /**
@@ -59,6 +60,7 @@ public class ListaProblemasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        enunciadoLista.setWrapText​(true);
          Navegacion navegacion = null;
         try {
             navegacion = Navegacion.getSingletonNavegacion();
@@ -80,7 +82,6 @@ public class ListaProblemasController implements Initializable {
             E15=listaProblemas.get(15);
             E16=listaProblemas.get(16);
             E17=listaProblemas.get(17);
-            E18=listaProblemas.get(18);
             
             
             
@@ -95,93 +96,90 @@ public class ListaProblemasController implements Initializable {
 
     @FXML
     private void pulsar1(ActionEvent event) {
-        textoEnunciados.setText(E1.getText());
+       enunciadoLista.setText(E1.getText());
     }
 
     @FXML
     private void pulsar4(ActionEvent event) {
-        textoEnunciados.setText(E4.getText());
+        enunciadoLista.setText(E4.getText());
     }
 
     @FXML
     private void pulsar7(ActionEvent event) {
-        textoEnunciados.setText(E7.getText());
+        enunciadoLista.setText(E7.getText());
     }
 
     @FXML
     private void pulsar2(ActionEvent event) {
-        textoEnunciados.setText(E2.getText());
+        enunciadoLista.setText(E2.getText());
     }
 
     @FXML
     private void pulsar5(ActionEvent event) {
-        textoEnunciados.setText(E5.getText());
+       enunciadoLista.setText(E5.getText());
     }
 
     @FXML
     private void pulsar8(ActionEvent event) {
-        textoEnunciados.setText(E8.getText());
+        enunciadoLista.setText(E8.getText());
     }
 
     @FXML
     private void pulsar10(ActionEvent event) {
-        textoEnunciados.setText(E10.getText());
+        enunciadoLista.setText(E10.getText());
     }
 
     @FXML
     private void pulsar13(ActionEvent event) {
-        textoEnunciados.setText(E13.getText());
+        enunciadoLista.setText(E13.getText());
     }
 
     @FXML
     private void pulsar16(ActionEvent event) {
-        textoEnunciados.setText(E16.getText());
+        enunciadoLista.setText(E16.getText());
     }
 
     @FXML
     private void pulsar11(ActionEvent event) {
-        textoEnunciados.setText(E11.getText());
+        enunciadoLista.setText(E11.getText());
     }
 
     @FXML
     private void pulsar14(ActionEvent event) {
-        textoEnunciados.setText(E14.getText());
+        enunciadoLista.setText(E14.getText());
     }
 
     @FXML
     private void pulsar17(ActionEvent event) {
-        textoEnunciados.setText(E17.getText());
+        enunciadoLista.setText(E17.getText());
     }
 
     @FXML
     private void pulsar3(ActionEvent event) {
-        textoEnunciados.setText(E3.getText());
+        //textoEnunciados.setText(E3.getText());
     }
 
     @FXML
     private void pulsar6(ActionEvent event) {
-        textoEnunciados.setText(E6.getText());
+        //textoEnunciados.setText(E6.getText());
     }
 
     @FXML
     private void pulsar9(ActionEvent event) {
-        textoEnunciados.setText(E9.getText());
+        //textoEnunciados.setText(E9.getText());
     }
 
     @FXML
     private void pulsar12(ActionEvent event) {
-        textoEnunciados.setText(E12.getText());
+       // textoEnunciados.setText(E12.getText());
     }
 
     @FXML
     private void pulsar15(ActionEvent event) {
-        textoEnunciados.setText(E15.getText());
+        //textoEnunciados.setText(E15.getText());
     }
 
-    @FXML
-    private void pulsar18(ActionEvent event) {
-        textoEnunciados.setText(E18.getText());
-    }
+   
 
     @FXML
     private void volverMenuPrincipal(ActionEvent event) throws IOException {

@@ -117,9 +117,9 @@ public class PantallaPrincipalController implements Initializable {
     @FXML
     private void pulsadoMostrarResultados(ActionEvent event) throws IOException {
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/MostrarResultados.fxml"));
-         
-        Scene inicioDeSesion = new Scene(inicioSesionParent);
-        
+       //FXMLLoader loader = new FXMLLoader(getClass().getResource("MostrarResultados.fxml"));
+       Scene inicioDeSesion = new Scene(inicioSesionParent);
+       // loader.setController(new inicioDeSesion("/poiupv/FXML/MostrarResultados.fxml"));
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(false);
