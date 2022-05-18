@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPanePrincipal" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaPrincipalController">
+<BorderPane fx:id="borderPanePrincipal" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" stylesheets="@../CSS/registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaPrincipalController">
    <center>
       <VBox fx:id="boxMenus" prefHeight="200.0" prefWidth="502.0" BorderPane.alignment="CENTER">
          <children>
@@ -46,13 +46,13 @@
    <bottom>
       <HBox fx:id="boxCierreMod" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="TOP_RIGHT" fillWidth="false" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+            <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
                <children>
-                  <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" prefHeight="35.0" prefWidth="100.0" text="Modificar Perfil" />
-                  <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="35.0" prefWidth="100.0" text="Cerrar Sesión">
+                  <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" prefHeight="35.0" prefWidth="100.0" stylesheets="@../CSS/pantprincipal.css" text="Modificar Perfil" />
+                  <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="35.0" prefWidth="100.0" stylesheets="@../CSS/pantprincipal.css" text="Cerrar Sesión">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -72,10 +72,11 @@
       <VBox fx:id="boxImagen" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="fotoUsuario" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="nomUsuario" contentDisplay="CENTER">
-               <padding>
-                  <Insets left="50.0" />
-               </padding></Label>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="nomUsuario" contentDisplay="CENTER" />
+               </children>
+            </HBox>
          </children>
          <BorderPane.margin>
             <Insets bottom="30.0" top="30.0" />

@@ -19,7 +19,7 @@
 
 <AnchorPane id="AnchorPane" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" styleClass="mainFxmlClass" stylesheets="@../CSS/registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.RegistroController">
    <children>
-      <BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@registro.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../CSS/registro.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
@@ -85,7 +85,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar1.gif" />
+                                          <Image url="@../../resources/avatars/avatar1.gif" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -94,7 +94,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar2.png" />
+                                          <Image url="@../../resources/avatars/avatar2.png" />
                                        </image></ImageView>
                                  </graphic>
                               </Button>
@@ -106,7 +106,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar3.png" />
+                                          <Image url="@../../resources/avatars/avatar3.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -115,7 +115,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/masavatar.png" />
+                                          <Image url="@../../resources/avatars/masavatar.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -131,7 +131,7 @@
                               <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="40.0" maxWidth="172.0" minHeight="40.0" minWidth="172.0" prefHeight="40.0" prefWidth="172.0" text="Avatar actual:" />
                               <ImageView fx:id="avatarElegido" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../resources/avatars/default.png" />
+                                    <Image url="@../../resources/avatars/default.png" />
                                  </image>
                                  <VBox.margin>
                                     <Insets left="45.0" />
@@ -147,7 +147,7 @@
                </padding></VBox>
          </right>
          <bottom>
-            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@registro.css" BorderPane.alignment="TOP_RIGHT">
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@../CSS/registro.css" BorderPane.alignment="TOP_RIGHT">
                <children>
                   <TextArea fx:id="mensajeError" editable="false" maxHeight="60.0" maxWidth="400.0" minHeight="60.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" visible="false">
                      <HBox.margin>
