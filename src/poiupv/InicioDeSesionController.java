@@ -49,7 +49,8 @@ public class InicioDeSesionController implements Initializable {
     @FXML
     private CheckBox checkBox;
     
-    
+    private int aciertos;
+    private int fallos;
     
     public static User user;
     @FXML
@@ -65,6 +66,9 @@ public class InicioDeSesionController implements Initializable {
         contraUsuario.managedProperty().bind(checkBox.selectedProperty().not());
         contraUsuario.visibleProperty().bind(checkBox.selectedProperty().not());
         textoContraseña.textProperty().bindBidirectional(contraUsuario.textProperty());
+        
+        aciertos=0;
+        fallos=0;
         
         titulo.setId("titulo");
     }    
@@ -141,6 +145,16 @@ public class InicioDeSesionController implements Initializable {
     public List<Session> getSesion(){
         return user.getSessions();
     }
-    
-    
+    public int getAciertos(){
+        return aciertos;
+    }
+    public int getFallos(){
+        return fallos;
+    }
+    public void aumentoFallos(){
+        fallos++;
+    }
+    public void aumentoAciertos(){
+        aciertos++;
+    }
 }

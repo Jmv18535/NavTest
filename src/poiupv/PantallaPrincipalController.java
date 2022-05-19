@@ -75,10 +75,7 @@ public class PantallaPrincipalController implements Initializable {
     private HBox hBox2;
     @FXML
     private HBox hBox3;
-    
-    public int aciertos;
-    
-    public int fallos;
+   
 
     /**
      * Initializes the controller class.
@@ -109,6 +106,7 @@ public class PantallaPrincipalController implements Initializable {
 
     @FXML
     private void pulsadoProblemaAleatorio(ActionEvent event) throws IOException {
+       
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
@@ -157,7 +155,7 @@ public class PantallaPrincipalController implements Initializable {
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
             
-            Session session= new Session(LocalDateTime.now(),10,2);
+            Session session= new Session(LocalDateTime.now(),inicio.getAciertos(),inicio.getFallos());
      
             inicio.anadirSesion(session);
             
@@ -177,29 +175,6 @@ public class PantallaPrincipalController implements Initializable {
         }
     }
     
-    public void aumentoAciertos(){
-        aciertos++;
-    }
-    
-    public int getAciertos(){
-        return aciertos;
-    }
-    
-    public void setAciertos(int hits){
-        aciertos=hits;
-    }
-    
-    public void aumentoFallos(){
-        fallos++;
-    }
-    
-    public int getFallos(){
-        return fallos;
-    }
-    
-    public void setFallos(int misses){
-        fallos=misses;
-    }
     
 }
  
