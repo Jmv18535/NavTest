@@ -17,16 +17,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="mainFxmlClass" stylesheets="@../CSS/registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ModificarPerfilController">
+<AnchorPane id="AnchorPane" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" styleClass="mainFxmlClass" stylesheets="@../CSS/registro.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ModificarPerfilController">
    <children>
-      <BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@registro.css">
+      <BorderPane stylesheets="@../CSS/registro.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="341.6" prefWidth="100.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="     Usuario" textAlignment="CENTER" />
-                        <TextField fx:id="nombreUsuario" editable="false" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0">
+                        <Label maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" text="     Usuario" textAlignment="CENTER" />
+                        <TextField fx:id="nombreUsuario" editable="false" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -39,8 +39,8 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="      Correo" textAlignment="CENTER" />
-                        <TextField fx:id="correoUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="tucorreo@dominio.com">
+                        <Label maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" text="      Correo" textAlignment="CENTER" />
+                        <TextField fx:id="correoUsuario" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="tucorreo@dominio.com">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -50,24 +50,24 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="  Contraseña" textAlignment="CENTER" />
-                        <StackPane>
+                        <Label maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" text="  Contraseña" textAlignment="CENTER" />
+                        <StackPane maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
                            <children>
-                              <TextField fx:id="textoContraseña" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
-                              <PasswordField fx:id="contraUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
+                              <TextField fx:id="textoContraseña" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" />
+                              <PasswordField fx:id="contraUsuario" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" />
                            </children>
                         </StackPane>
-                        <CheckBox fx:id="checkBox" mnemonicParsing="false" />
+                        <CheckBox fx:id="checkBox" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" prefHeight="40.0" />
                         <Label fx:id="falloPassword" text="*" textFill="RED" visible="false" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="100.0" text="  Nacimiento" textAlignment="CENTER" />
-                        <DatePicker fx:id="edadUsuario" maxHeight="30.0" maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" promptText="22/01/2022">
+                        <Label maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" prefHeight="40.0" prefWidth="100.0" text="  Nacimiento" textAlignment="CENTER" />
+                        <DatePicker fx:id="edadUsuario" maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="22/01/2022">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -77,14 +77,14 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets bottom="10.0" left="60.0" right="30.0" top="70.0" />
+                  <Insets bottom="10.0" left="40.0" right="30.0" top="70.0" />
                </padding>
             </VBox>
          </center>
          <right>
             <VBox prefHeight="392.0" prefWidth="300.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="318.0" prefWidth="303.0">
+                  <HBox prefHeight="126.0" prefWidth="280.0">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0">
                            <children>
@@ -92,7 +92,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar1.gif" />
+                                          <Image url="@../../resources/avatars/avatar1.gif" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -101,16 +101,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar2.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button mnemonicParsing="false" onAction="#pulsarAvatarArchivo" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/avatars/masavatar.png" />
+                                          <Image url="@../../resources/avatars/avatar2.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -123,16 +114,16 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar3.png" />
+                                          <Image url="@../../resources/avatars/avatar3.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#pulsarAvatar4" prefHeight="50.0" prefWidth="50.0">
+                              <Button mnemonicParsing="false" onAction="#pulsarAvatarArchivo" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../resources/avatars/avatar4.png" />
+                                          <Image url="@../../resources/avatars/masavatar.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -143,19 +134,19 @@
                   </HBox>
                   <HBox prefHeight="76.0" prefWidth="280.0">
                      <children>
-                        <VBox prefHeight="102.0" prefWidth="129.0">
+                        <VBox prefHeight="115.0" prefWidth="155.0" spacing="10.0">
                            <children>
-                              <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" prefHeight="22.0" prefWidth="129.0" text="Avatar actual:" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="40.0" maxWidth="172.0" minHeight="40.0" minWidth="172.0" prefHeight="40.0" prefWidth="172.0" text="Avatar actual:" />
+                              <ImageView fx:id="avatarElegido" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resources/avatars/default.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets left="45.0" />
+                                 </VBox.margin>
+                              </ImageView>
                            </children>
                         </VBox>
-                        <ImageView fx:id="avatarElegido" fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                           <image>
-                              <Image url="@../resources/avatars/default.png" />
-                           </image>
-                        </ImageView>
                      </children>
                   </HBox>
                </children>
@@ -165,7 +156,7 @@
             </VBox>
          </right>
          <bottom>
-            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@pantallainicial.css" BorderPane.alignment="TOP_RIGHT">
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="TOP_RIGHT">
                <children>
                   <TextArea fx:id="mensajeError" editable="false" maxHeight="60.0" maxWidth="400.0" minHeight="60.0" minWidth="400.0" prefHeight="200.0" prefWidth="400.0" visible="false">
                      <HBox.margin>

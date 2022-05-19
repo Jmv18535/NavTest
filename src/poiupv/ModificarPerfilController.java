@@ -233,7 +233,6 @@ public class ModificarPerfilController implements Initializable {
         avatarElegido.setImage(new Image(isImage,100,100,false,false));
     }
 
-    @FXML
     private void pulsarAvatar4(ActionEvent event) throws FileNotFoundException {
         File img = new File("src/resources/avatars/avatar4.png");
         InputStream isImage = (InputStream) new FileInputStream(img);
