@@ -5,7 +5,11 @@
 package poiupv;
 
 import DBAccess.NavegacionDAOException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +28,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Answer;
@@ -66,6 +72,21 @@ public class ProblemaAleatorioController implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private ToggleGroup respuestas;
+    
+    private Answer a;
+    private Answer b;
+    private Answer c;
+    private Answer d;
+    
+    PantallaPrincipalController inicio= new PantallaPrincipalController();
+    @FXML
+    private ImageView aciertoFalloA;
+    @FXML
+    private ImageView aciertoFalloB;
+    @FXML
+    private ImageView aciertoFalloC;
+    @FXML
+    private ImageView aciertoFalloD;
     /**
      * Initializes the controller class.
      */
@@ -83,10 +104,10 @@ public class ProblemaAleatorioController implements Initializable {
             enunciadoProblema.setText(problemaElegido.getText());
             enunciadoProblema.setWrapText​(true);
             List<Answer> respuestas = problemaElegido.getAnswers();
-            Answer a=respuestas.get(0);
-            Answer b=respuestas.get(1);
-            Answer c=respuestas.get(2);
-            Answer d=respuestas.get(3);
+            a=respuestas.get(0);
+            b=respuestas.get(1);
+            c=respuestas.get(2);
+            d=respuestas.get(3);
             
             enunciadoA.setText(a.getText());
             enunciadoB.setText(b.getText());
@@ -131,8 +152,69 @@ public class ProblemaAleatorioController implements Initializable {
     }
 
     @FXML
-    private void corregirRespuestas(ActionEvent event) {
-        //hgacer
+    private void corregirRespuestas(ActionEvent event) throws FileNotFoundException {
+        if(aSolucion.isSelected()){
+            if(a.getValidity()){
+                inicio.aumentoAciertos();
+                File img = new File("src/resources/Tick.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloA.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloA.setVisible(true);
+            }else{
+                inicio.aumentoFallos();
+                File img = new File("src/resources/Cross.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloA.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloA.setVisible(true);
+            }
+        }
+        if(bSolucion.isSelected()){
+            if(b.getValidity()){
+                inicio.aumentoAciertos();
+                File img = new File("src/resources/Tick.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloB.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloB.setVisible(true);
+            }else{
+                inicio.aumentoFallos();
+                File img = new File("src/resources/Cross.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloB.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloB.setVisible(true);
+                }
+            }
+        if(cSolucion.isSelected()){
+            if(c.getValidity()){
+                inicio.aumentoAciertos();
+                File img = new File("src/resources/Tick.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloC.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloC.setVisible(true);
+            }else{
+                inicio.aumentoFallos();
+                File img = new File("src/resources/Cross.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloC.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloC.setVisible(true);
+            }
+        }
+        if(dSolucion.isSelected()){
+            if(d.getValidity()){
+                inicio.aumentoAciertos();
+                File img = new File("src/resources/Tick.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloD.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloD.setVisible(true);
+            }else{
+                inicio.aumentoFallos();
+                File img = new File("src/resources/Cross.png");
+                InputStream isImage = (InputStream) new FileInputStream(img);
+                aciertoFalloD.setImage(new Image(isImage,40,40,false,false));
+                aciertoFalloD.setVisible(true);
+            }
+        }
+        
+        
     }
 
     @FXML

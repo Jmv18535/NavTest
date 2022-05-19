@@ -114,7 +114,7 @@
                                  <graphic>
                                     <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#seleccionarAvatar" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../resources/avatars/avatar3.png" />
+                                          <Image url="@../../resources/avatars/DIOS.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
