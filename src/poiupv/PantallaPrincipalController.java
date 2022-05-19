@@ -76,9 +76,9 @@ public class PantallaPrincipalController implements Initializable {
     @FXML
     private HBox hBox3;
     
-    private int aciertos;
+    public int aciertos;
     
-    private int fallos;
+    public int fallos;
 
     /**
      * Initializes the controller class.
@@ -157,12 +157,11 @@ public class PantallaPrincipalController implements Initializable {
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
             
-            Session session= new Session(LocalDateTime.now(),aciertos,fallos);
+            Session session= new Session(LocalDateTime.now(),10,2);
      
             inicio.anadirSesion(session);
             
-            fallos=0;
-            aciertos=0;
+            
             
             Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          

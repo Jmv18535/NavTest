@@ -79,6 +79,7 @@ public class ProblemaAleatorioController implements Initializable {
     private Answer d;
     
     PantallaPrincipalController inicio= new PantallaPrincipalController();
+    
     @FXML
     private ImageView aciertoFalloA;
     @FXML
@@ -155,13 +156,13 @@ public class ProblemaAleatorioController implements Initializable {
     private void corregirRespuestas(ActionEvent event) throws FileNotFoundException {
         if(aSolucion.isSelected()){
             if(a.getValidity()){
-                inicio.aumentoAciertos();
+                inicio.aciertos+=1;
                 File img = new File("src/resources/Tick.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloA.setImage(new Image(isImage,40,40,false,false));
                 aciertoFalloA.setVisible(true);
             }else{
-                inicio.aumentoFallos();
+                inicio.fallos+=1;
                 File img = new File("src/resources/Cross.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloA.setImage(new Image(isImage,40,40,false,false));
@@ -170,13 +171,13 @@ public class ProblemaAleatorioController implements Initializable {
         }
         if(bSolucion.isSelected()){
             if(b.getValidity()){
-                inicio.aumentoAciertos();
+                inicio.aciertos+=1;
                 File img = new File("src/resources/Tick.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloB.setImage(new Image(isImage,40,40,false,false));
                 aciertoFalloB.setVisible(true);
             }else{
-                inicio.aumentoFallos();
+                inicio.fallos+=1;
                 File img = new File("src/resources/Cross.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloB.setImage(new Image(isImage,40,40,false,false));
@@ -185,13 +186,13 @@ public class ProblemaAleatorioController implements Initializable {
             }
         if(cSolucion.isSelected()){
             if(c.getValidity()){
-                inicio.aumentoAciertos();
+                inicio.aciertos+=1;
                 File img = new File("src/resources/Tick.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloC.setImage(new Image(isImage,40,40,false,false));
                 aciertoFalloC.setVisible(true);
             }else{
-                inicio.aumentoFallos();
+                inicio.fallos+=1;
                 File img = new File("src/resources/Cross.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloC.setImage(new Image(isImage,40,40,false,false));
@@ -200,13 +201,13 @@ public class ProblemaAleatorioController implements Initializable {
         }
         if(dSolucion.isSelected()){
             if(d.getValidity()){
-                inicio.aumentoAciertos();
+                inicio.aciertos+=1;
                 File img = new File("src/resources/Tick.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloD.setImage(new Image(isImage,40,40,false,false));
                 aciertoFalloD.setVisible(true);
             }else{
-                inicio.aumentoFallos();
+                inicio.fallos+=1;
                 File img = new File("src/resources/Cross.png");
                 InputStream isImage = (InputStream) new FileInputStream(img);
                 aciertoFalloD.setImage(new Image(isImage,40,40,false,false));

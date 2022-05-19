@@ -27,6 +27,7 @@ import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Navegacion;
+import model.Problem;
 import model.Session;
 import model.User;
 import static model.User.checkNickName;
@@ -140,5 +141,6 @@ public class InicioDeSesionController implements Initializable {
     public List<Session> getSesion(){
         return user.getSessions();
     }
+    
     
 }

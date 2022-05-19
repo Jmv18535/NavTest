@@ -65,10 +65,17 @@ public class MostrarResultadosController implements Initializable {
         sesiones=inicio.getSesion();
         
         sesiones.size();
+        Session uno= sesiones.get(10);
+        int aciertos=uno.getHits();
+        int fallos=uno.getFaults();
+        String aciert= String.valueOf(aciertos);
+        String fall= String.valueOf(fallos);
+        numeroAciertos.setText(aciert);
+        numeroFallos.setText(fall);
         
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-           new PieChart.Data( "Aciertos", 3000),
-           new PieChart.Data ("Fallos", 100)
+           new PieChart.Data( "Aciertos", uno.getHits()),
+           new PieChart.Data ("Fallos", uno.getFaults())
                 
         );
         
