@@ -19,7 +19,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Navegacion;
 import model.Problem;
@@ -156,27 +155,27 @@ public class ListaProblemasController implements Initializable {
 
     @FXML
     private void pulsar3(ActionEvent event) {
-        //textoEnunciados.setText(E3.getText());
+        enunciadoLista.setText(E3.getText());
     }
 
     @FXML
     private void pulsar6(ActionEvent event) {
-        //textoEnunciados.setText(E6.getText());
+        enunciadoLista.setText(E6.getText());
     }
 
     @FXML
     private void pulsar9(ActionEvent event) {
-        //textoEnunciados.setText(E9.getText());
+        enunciadoLista.setText(E9.getText());
     }
 
     @FXML
     private void pulsar12(ActionEvent event) {
-       // textoEnunciados.setText(E12.getText());
+        enunciadoLista.setText(E12.getText());
     }
 
     @FXML
     private void pulsar15(ActionEvent event) {
-        //textoEnunciados.setText(E15.getText());
+        enunciadoLista.setText(E15.getText());
     }
 
    
