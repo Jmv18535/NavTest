@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -51,6 +54,25 @@ public class MostrarResultadosController implements Initializable {
 
     @FXML
     private void pulsadoBuscarResultados(ActionEvent event) {
+        //Crear Datos
+        
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+           new PieChart.Data( "Product A", 3000),
+           new PieChart.Data ("Product B", 100)
+                
+        );
+        
+        PieChart pieChart = new PieChart (pieChartData);
+        pieChart.setTitle("Products sold");
+        pieChart.setClockwise(true);
+        pieChart.setLabelLineLength(50);
+        pieChart.setLabelsVisible(true);
+        pieChart.setStartAngle(180);
+        
+        //vboxParaTarta.setCenter(pieChart);
+        
+        
+        
         
     }
 
