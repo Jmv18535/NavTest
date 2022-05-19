@@ -9,6 +9,7 @@ import DBAccess.NavegacionDAOException;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,6 +27,7 @@ import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Navegacion;
+import model.Session;
 import model.User;
 import static model.User.checkNickName;
 /**
@@ -45,6 +47,8 @@ public class InicioDeSesionController implements Initializable {
     private TextField textoContraseña;
     @FXML
     private CheckBox checkBox;
+    
+    PantallaPrincipalController principal= new PantallaPrincipalController();
     
     public static User user;
     @FXML
@@ -108,6 +112,8 @@ public class InicioDeSesionController implements Initializable {
              }
         }
         
+        principal.setAciertos(0);
+        principal.setFallos(0);
         
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
@@ -129,4 +135,11 @@ public class InicioDeSesionController implements Initializable {
         user.setBirthdate(birthdate);
         user.setPassword(password);
     }
+    public void anadirSesion(Session sesion) throws NavegacionDAOException{
+        user.addSession(sesion);
+    }
+    public List<Session> getSesion(){
+        return user.getSessions();
+    }
+    
 }

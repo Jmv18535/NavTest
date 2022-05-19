@@ -5,9 +5,11 @@
  */
 package poiupv;
 
+import DBAccess.NavegacionDAOException;
 import poiupv.InicioDeSesionController;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -31,6 +33,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Session;
 import model.User;
 
 /**
@@ -72,6 +75,10 @@ public class PantallaPrincipalController implements Initializable {
     private HBox hBox2;
     @FXML
     private HBox hBox3;
+    
+    private int aciertos;
+    
+    private int fallos;
 
     /**
      * Initializes the controller class.
@@ -139,7 +146,7 @@ public class PantallaPrincipalController implements Initializable {
     }
 
     @FXML
-    private void pulsadoCerrarSesion(ActionEvent event) throws IOException {
+    private void pulsadoCerrarSesion(ActionEvent event) throws IOException, NavegacionDAOException {
         Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
         alerta.initStyle(StageStyle.UTILITY);
         alerta.setTitle("Cerrar Sesión");
@@ -149,6 +156,11 @@ public class PantallaPrincipalController implements Initializable {
         Optional <ButtonType> result = alerta.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             System.out.println("Aceptar");
+            
+            Session session= new Session(LocalDateTime.now(),aciertos,fallos);
+     
+            inicio.anadirSesion(session);
+            
             Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          
             Scene inicioDeSesion = new Scene(inicioSesionParent);
@@ -161,6 +173,30 @@ public class PantallaPrincipalController implements Initializable {
         } else {
             System.out.println("Cancelar");
         }
+    }
+    
+    public void aumentoAciertos(){
+        aciertos++;
+    }
+    
+    public int getAciertos(){
+        return aciertos;
+    }
+    
+    public void setAciertos(int hits){
+        aciertos=hits;
+    }
+    
+    public void aumentoFallos(){
+        fallos++;
+    }
+    
+    public int getFallos(){
+        return fallos;
+    }
+    
+    public void setFallos(int misses){
+        fallos=misses;
     }
     
 }

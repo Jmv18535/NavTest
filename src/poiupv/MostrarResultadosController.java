@@ -7,6 +7,7 @@ package poiupv;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +25,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.Session;
 
 /**
  * FXML Controller class
@@ -44,7 +46,11 @@ public class MostrarResultadosController implements Initializable {
     private Text porcentajeDeAciertos;
     @FXML
     private BorderPane borderPaneTarta;
+    
+    InicioDeSesionController inicio= new InicioDeSesionController();
 
+    private List<Session> sesiones;
+    
     /**
      * Initializes the controller class.
      */
@@ -56,6 +62,9 @@ public class MostrarResultadosController implements Initializable {
     @FXML
     private void pulsadoBuscarResultados(ActionEvent event) {
         //Crear Datos
+        sesiones=inicio.getSesion();
+        
+        sesiones.size();
         
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
            new PieChart.Data( "Aciertos", 3000),
