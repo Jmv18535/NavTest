@@ -81,9 +81,9 @@ public class ProblemaAleatorioController implements Initializable {
     private Answer b;
     private Answer c;
     private Answer d;
-    
-    
+       
     InicioDeSesionController inicio= new InicioDeSesionController();
+    
     @FXML
     private ImageView aciertoFalloA;
     @FXML
@@ -247,6 +247,7 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void pulsarMas(ActionEvent event) {
+        
     }
     
 }

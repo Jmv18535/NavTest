@@ -49,8 +49,8 @@ public class InicioDeSesionController implements Initializable {
     @FXML
     private CheckBox checkBox;
     
-    private int aciertos;
-    private int fallos;
+    private static int aciertos;
+    private static int fallos;
     
     public static User user;
     @FXML
