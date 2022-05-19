@@ -134,5 +134,13 @@ public class ProblemaAleatorioController implements Initializable {
     private void corregirRespuestas(ActionEvent event) {
         //hgacer
     }
+
+    @FXML
+    private void pulsarMenos(ActionEvent event) {
+    }
+
+    @FXML
+    private void pulsarMas(ActionEvent event) {
+    }
     
 }

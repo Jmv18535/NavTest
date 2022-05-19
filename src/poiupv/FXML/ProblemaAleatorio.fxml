@@ -85,9 +85,9 @@
                       </Menu>
                     </menus>
                   </MenuBar>
-                  <Button mnemonicParsing="false" text="-" />
+                  <Button mnemonicParsing="false" onAction="#pulsarMenos" text="-" />
                   <Slider />
-                  <Button mnemonicParsing="false" text="+" />
+                  <Button mnemonicParsing="false" onAction="#pulsarMas" text="+" />
                </children>
             </HBox>
             <ScrollPane fx:id="scrollPane" hbarPolicy="ALWAYS" pannable="true" prefHeight="374.0" prefWidth="192.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
