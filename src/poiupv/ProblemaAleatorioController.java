@@ -66,6 +66,10 @@ public class ProblemaAleatorioController implements Initializable {
     private Button salirPrincipio;
 
     private int problemaAleatorio=1;
+    private int respuestaAleatoria=1;
+    private int respuestaAleatoria1=1;
+    private int respuestaAleatoria2=1;
+    private int respuestaAleatoria3=1;
     private List<Problem> listaProblemas;
     private Problem problemaElegido;
     @FXML
@@ -105,10 +109,24 @@ public class ProblemaAleatorioController implements Initializable {
             enunciadoProblema.setText(problemaElegido.getText());
             enunciadoProblema.setWrapText​(true);
             List<Answer> respuestas = problemaElegido.getAnswers();
-            a=respuestas.get(0);
-            b=respuestas.get(1);
-            c=respuestas.get(2);
-            d=respuestas.get(3);
+            List<Answer> respuestas1 = new ArrayList<>(respuestas);
+
+            
+            respuestaAleatoria = (int) (Math.random()*respuestas1.size());
+            a = respuestas1.get(respuestaAleatoria);
+            respuestas1.remove(respuestaAleatoria);
+                       
+            respuestaAleatoria1 = (int) (Math.random()*respuestas1.size());
+            b = respuestas1.get(respuestaAleatoria1);
+            respuestas1.remove(respuestaAleatoria1);
+            
+            respuestaAleatoria2 = (int) (Math.random()*respuestas1.size());
+            c = respuestas1.get(respuestaAleatoria2);
+            respuestas1.remove(respuestaAleatoria2);
+            
+            respuestaAleatoria3 = (int) (Math.random()*respuestas1.size());
+            d = respuestas1.get(respuestaAleatoria3);
+            respuestas1.remove(respuestaAleatoria3);           
             
             enunciadoA.setText(a.getText());
             enunciadoB.setText(b.getText());
@@ -154,6 +172,11 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void corregirRespuestas(ActionEvent event) throws FileNotFoundException {
+        aciertoFalloA.setVisible(false);
+        aciertoFalloB.setVisible(false);
+        aciertoFalloC.setVisible(false);
+        aciertoFalloD.setVisible(false);
+        
         if(aSolucion.isSelected()){
             if(a.getValidity()){
                 inicio.aciertos+=1;
