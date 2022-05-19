@@ -137,6 +137,11 @@
                               <Insets bottom="20.0" left="60.0" />
                            </VBox.margin>
                         </Button>
+                        <Button mnemonicParsing="false" onAction="#pulsar18" prefHeight="30.0" prefWidth="60.0" text="18">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="60.0" />
+                           </VBox.margin>
+                        </Button>
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
