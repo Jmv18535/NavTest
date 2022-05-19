@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.DatePicker;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -42,7 +43,7 @@ public class MostrarResultadosController implements Initializable {
     @FXML
     private Text porcentajeDeAciertos;
     @FXML
-    private VBox vboxParaTarta;
+    private BorderPane borderPaneTarta;
 
     /**
      * Initializes the controller class.
@@ -57,19 +58,19 @@ public class MostrarResultadosController implements Initializable {
         //Crear Datos
         
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-           new PieChart.Data( "Product A", 3000),
-           new PieChart.Data ("Product B", 100)
+           new PieChart.Data( "Aciertos", 3000),
+           new PieChart.Data ("Fallos", 100)
                 
         );
         
         PieChart pieChart = new PieChart (pieChartData);
-        pieChart.setTitle("Products sold");
+        pieChart.setTitle("Gráfica de aciertos y fallos");
         pieChart.setClockwise(true);
         pieChart.setLabelLineLength(50);
         pieChart.setLabelsVisible(true);
         pieChart.setStartAngle(180);
         
-        //vboxParaTarta.setCenter(pieChart);
+        borderPaneTarta.setCenter(pieChart);
         
         
         
