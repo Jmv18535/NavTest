@@ -161,6 +161,9 @@ public class PantallaPrincipalController implements Initializable {
      
             inicio.anadirSesion(session);
             
+            fallos=0;
+            aciertos=0;
+            
             Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaInicial.fxml"));
          
             Scene inicioDeSesion = new Scene(inicioSesionParent);

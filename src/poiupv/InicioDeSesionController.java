@@ -48,7 +48,7 @@ public class InicioDeSesionController implements Initializable {
     @FXML
     private CheckBox checkBox;
     
-    PantallaPrincipalController principal= new PantallaPrincipalController();
+    
     
     public static User user;
     @FXML
@@ -112,8 +112,7 @@ public class InicioDeSesionController implements Initializable {
              }
         }
         
-        principal.setAciertos(0);
-        principal.setFallos(0);
+        
         
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/PantallaPrincipal.fxml"));
          
