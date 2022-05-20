@@ -106,7 +106,7 @@
                     </menus>
                   </MenuBar>
                   <Button mnemonicParsing="false" onAction="#pulsarMenos" text="-" />
-                  <Slider />
+                  <Slider fx:id="zoomSlider" />
                   <Button mnemonicParsing="false" onAction="#pulsarMas" text="+" />
                </children>
             </HBox>

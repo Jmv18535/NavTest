@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
@@ -74,6 +76,8 @@ public class ProblemaAleatorioController implements Initializable {
     private Problem problemaElegido;
     @FXML
     private ScrollPane scrollPane;
+    
+    private Group zoomGrupo;
     @FXML
     private ToggleGroup respuestas;
     
@@ -92,6 +96,8 @@ public class ProblemaAleatorioController implements Initializable {
     private ImageView aciertoFalloC;
     @FXML
     private ImageView aciertoFalloD;
+    @FXML
+    private Slider zoomSlider;
     /**
      * Initializes the controller class.
      */
@@ -136,6 +142,17 @@ public class ProblemaAleatorioController implements Initializable {
         } catch (NavegacionDAOException ex) {
             Logger.getLogger(ProblemaAleatorioController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        zoomSlider.setMin(0.5);
+        zoomSlider.setMax(1.5);
+        zoomSlider.setValue(1.0);
+        zoomSlider.valueProperty().addListener((o, oldVal, newVal) -> zoom((Double) newVal));
+        
+        Group contentGroup = new Group();
+        zoomGrupo = new Group();
+        contentGroup.getChildren().add(zoomGrupo);
+        zoomGrupo.getChildren().add(scrollPane.getContent());
+        scrollPane.setContent(contentGroup);
         
     }    
 
@@ -243,11 +260,24 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void pulsarMenos(ActionEvent event) {
+        double sliderVal = zoomSlider.getValue();
+        zoomSlider.setValue(sliderVal + -0.1);
     }
 
     @FXML
     private void pulsarMas(ActionEvent event) {
+        double sliderVal = zoomSlider.getValue();
+        zoomSlider.setValue(sliderVal += 0.1);
         
     }
     
+    private void zoom(double scaleValue) {
+        double scrollH = scrollPane.getHvalue();
+        double scrollV = scrollPane.getVvalue();
+        zoomGrupo.setScaleX(scaleValue);
+        zoomGrupo.setScaleY(scaleValue);
+        scrollPane.setHvalue(scrollH);
+        scrollPane.setVvalue(scrollV);
+    
+    }
 }
