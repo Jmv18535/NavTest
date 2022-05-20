@@ -12,6 +12,8 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -88,6 +90,7 @@ public class PantallaPrincipalController implements Initializable {
         fotoUsuario.setImage(usuario.getAvatar());
         
         
+        
     }    
 
     @FXML
@@ -101,6 +104,16 @@ public class PantallaPrincipalController implements Initializable {
         ventana.setScene(inicioDeSesion);
       
         ventana.setResizable(false);
+        ventana.setOnCloseRequest(event1 -> {
+            
+                Session session= new Session(LocalDateTime.now(),inicio.getAciertos(),inicio.getFallos());
+     
+                try {
+                    inicio.anadirSesion(session);
+                } catch (NavegacionDAOException ex) {
+                    Logger.getLogger(PantallaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
         ventana.show();
     }
 
@@ -116,11 +129,21 @@ public class PantallaPrincipalController implements Initializable {
       
         ventana.setResizable(true);
         ventana.setMaximized(true);
+        ventana.setOnCloseRequest(event1 -> {
+            
+                Session session= new Session(LocalDateTime.now(),inicio.getAciertos(),inicio.getFallos());
+     
+                try {
+                    inicio.anadirSesion(session);
+                } catch (NavegacionDAOException ex) {
+                    Logger.getLogger(PantallaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
         ventana.show();
     }
 
     @FXML
-    private void pulsadoMostrarResultados(ActionEvent event) throws IOException {
+    private void pulsadoMostrarResultados(ActionEvent event) throws IOException, NavegacionDAOException {
         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/MostrarResultados.fxml"));
        //FXMLLoader loader = new FXMLLoader(getClass().getResource("MostrarResultados.fxml"));
        Scene inicioDeSesion = new Scene(inicioSesionParent);
@@ -128,6 +151,16 @@ public class PantallaPrincipalController implements Initializable {
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(false);
+        ventana.setOnCloseRequest(event1 -> {
+            
+                Session session= new Session(LocalDateTime.now(),inicio.getAciertos(),inicio.getFallos());
+     
+                try {
+                    inicio.anadirSesion(session);
+                } catch (NavegacionDAOException ex) {
+                    Logger.getLogger(PantallaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            });
         ventana.show();
     }
 

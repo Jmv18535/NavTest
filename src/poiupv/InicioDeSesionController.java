@@ -126,6 +126,10 @@ public class InicioDeSesionController implements Initializable {
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(false);
+        ventana.setOnCloseRequest(event1 -> {
+        System.out.println("me cago  en todo");
+        // Save file
+        });
         ventana.show();
     }
     
