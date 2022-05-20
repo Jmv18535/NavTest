@@ -198,6 +198,10 @@ public class ListaProblemasController implements Initializable {
     private void pulsar18(ActionEvent event) {
         enunciadoLista.setText(E18.getText());
     }
+
+    @FXML
+    private void pulsarHacerEjercicio(ActionEvent event) {
+    }
     }
     
 
