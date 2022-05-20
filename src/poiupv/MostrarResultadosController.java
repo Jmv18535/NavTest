@@ -38,13 +38,11 @@ public class MostrarResultadosController implements Initializable {
     @FXML
     private DatePicker fechaABuscarDesde=new DatePicker(LocalDate.now());
 
-    @FXML
     private Text numeroExamenesRealizados;
     @FXML
     private Text numeroAciertos;
     @FXML
     private Text numeroFallos;
-    @FXML
     private Text porcentajeDeAciertos;
     @FXML
     private BorderPane borderPaneTarta;
@@ -57,6 +55,8 @@ public class MostrarResultadosController implements Initializable {
     int fallos=0;
     int examenesHechos;
     double porcentajeAciertos;
+    @FXML
+    private DatePicker fechaABuscarHasta;
     
     /**
      * Initializes the controller class.
@@ -105,9 +105,9 @@ public class MostrarResultadosController implements Initializable {
         
         numeroAciertos.setText(String.valueOf(aciertos));
         numeroFallos.setText(String.valueOf(fallos));
-        numeroExamenesRealizados.setText(String.valueOf(examenesHechos));
         
-        porcentajeDeAciertos.setText(porcentaje);
+        
+       
         
         //Grafico de tarta
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
