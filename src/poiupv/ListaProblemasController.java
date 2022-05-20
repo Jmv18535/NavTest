@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import model.Navegacion;
@@ -52,6 +53,8 @@ public class ListaProblemasController implements Initializable {
 
     @FXML
     private TextArea enunciadoLista;
+    @FXML
+    private Label errorNoSeleccionado;
    
 
     /**
@@ -200,7 +203,24 @@ public class ListaProblemasController implements Initializable {
     }
 
     @FXML
-    private void pulsarHacerEjercicio(ActionEvent event) {
+    private void pulsarHacerEjercicio(ActionEvent event) throws IOException {
+        
+        if(enunciadoLista == null){
+          errorNoSeleccionado.setVisible(true);
+          
+        }else{
+            
+         errorNoSeleccionado.setVisible(false);  
+         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
+         
+        Scene inicioDeSesion = new Scene(inicioSesionParent);
+        
+        Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
+        ventana.setScene(inicioDeSesion);
+        ventana.setResizable(true);
+        ventana.setMaximized(true);        
+        ventana.show();
+        }
     }
     }
     
