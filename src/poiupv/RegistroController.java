@@ -124,6 +124,21 @@ public class RegistroController implements Initializable {
         contraUsuario.managedProperty().bind(checkBox.selectedProperty().not());
         contraUsuario.visibleProperty().bind(checkBox.selectedProperty().not());
         textoContraseña.textProperty().bindBidirectional(contraUsuario.textProperty());
+        
+        //Bloqueo de edad
+        /*
+        edadUsuario.setDayCellFactory(param -> new DateCell() {
+        private LocalDate menorDeEdad = LocalDate.now().minusYears(16);
+
+        @Override
+        public void updateItem(LocalDate date, boolean empty) {
+            super.updateItem(date, empty);
+            if (date != null && !empty) {
+                    setDisable(date.compareTo(menorDeEdad) > 0 );
+                }
+            }
+        });
+        */
     }    
 
     @FXML
