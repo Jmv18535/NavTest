@@ -143,7 +143,7 @@ public class MostrarResultadosController implements Initializable {
 
     
     
-    @FXML+
+    @FXML
     private void pulsadoBuscarResultados(ActionEvent event) throws NullPointerException{
         //Coge lista sesiones
         sesiones=inicio.getSesion();
