@@ -111,7 +111,7 @@
                <content>
                   <Pane onMouseClicked="#cartaClicked" onMouseDragged="#cartaDragged" onMousePressed="#cartaPressed">
                      <children>
-                        <ImageView fitHeight="4000.0" fitWidth="4000.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagenFondo" fitHeight="4000.0" fitWidth="4000.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/carta_nautica.jpg" />
                            </image>

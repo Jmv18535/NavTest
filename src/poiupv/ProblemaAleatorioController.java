@@ -117,6 +117,8 @@ public class ProblemaAleatorioController implements Initializable {
     private ColorPicker colorPicker;
     @FXML
     private TextField grosor;
+    @FXML
+    private ImageView imagenFondo;
     /**
      * Initializes the controller class.
      */
@@ -163,9 +165,11 @@ public class ProblemaAleatorioController implements Initializable {
         }
         
         choiceBox.getItems().add("Punto");
-        choiceBox.getItems().add("Línia");
+        choiceBox.getItems().add("Línea");
         choiceBox.getItems().add("Arco");
         choiceBox.getItems().add("Texto");
+        choiceBox.getItems().add("Extremos");
+        choiceBox.getItems().add("Seleccion");
         
 
         
@@ -300,7 +304,7 @@ public class ProblemaAleatorioController implements Initializable {
         double radio = Math.abs(event.getX()- inicioXArc);
         circlePainting.setRadius(radio);
         event.consume();
-        } else if ("Línia".equals(choiceBox.getSelectionModel().getSelectedItem())) {
+        } else if ("Línea".equals(choiceBox.getSelectionModel().getSelectedItem())) {
             linea.setEndX(event.getX());
             linea.setEndY(event.getY());
             event.consume();
@@ -318,6 +322,21 @@ public class ProblemaAleatorioController implements Initializable {
             punto.setStrokeWidth(tamLin);  
             punto.setCenterX(event.getX());
             punto.setCenterY(event.getY());
+        }else if ("Extremos".equals(choiceBox.getSelectionModel().getSelectedItem())){
+            Line lineaEx1 = new Line(event.getX(), event.getY(), imagenFondo.getX(), 0);
+            Line lineaEx2 = new Line(event.getX(), event.getY(), 0, imagenFondo.getY());
+            String textoTam = grosor.getText();
+            int tamLin= Integer.valueOf(textoTam);
+            lineaEx1.setStrokeWidth(tamLin);
+            lineaEx1.setStroke(colorPicker.getValue());
+            lineaEx2.setStrokeWidth(tamLin);
+            lineaEx2.setStroke(colorPicker.getValue());
+            zoomGrupo.getChildren().add(lineaEx1);
+            zoomGrupo.getChildren().add(lineaEx2);
+        
+        }else if ("Seleccion".equals(choiceBox.getSelectionModel().getSelectedItem())){
+            
+            
         }
         
         
@@ -337,7 +356,7 @@ public class ProblemaAleatorioController implements Initializable {
             circlePainting.setCenterX(event.getX());
             circlePainting.setCenterY(event.getY());
             inicioXArc = event.getX();
-        } else if ("Línia".equals(choiceBox.getSelectionModel().getSelectedItem())) {
+        } else if ("Línea".equals(choiceBox.getSelectionModel().getSelectedItem())) {
             linea = new Line(event.getX(), event.getY(), event.getX(), event.getY());
             String textoTam = grosor.getText();
             int tamLin= Integer.valueOf(textoTam);
