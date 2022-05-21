@@ -324,8 +324,21 @@ public class ProblemaAleatorioController implements Initializable {
             punto.setCenterX(event.getX());
             punto.setCenterY(event.getY());
         }else if ("Extremos".equals(choiceBox.getSelectionModel().getSelectedItem())){
-            Line lineaEx1 = new Line(event.getX(), event.getY(), imagenFondo.getX(), 0);
-            Line lineaEx2 = new Line(event.getX(), event.getY(), 0, imagenFondo.getY());
+           // Line lineaEx1 = new Line(event.getX(), event.getY(), imagenFondo.getX(), 0);
+            //Line lineaEx2 = new Line(event.getX(), event.getY(), 0, imagenFondo.getY());
+            Line lineaEx1 = new Line();
+            Line lineaEx2 = new Line();
+            
+            lineaEx1.setStartX(event.getX());
+            lineaEx1.setStartY(0);
+            lineaEx1.setEndX(event.getX());
+            lineaEx1.setEndY(1000000);
+            
+            lineaEx2.setStartX(0);
+            lineaEx2.setStartY(event.getY());
+            lineaEx2.setEndX(100000);
+            lineaEx2.setEndY(event.getY());
+            
             String textoTam = grosor.getText();
             int tamLin= Integer.valueOf(textoTam);
             lineaEx1.setStrokeWidth(tamLin);
