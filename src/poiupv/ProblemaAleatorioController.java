@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package poiupv;
 
 import DBAccess.NavegacionDAOException;
@@ -39,11 +35,6 @@ import model.Answer;
 import model.Navegacion;
 import model.Problem;
 
-/**
- * FXML Controller class
- *
- * @author jasan
- */
 public class ProblemaAleatorioController implements Initializable {
 
     @FXML
@@ -72,6 +63,7 @@ public class ProblemaAleatorioController implements Initializable {
     private int respuestaAleatoria1=1;
     private int respuestaAleatoria2=1;
     private int respuestaAleatoria3=1;
+    
     private List<Problem> listaProblemas;
     private Problem problemaElegido;
     @FXML
@@ -143,6 +135,8 @@ public class ProblemaAleatorioController implements Initializable {
             Logger.getLogger(ProblemaAleatorioController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
+        
         zoomSlider.setMin(0.5);
         zoomSlider.setMax(1.5);
         zoomSlider.setValue(1.0);
@@ -154,24 +148,10 @@ public class ProblemaAleatorioController implements Initializable {
         zoomGrupo.getChildren().add(scrollPane.getContent());
         scrollPane.setContent(contentGroup);
         
-    }    
-
-    @FXML
-    private void marcarA(ActionEvent event) {
         
-    }
-
-    @FXML
-    private void marcarB(ActionEvent event) {
-    }
-
-    @FXML
-    private void marcarC(ActionEvent event) {
-    }
-
-    @FXML
-    private void marcarD(ActionEvent event) {
-    }
+        
+    }    
+    
 
     @FXML
     private void pulsarSalirprincipio(ActionEvent event) throws IOException {

@@ -98,9 +98,9 @@
       </HBox>
       <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="2">
         <columns>
-          <TableColumn fx:id="tableViewC1" prefWidth="105.0" text="Fecha" />
-          <TableColumn fx:id="tableViewC2" prefWidth="120.0" text="Aciertos" />
-            <TableColumn fx:id="tableViewC3" prefWidth="149.0" text="Fallos" />
+          <TableColumn fx:id="tableViewC1" prefWidth="160.0" resizable="false" text="Fecha" />
+          <TableColumn fx:id="tableViewC2" prefWidth="107.0" resizable="false" text="Aciertos" />
+            <TableColumn fx:id="tableViewC3" prefWidth="107.0" resizable="false" text="Fallos" />
         </columns>
       </TableView>
    </children>
