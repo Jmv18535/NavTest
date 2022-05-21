@@ -363,7 +363,7 @@ public class ProblemaAleatorioController implements Initializable {
                 });
                 colorItem.setOnAction(ev -> {
                     Circle elegida = (Circle) e.getSource();
-                    elegida.setFill(colorPicker.getValue());
+                    elegida.setStroke(colorPicker.getValue());
                     ev.consume();
                 });
                 menuContext.show(punto, e.getSceneX(), e.getSceneY());
