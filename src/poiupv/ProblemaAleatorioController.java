@@ -120,6 +120,8 @@ public class ProblemaAleatorioController implements Initializable {
     private TextField grosor;
     @FXML
     private ImageView imagenFondo;
+    @FXML
+    private Button eliminarBoton;
     /**
      * Initializes the controller class.
      */
@@ -427,4 +429,14 @@ public class ProblemaAleatorioController implements Initializable {
         }
         
     }
+
+    @FXML
+    private void pulsarEliminar(ActionEvent event) {
+        if(zoomGrupo.getChildren().size()-1 >=1){
+        zoomGrupo.getChildren().remove(zoomGrupo.getChildren().size()-1);}
+    else{
+    eliminarBoton.setDisable(true);
+
+}
+}
 }
