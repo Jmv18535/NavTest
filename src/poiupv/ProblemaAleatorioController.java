@@ -1,6 +1,7 @@
 package poiupv;
 
 import DBAccess.NavegacionDAOException;
+import static java.awt.SystemColor.text;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,11 +22,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -34,6 +40,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Answer;
 import model.Navegacion;
@@ -74,6 +82,8 @@ public class ProblemaAleatorioController implements Initializable {
     private ScrollPane scrollPane;
     
     private Group zoomGrupo;
+    
+    private Line linea;
     @FXML
     private ToggleGroup respuestas;
     
@@ -97,6 +107,10 @@ public class ProblemaAleatorioController implements Initializable {
     
     private Circle circlePainting;
     private double inicioXArc;
+    @FXML
+    private ChoiceBox<String> choiceBox;
+    @FXML
+    private ColorPicker colorPicker;
     /**
      * Initializes the controller class.
      */
@@ -142,7 +156,11 @@ public class ProblemaAleatorioController implements Initializable {
             Logger.getLogger(ProblemaAleatorioController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        choiceBox.getItems().add("Punto");
+        choiceBox.getItems().add("Línia");
+        choiceBox.getItems().add("Arco");
+        choiceBox.getItems().add("Texto");
+
         
         zoomSlider.setMin(0.5);
         zoomSlider.setMax(1.5);
@@ -268,22 +286,64 @@ public class ProblemaAleatorioController implements Initializable {
     
     }
 
+
     @FXML
-    private void arrastrarArco(MouseEvent event) {
+    private void cartaDragged(MouseEvent event) {
+        if ("Arco".equals(choiceBox.getSelectionModel().getSelectedItem())){
         double radio = Math.abs(event.getX()- inicioXArc);
         circlePainting.setRadius(radio);
         event.consume();
+        } else if ("Línia".equals(choiceBox.getSelectionModel().getSelectedItem())) {
+            linea.setEndX(event.getX());
+            linea.setEndY(event.getY());
+            event.consume();
+        }
     }
 
     @FXML
-    private void pulsarArco(MouseEvent event) {
-         circlePainting = new Circle(1);
+    private void cartaClicked(MouseEvent event) {
+        
+    }
+
+    @FXML
+    private void cartaPressed(MouseEvent event) {
+        if ("Arco".equals(choiceBox.getSelectionModel().getSelectedItem())){
+        circlePainting = new Circle(1);
         circlePainting.setStroke(Color.RED);
         circlePainting.setFill(Color.TRANSPARENT);
         zoomGrupo.getChildren().add(circlePainting);
         circlePainting.setCenterX(event.getX());
         circlePainting.setCenterY(event.getY());
         inicioXArc = event.getX();
-        
+        } else if ("Línia".equals(choiceBox.getSelectionModel().getSelectedItem())) {
+            linea = new Line(event.getX(), event.getY(), event.getX(), event.getY());
+            zoomGrupo.getChildren().add(linea);
+            linea.setOnContextMenuRequested(e -> {
+                ContextMenu menuContext = new ContextMenu();
+                MenuItem borrarItem = new MenuItem("eliminar");
+                menuContext.getItems().add(borrarItem);
+                borrarItem.setOnAction(ev -> {
+                    zoomGrupo.getChildren().remove((Node)e.getSource());
+                    ev.consume();
+                });
+                menuContext.show(linea, e.getSceneX(), e.getSceneY());
+                e.consume();
+            });
+        } else if ("Texto".equals(choiceBox.getSelectionModel().getSelectedItem())) {
+            TextField texto = new TextField();
+            zoomGrupo.getChildren().add(texto);
+            texto.setLayoutX(event.getX());
+            texto.setLayoutY(event.getY());
+            texto.requestFocus();
+            texto.setOnAction(e -> {
+                Text textoT = new Text(texto.getText());
+                textoT.setX(texto.getLayoutX());
+                textoT.setY(texto.getLayoutY());
+                textoT.setStyle("-fx-font-family: Gafata; -fx-font-size:40;");
+                zoomGrupo.getChildren().add(textoT);
+                zoomGrupo.getChildren().remove(texto);
+                e.consume();
+            });
+        }
     }
 }
