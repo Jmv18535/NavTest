@@ -31,7 +31,7 @@
                         <ToggleGroup fx:id="respuestas" />
                      </toggleGroup>
                   </RadioButton>
-                  <Label fx:id="enunciadoA" prefHeight="60.0" prefWidth="120.0" text="Label" />
+                  <Label fx:id="enunciadoA" prefHeight="60.0" prefWidth="265.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
                         <ImageView fx:id="aciertoFalloA" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" visible="false" />
@@ -45,7 +45,7 @@
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
                   <RadioButton fx:id="bSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="B" toggleGroup="$respuestas" />
-                  <Label fx:id="enunciadoB" prefHeight="60.0" prefWidth="120.0" text="Label" />
+                  <Label fx:id="enunciadoB" prefHeight="60.0" prefWidth="251.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
                         <ImageView fx:id="aciertoFalloB" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" visible="false" />
@@ -59,7 +59,7 @@
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
                   <RadioButton fx:id="cSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="C" toggleGroup="$respuestas" />
-                  <Label fx:id="enunciadoC" prefHeight="60.0" prefWidth="120.0" text="Label" />
+                  <Label fx:id="enunciadoC" prefHeight="60.0" prefWidth="256.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
                         <ImageView fx:id="aciertoFalloC" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" visible="false" />
@@ -73,7 +73,7 @@
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
                   <RadioButton fx:id="dSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="D" toggleGroup="$respuestas" />
-                  <Label fx:id="enunciadoD" prefHeight="60.0" prefWidth="120.0" text="Label" />
+                  <Label fx:id="enunciadoD" prefHeight="60.0" prefWidth="253.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
                         <ImageView fx:id="aciertoFalloD" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" visible="false" />
@@ -88,6 +88,7 @@
                <children>
                   <Button fx:id="salirPrincipio" mnemonicParsing="false" onAction="#pulsarSalirprincipio" text="Salir " />
                   <Button mnemonicParsing="false" onAction="#corregirRespuestas" text="Corregir" />
+                  <Button mnemonicParsing="false" onAction="#nuevoProblemaAleatorio" text="Nuevo problema aleatorio" />
                </children>
             </HBox>
          </children>

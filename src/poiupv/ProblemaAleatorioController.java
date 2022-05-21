@@ -495,4 +495,50 @@ public class ProblemaAleatorioController implements Initializable {
         baseY = transportador.getTranslateY();
         event.consume();
     }
+
+    @FXML
+    private void nuevoProblemaAleatorio(ActionEvent event) {
+            aciertoFalloA.setVisible(false);
+            aciertoFalloB.setVisible(false);
+            aciertoFalloC.setVisible(false);
+            aciertoFalloD.setVisible(false);
+            aSolucion.setSelected(false);
+            bSolucion.setSelected(false);
+            cSolucion.setSelected(false);
+            dSolucion.setSelected(false);
+            
+            
+            problemaAleatorio = (int) (Math.random()*listaProblemas.size());
+           
+            problemaElegido=listaProblemas.get(problemaAleatorio);
+            
+            enunciadoProblema.setText(problemaElegido.getText());
+            enunciadoProblema.setWrapText​(true);
+            List<Answer> respuestas = problemaElegido.getAnswers();
+            List<Answer> respuestas1 = new ArrayList<>(respuestas);
+
+            
+            respuestaAleatoria = (int) (Math.random()*respuestas1.size());
+            a = respuestas1.get(respuestaAleatoria);
+            respuestas1.remove(respuestaAleatoria);
+                       
+            respuestaAleatoria1 = (int) (Math.random()*respuestas1.size());
+            b = respuestas1.get(respuestaAleatoria1);
+            respuestas1.remove(respuestaAleatoria1);
+            
+            respuestaAleatoria2 = (int) (Math.random()*respuestas1.size());
+            c = respuestas1.get(respuestaAleatoria2);
+            respuestas1.remove(respuestaAleatoria2);
+            
+            respuestaAleatoria3 = (int) (Math.random()*respuestas1.size());
+            d = respuestas1.get(respuestaAleatoria3);
+            respuestas1.remove(respuestaAleatoria3);           
+            
+            enunciadoA.setText(a.getText());
+            enunciadoB.setText(b.getText());
+            enunciadoC.setText(c.getText());
+            enunciadoD.setText(d.getText());
+            
+            
+        }
 }
