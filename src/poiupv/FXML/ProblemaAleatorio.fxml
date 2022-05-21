@@ -98,7 +98,7 @@
                   <Button mnemonicParsing="false" onAction="#pulsarMas" prefHeight="25.0" prefWidth="26.0" text="+" />
                   <Button mnemonicParsing="false" text="punto" />
                   <Button mnemonicParsing="false" text="linea" />
-                  <Button mnemonicParsing="false" text="arco" />
+                  <Button mnemonicParsing="false" onMouseDragged="#arrastrarArco" onMousePressed="#pulsarArco" text="arco" />
                   <Button mnemonicParsing="false" text="texto" />
                   <Button mnemonicParsing="false" text="eliminar" />
                   <Button mnemonicParsing="false" text="transportador" />

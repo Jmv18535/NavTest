@@ -30,6 +30,10 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import model.Answer;
 import model.Navegacion;
@@ -90,6 +94,9 @@ public class ProblemaAleatorioController implements Initializable {
     private ImageView aciertoFalloD;
     @FXML
     private Slider zoomSlider;
+    
+    private Circle circlePainting;
+    private double inicioXArc;
     /**
      * Initializes the controller class.
      */
@@ -259,5 +266,24 @@ public class ProblemaAleatorioController implements Initializable {
         scrollPane.setHvalue(scrollH);
         scrollPane.setVvalue(scrollV);
     
+    }
+
+    @FXML
+    private void arrastrarArco(MouseEvent event) {
+        double radio = Math.abs(event.getX()- inicioXArc);
+        circlePainting.setRadius(radio);
+        event.consume();
+    }
+
+    @FXML
+    private void pulsarArco(MouseEvent event) {
+         circlePainting = new Circle(1);
+        circlePainting.setStroke(Color.RED);
+        circlePainting.setFill(Color.TRANSPARENT);
+        zoomGrupo.getChildren().add(circlePainting);
+        circlePainting.setCenterX(event.getX());
+        circlePainting.setCenterY(event.getY());
+        inicioXArc = event.getX();
+        
     }
 }
