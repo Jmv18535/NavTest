@@ -185,6 +185,8 @@ public class ProblemaAleatorioController implements Initializable {
         choiceBox.getItems().add("Extremos");
         choiceBox.getItems().add("Seleccion");
         
+        grosor.setText("20");
+        
 
         
         zoomSlider.setMin(0.5);
@@ -223,6 +225,7 @@ public class ProblemaAleatorioController implements Initializable {
         aciertoFalloB.setVisible(false);
         aciertoFalloC.setVisible(false);
         aciertoFalloD.setVisible(false);
+       
         
         if(aSolucion.isSelected()){
             if(a.getValidity()){
