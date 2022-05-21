@@ -23,7 +23,7 @@
   <items>
       <VBox maxWidth="400.0" minHeight="200.0" minWidth="200.0" prefWidth="300.0" spacing="20.0">
          <children>
-            <TextArea fx:id="enunciadoProblema" disable="true" editable="false" prefColumnCount="10" prefHeight="200.0" prefWidth="175.0" wrapText="true" />
+            <TextArea fx:id="enunciadoProblema" editable="false" prefColumnCount="10" prefHeight="200.0" prefWidth="175.0" wrapText="true" />
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
                   <RadioButton fx:id="aSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="A">
