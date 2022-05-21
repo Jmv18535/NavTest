@@ -23,7 +23,7 @@
             <TextArea fx:id="enunciadoProblema" editable="false" prefColumnCount="10" prefHeight="200.0" prefWidth="175.0" wrapText="true" />
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
-                  <RadioButton fx:id="aSolucion" mnemonicParsing="false" onAction="#marcarA" prefHeight="60.0" prefWidth="40.0" text="A">
+                  <RadioButton fx:id="aSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="A">
                      <toggleGroup>
                         <ToggleGroup fx:id="respuestas" />
                      </toggleGroup>
@@ -41,7 +41,7 @@
             </HBox>
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
-                  <RadioButton fx:id="bSolucion" mnemonicParsing="false" onAction="#marcarB" prefHeight="60.0" prefWidth="40.0" text="B" toggleGroup="$respuestas" />
+                  <RadioButton fx:id="bSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="B" toggleGroup="$respuestas" />
                   <Label fx:id="enunciadoB" prefHeight="60.0" prefWidth="120.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
@@ -55,7 +55,7 @@
             </HBox>
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
-                  <RadioButton fx:id="cSolucion" mnemonicParsing="false" onAction="#marcarC" prefHeight="60.0" prefWidth="40.0" text="C" toggleGroup="$respuestas" />
+                  <RadioButton fx:id="cSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="C" toggleGroup="$respuestas" />
                   <Label fx:id="enunciadoC" prefHeight="60.0" prefWidth="120.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
@@ -69,7 +69,7 @@
             </HBox>
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
-                  <RadioButton fx:id="dSolucion" mnemonicParsing="false" onAction="#marcarD" prefHeight="60.0" prefWidth="40.0" text="D" toggleGroup="$respuestas" />
+                  <RadioButton fx:id="dSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="D" toggleGroup="$respuestas" />
                   <Label fx:id="enunciadoD" prefHeight="60.0" prefWidth="120.0" text="Label" />
                   <Pane prefHeight="60.0" prefWidth="40.0">
                      <children>
