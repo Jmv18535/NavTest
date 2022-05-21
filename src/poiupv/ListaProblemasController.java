@@ -102,78 +102,91 @@ public class ListaProblemasController implements Initializable {
     private void pulsar1(ActionEvent event) {
        enunciadoLista.setText(E1.getText());
        problemaElegido=E1;
+       errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar4(ActionEvent event) {
         enunciadoLista.setText(E4.getText());
         problemaElegido=E4;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar7(ActionEvent event) {
         enunciadoLista.setText(E7.getText());
         problemaElegido=E7;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar2(ActionEvent event) {
         enunciadoLista.setText(E2.getText());
         problemaElegido=E2;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar5(ActionEvent event) {
        enunciadoLista.setText(E5.getText());
        problemaElegido=E5;
+       errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar8(ActionEvent event) {
         enunciadoLista.setText(E8.getText());
         problemaElegido=E8;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar10(ActionEvent event) {
         enunciadoLista.setText(E10.getText());
         problemaElegido=E10;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar13(ActionEvent event) {
         enunciadoLista.setText(E13.getText());
         problemaElegido=E13;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar16(ActionEvent event) {
         enunciadoLista.setText(E16.getText());
         problemaElegido=E16;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar11(ActionEvent event) {
         enunciadoLista.setText(E11.getText());
         problemaElegido=E11;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar14(ActionEvent event) {
         enunciadoLista.setText(E14.getText());
         problemaElegido=E14;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar17(ActionEvent event) {
         enunciadoLista.setText(E17.getText());
         problemaElegido=E17;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar3(ActionEvent event) {
         enunciadoLista.setText(E3.getText());
         problemaElegido=E3;
+        errorNoSeleccionado.setVisible(false);
         
     }
 
@@ -181,24 +194,28 @@ public class ListaProblemasController implements Initializable {
     private void pulsar6(ActionEvent event) {
         enunciadoLista.setText(E6.getText());
         problemaElegido=E6;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar9(ActionEvent event) {
         enunciadoLista.setText(E9.getText());
         problemaElegido=E9;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar12(ActionEvent event) {
         enunciadoLista.setText(E12.getText());
         problemaElegido=E12;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
     private void pulsar15(ActionEvent event) {
         enunciadoLista.setText(E15.getText());
         problemaElegido=E15;
+        errorNoSeleccionado.setVisible(false);
     }
 
    
@@ -219,6 +236,7 @@ public class ListaProblemasController implements Initializable {
     private void pulsar18(ActionEvent event) {
         enunciadoLista.setText(E18.getText());
         problemaElegido=E18;
+        errorNoSeleccionado.setVisible(false);
     }
 
     @FXML
