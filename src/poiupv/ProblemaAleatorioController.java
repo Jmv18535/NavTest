@@ -86,6 +86,15 @@ public class ProblemaAleatorioController implements Initializable {
     private Group zoomGrupo;
     
     private Line linea;
+    
+    private double inicioXTrans;
+
+    private double inicioYTrans;
+
+    private double baseX;
+
+    private double baseY;
+    
     @FXML
     private ToggleGroup respuestas;
     
@@ -122,6 +131,8 @@ public class ProblemaAleatorioController implements Initializable {
     private ImageView imagenFondo;
     @FXML
     private Button eliminarBoton;
+    @FXML
+    private ImageView transportador;
     /**
      * Initializes the controller class.
      */
@@ -434,6 +445,14 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void transportador(ActionEvent event) {
+        if (transportador.isVisible() == false) {
+            transportador.setVisible(true);
+            transportador.setDisable(false);
+        } else {
+            transportador.setVisible(false);
+            transportador.setDisable(false);
+
+        }
     }
  
     @FXML
@@ -454,4 +473,26 @@ public class ProblemaAleatorioController implements Initializable {
 
 }
 }
+
+    @FXML
+    private void transportReleased(MouseEvent event) {
+    }
+    
+    @FXML
+    private void transportDragged(MouseEvent event) {
+        double despX = event.getSceneX() - inicioXTrans;
+        double despY = event.getSceneY() - inicioYTrans;
+        transportador.setTranslateX(baseX + despX);
+        transportador.setTranslateY(baseY + despY);
+        event.consume();
+    }
+
+    @FXML
+    private void transportPressed(MouseEvent event) {
+        inicioXTrans = event.getSceneX();
+        inicioYTrans = event.getSceneY();
+        baseX = transportador.getTranslateX();
+        baseY = transportador.getTranslateY();
+        event.consume();
+    }
 }

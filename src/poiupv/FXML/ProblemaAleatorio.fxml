@@ -17,12 +17,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ProblemaAleatorioController">
   <items>
       <VBox maxWidth="400.0" minHeight="200.0" minWidth="200.0" prefWidth="300.0" spacing="20.0">
          <children>
-            <TextArea fx:id="enunciadoProblema" editable="false" prefColumnCount="10" prefHeight="200.0" prefWidth="175.0" wrapText="true" />
+            <TextArea fx:id="enunciadoProblema" disable="true" editable="false" prefColumnCount="10" prefHeight="200.0" prefWidth="175.0" wrapText="true" />
             <HBox prefHeight="60.0" prefWidth="175.0">
                <children>
                   <RadioButton fx:id="aSolucion" mnemonicParsing="false" prefHeight="60.0" prefWidth="40.0" text="A">
@@ -100,7 +101,10 @@
                   <Button mnemonicParsing="false" onAction="#pulsarMas" prefHeight="25.0" prefWidth="26.0" text="+" />
                   <Button fx:id="eliminarBoton" mnemonicParsing="false" onAction="#pulsarEliminar" text="eliminar" />
                   <Button mnemonicParsing="false" onAction="#transportador" text="transportador" />
-                  <ColorPicker fx:id="colorPicker" />
+                  <ColorPicker fx:id="colorPicker">
+                     <value>
+                        <Color />
+                     </value></ColorPicker>
                   <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
                   <Label text="Tamaño:" />
                   <TextField fx:id="grosor" prefHeight="25.0" prefWidth="32.0" text="2" />
@@ -111,9 +115,14 @@
                <content>
                   <Pane onMouseClicked="#cartaClicked" onMouseDragged="#cartaDragged" onMousePressed="#cartaPressed">
                      <children>
-                        <ImageView fx:id="imagenFondo" fitHeight="4000.0" fitWidth="4000.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagenFondo" fitHeight="4000.0" fitWidth="4000.0" layoutX="158.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/carta_nautica.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="transportador" disable="true" fitHeight="600.0" fitWidth="600.0" focusTraversable="true" onMouseDragged="#transportDragged" onMousePressed="#transportPressed" onMouseReleased="#transportReleased" opacity="0.65" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../resources/transportador.png" />
                            </image>
                         </ImageView>
                      </children>
