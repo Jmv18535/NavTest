@@ -10,6 +10,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -98,9 +99,12 @@
                   <Slider fx:id="zoomSlider" />
                   <Button mnemonicParsing="false" onAction="#pulsarMas" prefHeight="25.0" prefWidth="26.0" text="+" />
                   <Button mnemonicParsing="false" text="eliminar" />
-                  <Button mnemonicParsing="false" text="transportador" />
+                  <Button mnemonicParsing="false" onAction="#transportador" text="transportador" />
                   <ColorPicker fx:id="colorPicker" />
                   <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
+                  <Label text="Tamaño:" />
+                  <TextField fx:id="grosor" prefHeight="25.0" prefWidth="32.0" text="2" />
+                  <Button mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
                </children>
             </HBox>
             <ScrollPane fx:id="scrollPane" hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">

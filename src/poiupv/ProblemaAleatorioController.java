@@ -41,6 +41,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Answer;
@@ -106,11 +107,16 @@ public class ProblemaAleatorioController implements Initializable {
     private Slider zoomSlider;
     
     private Circle circlePainting;
+    
+    private Circle punto;
+    
     private double inicioXArc;
     @FXML
     private ChoiceBox<String> choiceBox;
     @FXML
     private ColorPicker colorPicker;
+    @FXML
+    private TextField grosor;
     /**
      * Initializes the controller class.
      */
@@ -160,6 +166,7 @@ public class ProblemaAleatorioController implements Initializable {
         choiceBox.getItems().add("Línia");
         choiceBox.getItems().add("Arco");
         choiceBox.getItems().add("Texto");
+        
 
         
         zoomSlider.setMin(0.5);
@@ -302,21 +309,40 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void cartaClicked(MouseEvent event) {
+        if ("Punto".equals(choiceBox.getSelectionModel().getSelectedItem())){
+            punto= new Circle(1);
+            zoomGrupo.getChildren().add(punto);
+            punto.setStroke(colorPicker.getValue());
+            String textoTam = grosor.getText();
+            int tamLin= Integer.valueOf(textoTam);
+            punto.setStrokeWidth(tamLin);  
+            punto.setCenterX(event.getX());
+            punto.setCenterY(event.getY());
+        }
+        
         
     }
 
     @FXML
     private void cartaPressed(MouseEvent event) {
         if ("Arco".equals(choiceBox.getSelectionModel().getSelectedItem())){
-        circlePainting = new Circle(1);
-        circlePainting.setStroke(Color.RED);
-        circlePainting.setFill(Color.TRANSPARENT);
-        zoomGrupo.getChildren().add(circlePainting);
-        circlePainting.setCenterX(event.getX());
-        circlePainting.setCenterY(event.getY());
-        inicioXArc = event.getX();
+            circlePainting = new Circle(1);
+            circlePainting.setStroke(colorPicker.getValue());
+            circlePainting.setFill(Color.TRANSPARENT);
+            
+            String textoTam = grosor.getText();
+            int tamLin= Integer.valueOf(textoTam);
+            circlePainting.setStrokeWidth(tamLin);
+            zoomGrupo.getChildren().add(circlePainting);
+            circlePainting.setCenterX(event.getX());
+            circlePainting.setCenterY(event.getY());
+            inicioXArc = event.getX();
         } else if ("Línia".equals(choiceBox.getSelectionModel().getSelectedItem())) {
             linea = new Line(event.getX(), event.getY(), event.getX(), event.getY());
+            String textoTam = grosor.getText();
+            int tamLin= Integer.valueOf(textoTam);
+            linea.setStrokeWidth(tamLin);
+            linea.setStroke(colorPicker.getValue());
             zoomGrupo.getChildren().add(linea);
             linea.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
@@ -339,11 +365,27 @@ public class ProblemaAleatorioController implements Initializable {
                 Text textoT = new Text(texto.getText());
                 textoT.setX(texto.getLayoutX());
                 textoT.setY(texto.getLayoutY());
-                textoT.setStyle("-fx-font-family: Gafata; -fx-font-size:40;");
+                textoT.setFill(colorPicker.getValue());
+                String textoTam = grosor.getText();
+                Font fuente= new Font(Integer.valueOf(textoTam));
+                textoT.setFont(fuente);
                 zoomGrupo.getChildren().add(textoT);
                 zoomGrupo.getChildren().remove(texto);
                 e.consume();
             });
         }
+    }
+
+    @FXML
+    private void transportador(ActionEvent event) {
+    }
+ 
+    @FXML
+    private void limpiar(ActionEvent event) {
+      
+        for(int i=zoomGrupo.getChildren().size()-1;i>=1;i--){
+            zoomGrupo.getChildren().remove(i);
+        }
+        
     }
 }
