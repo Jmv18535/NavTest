@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -183,9 +184,10 @@ public class ProblemaAleatorioController implements Initializable {
         choiceBox.getItems().add("Arco");
         choiceBox.getItems().add("Texto");
         choiceBox.getItems().add("Extremos");
-        choiceBox.getItems().add("Seleccion");
+        choiceBox.getItems().add("Mover");
         
-        grosor.setText("20");
+        
+        grosor.setText("15");
         
 
         
@@ -341,7 +343,7 @@ public class ProblemaAleatorioController implements Initializable {
             }
         });
         if ("Punto".equals(choiceBox.getSelectionModel().getSelectedItem())){
-            punto= new Circle(1);
+            punto= new Circle(3);
             zoomGrupo.getChildren().add(punto);
             punto.setStroke(colorPicker.getValue());
             String textoTam = grosor.getText();
@@ -349,6 +351,24 @@ public class ProblemaAleatorioController implements Initializable {
             punto.setStrokeWidth(tamLin);  
             punto.setCenterX(event.getX());
             punto.setCenterY(event.getY());
+            punto.setOnContextMenuRequested(e -> {
+                ContextMenu menuContext = new ContextMenu();
+                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem colorItem = new MenuItem("Cambio Color");
+                menuContext.getItems().add(borrarItem);
+                menuContext.getItems().add(colorItem);
+                borrarItem.setOnAction(ev -> {
+                    zoomGrupo.getChildren().remove((Node)e.getSource());
+                    ev.consume();
+                });
+                colorItem.setOnAction(ev -> {
+                    Circle elegida = (Circle) e.getSource();
+                    elegida.setFill(colorPicker.getValue());
+                    ev.consume();
+                });
+                menuContext.show(punto, e.getSceneX(), e.getSceneY());
+                e.consume();
+            });
         }else if ("Extremos".equals(choiceBox.getSelectionModel().getSelectedItem())){
            // Line lineaEx1 = new Line(event.getX(), event.getY(), imagenFondo.getX(), 0);
             //Line lineaEx2 = new Line(event.getX(), event.getY(), 0, imagenFondo.getY());
@@ -373,12 +393,43 @@ public class ProblemaAleatorioController implements Initializable {
             lineaEx2.setStroke(colorPicker.getValue());
             zoomGrupo.getChildren().add(lineaEx1);
             zoomGrupo.getChildren().add(lineaEx2);
-        
-        }else if ("Seleccion".equals(choiceBox.getSelectionModel().getSelectedItem())){
-            
-            
+            lineaEx2.setOnContextMenuRequested(e -> {
+                ContextMenu menuContext = new ContextMenu();
+                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem colorItem = new MenuItem("Cambio Color");
+                menuContext.getItems().add(borrarItem);
+                menuContext.getItems().add(colorItem);
+                borrarItem.setOnAction(ev -> {
+                    zoomGrupo.getChildren().remove((Node)e.getSource());
+                    ev.consume();
+                });
+                colorItem.setOnAction(ev -> {
+                    Line elegida = (Line) e.getSource();
+                    elegida.setStroke(colorPicker.getValue());
+                    ev.consume();
+                });
+                menuContext.show(lineaEx2, e.getSceneX(), e.getSceneY());
+                e.consume();
+            });
+            lineaEx1.setOnContextMenuRequested(e -> {
+                ContextMenu menuContext = new ContextMenu();
+                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem colorItem = new MenuItem("Cambio Color");
+                menuContext.getItems().add(borrarItem);
+                menuContext.getItems().add(colorItem);
+                borrarItem.setOnAction(ev -> {
+                    zoomGrupo.getChildren().remove((Node)e.getSource());
+                    ev.consume();
+                });
+                colorItem.setOnAction(ev -> {
+                    Line elegida = (Line) e.getSource();
+                    elegida.setStroke(colorPicker.getValue());
+                    ev.consume();
+                });
+                menuContext.show(lineaEx1, e.getSceneX(), e.getSceneY());
+                e.consume();
+            });
         }
-        
         
     }
 
@@ -401,6 +452,26 @@ public class ProblemaAleatorioController implements Initializable {
             circlePainting.setCenterX(event.getX());
             circlePainting.setCenterY(event.getY());
             inicioXArc = event.getX();
+            
+            circlePainting.setOnContextMenuRequested(e -> {
+                ContextMenu menuContext = new ContextMenu();
+                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem colorItem = new MenuItem("Cambio Color");
+                menuContext.getItems().add(borrarItem);
+                menuContext.getItems().add(colorItem);
+                borrarItem.setOnAction(ev -> {
+                    zoomGrupo.getChildren().remove((Node)e.getSource());
+                    ev.consume();
+                });
+                colorItem.setOnAction(ev -> {
+                    Circle elegida = (Circle) e.getSource();
+                    elegida.setStroke(colorPicker.getValue());
+                    ev.consume();
+                });
+                menuContext.show(circlePainting, e.getSceneX(), e.getSceneY());
+                e.consume();
+            });
+            
         } else if ("Línea".equals(choiceBox.getSelectionModel().getSelectedItem())) {
             linea = new Line(event.getX(), event.getY(), event.getX(), event.getY());
             String textoTam = grosor.getText();
@@ -411,21 +482,23 @@ public class ProblemaAleatorioController implements Initializable {
             linea.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
                 MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem colorItem = new MenuItem("Cambio Color");
                 menuContext.getItems().add(borrarItem);
+                menuContext.getItems().add(colorItem);
                 borrarItem.setOnAction(ev -> {
                     zoomGrupo.getChildren().remove((Node)e.getSource());
+                    ev.consume();
+                });
+                colorItem.setOnAction(ev -> {
+                    Line elegida = (Line) e.getSource();
+                    elegida.setStroke(colorPicker.getValue());
                     ev.consume();
                 });
                 menuContext.show(linea, e.getSceneX(), e.getSceneY());
                 e.consume();
             });
-            linea.setOnMouseClicked(evt -> {
-            if (evt.getButton() == MouseButton.PRIMARY) {
-                linea.strokeProperty().bind(colorPicker.valueProperty());
-                //linea.strokeWidthProperty()Property().bind();
-                }
-            });
         } else if ("Texto".equals(choiceBox.getSelectionModel().getSelectedItem())) {
+            
             TextField texto = new TextField();
             zoomGrupo.getChildren().add(texto);
             texto.setLayoutX(event.getX());
@@ -441,8 +514,30 @@ public class ProblemaAleatorioController implements Initializable {
                 textoT.setFont(fuente);
                 zoomGrupo.getChildren().add(textoT);
                 zoomGrupo.getChildren().remove(texto);
+                
+                textoT.setOnContextMenuRequested(ea -> {
+                    ContextMenu menuContext = new ContextMenu();
+                    MenuItem borrarItem = new MenuItem("eliminar");
+                    MenuItem colorItem = new MenuItem("Cambio Color");
+                    menuContext.getItems().add(borrarItem);
+                    menuContext.getItems().add(colorItem);
+                    borrarItem.setOnAction(ev -> {
+                        zoomGrupo.getChildren().remove((Node)ea.getSource());
+                        ev.consume();
+                     });
+                    colorItem.setOnAction(ev -> {
+                        Text elegida = (Text) ea.getSource();                    
+                        elegida.setFill(colorPicker.getValue());
+                        ev.consume();
+                });
+                menuContext.show(textoT, ea.getSceneX(), ea.getSceneY());
+                e.consume();
+               
+            });
                 e.consume();
             });
+            
+            
         }
     }
 

@@ -121,7 +121,7 @@
                               <Image url="@../../resources/carta_nautica.jpg" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="transportador" disable="true" fitHeight="600.0" fitWidth="600.0" focusTraversable="true" onMouseDragged="#transportDragged" onMousePressed="#transportPressed" onMouseReleased="#transportReleased" opacity="0.65" pickOnBounds="true" preserveRatio="true" visible="false">
+                        <ImageView fx:id="transportador" disable="true" fitHeight="500.0" fitWidth="500.0" focusTraversable="true" onMouseDragged="#transportDragged" onMousePressed="#transportPressed" onMouseReleased="#transportReleased" opacity="0.65" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
                               <Image url="@../../resources/transportador.png" />
                            </image>
