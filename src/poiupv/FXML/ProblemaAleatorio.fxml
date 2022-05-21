@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="450.0" minWidth="750.0" prefHeight="459.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ProblemaAleatorioController">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="459.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ProblemaAleatorioController">
   <items>
       <VBox maxWidth="400.0" minHeight="200.0" minWidth="200.0" prefWidth="300.0" spacing="20.0">
          <children>
@@ -105,11 +105,11 @@
                   <ColorPicker />
                </children>
             </HBox>
-            <ScrollPane fx:id="scrollPane" hbarPolicy="ALWAYS" pannable="true" prefHeight="374.0" prefWidth="192.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+            <ScrollPane fx:id="scrollPane" hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                <content>
                   <Pane>
                      <children>
-                        <ImageView layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="4000.0" fitWidth="4000.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resources/carta_nautica.jpg" />
                            </image>
