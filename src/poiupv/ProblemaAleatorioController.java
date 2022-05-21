@@ -36,6 +36,7 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -373,6 +374,12 @@ public class ProblemaAleatorioController implements Initializable {
                 });
                 menuContext.show(linea, e.getSceneX(), e.getSceneY());
                 e.consume();
+            });
+            linea.setOnMouseClicked(evt -> {
+            if (evt.getButton() == MouseButton.PRIMARY) {
+                linea.strokeProperty().bind(colorPicker.valueProperty());
+                //linea.strokeWidthProperty()Property().bind();
+                }
             });
         } else if ("Texto".equals(choiceBox.getSelectionModel().getSelectedItem())) {
             TextField texto = new TextField();
