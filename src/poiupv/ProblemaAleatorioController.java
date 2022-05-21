@@ -303,6 +303,11 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void cartaDragged(MouseEvent event) {
+        scrollPane.addEventFilter(MouseEvent.MOUSE_DRAGGED,evt -> {
+            if (evt.getButton() == MouseButton.SECONDARY) {
+                evt.consume();
+            }
+        });
         if ("Arco".equals(choiceBox.getSelectionModel().getSelectedItem())){
         double radio = Math.abs(event.getX()- inicioXArc);
         circlePainting.setRadius(radio);
@@ -316,6 +321,11 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void cartaClicked(MouseEvent event) {
+         scrollPane.addEventFilter(MouseEvent.MOUSE_CLICKED,evt -> {
+            if (evt.getButton() == MouseButton.SECONDARY) {
+                evt.consume();
+            }
+        });
         if ("Punto".equals(choiceBox.getSelectionModel().getSelectedItem())){
             punto= new Circle(1);
             zoomGrupo.getChildren().add(punto);
@@ -360,6 +370,11 @@ public class ProblemaAleatorioController implements Initializable {
 
     @FXML
     private void cartaPressed(MouseEvent event) {
+        scrollPane.addEventFilter(MouseEvent.MOUSE_PRESSED,evt -> {
+            if (evt.getButton() == MouseButton.SECONDARY) {
+                evt.consume();
+            }
+        });
         if ("Arco".equals(choiceBox.getSelectionModel().getSelectedItem())){
             circlePainting = new Circle(1);
             circlePainting.setStroke(colorPicker.getValue());
@@ -423,7 +438,7 @@ public class ProblemaAleatorioController implements Initializable {
  
     @FXML
     private void limpiar(ActionEvent event) {
-      
+  
         for(int i=zoomGrupo.getChildren().size()-1;i>=1;i--){
             zoomGrupo.getChildren().remove(i);
         }
