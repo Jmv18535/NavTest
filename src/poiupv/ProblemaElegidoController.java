@@ -50,7 +50,7 @@ import model.Answer;
 import model.Navegacion;
 import model.Problem;
 
-public class ProblemaAleatorioController implements Initializable {
+public class ProblemaElegidoController implements Initializable {
 
     @FXML
     private TextArea enunciadoProblema;
@@ -106,6 +106,8 @@ public class ProblemaAleatorioController implements Initializable {
        
     InicioDeSesionController inicio= new InicioDeSesionController();
     
+    ListaProblemasController lista= new ListaProblemasController();
+    
     @FXML
     private ImageView aciertoFalloA;
     @FXML
@@ -134,6 +136,8 @@ public class ProblemaAleatorioController implements Initializable {
     private Button eliminarBoton;
     @FXML
     private ImageView transportador;
+    
+    private int problemaActual;
     /**
      * Initializes the controller class.
      */
@@ -146,7 +150,9 @@ public class ProblemaAleatorioController implements Initializable {
             listaProblemas=navegacion.getProblems();
             problemaAleatorio = (int) (Math.random()*listaProblemas.size());
             
-            problemaElegido=listaProblemas.get(problemaAleatorio);
+            problemaActual=lista.getNumProblema(); 
+            problemaElegido=listaProblemas.get(problemaActual);
+            
             
             enunciadoProblema.setText(problemaElegido.getText());
             enunciadoProblema.setWrapText​(true);

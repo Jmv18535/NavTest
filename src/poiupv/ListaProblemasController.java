@@ -51,6 +51,8 @@ public class ListaProblemasController implements Initializable {
     private Problem E17;
     private Problem E18;
 
+    private int numProblema;
+    
     @FXML
     private TextArea enunciadoLista;
     @FXML
@@ -103,6 +105,7 @@ public class ListaProblemasController implements Initializable {
        enunciadoLista.setText(E1.getText());
        problemaElegido=E1;
        errorNoSeleccionado.setVisible(false);
+       numProblema=1;
     }
 
     @FXML
@@ -110,6 +113,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E4.getText());
         problemaElegido=E4;
         errorNoSeleccionado.setVisible(false);
+        numProblema=4;
     }
 
     @FXML
@@ -117,6 +121,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E7.getText());
         problemaElegido=E7;
         errorNoSeleccionado.setVisible(false);
+        numProblema=7;
     }
 
     @FXML
@@ -124,6 +129,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E2.getText());
         problemaElegido=E2;
         errorNoSeleccionado.setVisible(false);
+        numProblema=2;
     }
 
     @FXML
@@ -131,6 +137,7 @@ public class ListaProblemasController implements Initializable {
        enunciadoLista.setText(E5.getText());
        problemaElegido=E5;
        errorNoSeleccionado.setVisible(false);
+       numProblema=5;
     }
 
     @FXML
@@ -138,6 +145,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E8.getText());
         problemaElegido=E8;
         errorNoSeleccionado.setVisible(false);
+        numProblema=8;
     }
 
     @FXML
@@ -145,6 +153,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E10.getText());
         problemaElegido=E10;
         errorNoSeleccionado.setVisible(false);
+        numProblema=10;
     }
 
     @FXML
@@ -152,6 +161,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E13.getText());
         problemaElegido=E13;
         errorNoSeleccionado.setVisible(false);
+        numProblema=13;
     }
 
     @FXML
@@ -159,6 +169,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E16.getText());
         problemaElegido=E16;
         errorNoSeleccionado.setVisible(false);
+        numProblema=16;
     }
 
     @FXML
@@ -166,6 +177,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E11.getText());
         problemaElegido=E11;
         errorNoSeleccionado.setVisible(false);
+        numProblema=11;
     }
 
     @FXML
@@ -173,6 +185,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E14.getText());
         problemaElegido=E14;
         errorNoSeleccionado.setVisible(false);
+        numProblema=14;
     }
 
     @FXML
@@ -180,6 +193,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E17.getText());
         problemaElegido=E17;
         errorNoSeleccionado.setVisible(false);
+        numProblema=17;
     }
 
     @FXML
@@ -187,6 +201,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E3.getText());
         problemaElegido=E3;
         errorNoSeleccionado.setVisible(false);
+        numProblema=3;
         
     }
 
@@ -195,6 +210,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E6.getText());
         problemaElegido=E6;
         errorNoSeleccionado.setVisible(false);
+        numProblema=6;
     }
 
     @FXML
@@ -202,6 +218,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E9.getText());
         problemaElegido=E9;
         errorNoSeleccionado.setVisible(false);
+        numProblema=9;
     }
 
     @FXML
@@ -209,6 +226,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E12.getText());
         problemaElegido=E12;
         errorNoSeleccionado.setVisible(false);
+        numProblema=12;
     }
 
     @FXML
@@ -216,6 +234,7 @@ public class ListaProblemasController implements Initializable {
         enunciadoLista.setText(E15.getText());
         problemaElegido=E15;
         errorNoSeleccionado.setVisible(false);
+        numProblema=15;
     }
 
    
@@ -248,7 +267,7 @@ public class ListaProblemasController implements Initializable {
         }else{
             
          errorNoSeleccionado.setVisible(false);  
-         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaAleatorio.fxml"));
+         Parent inicioSesionParent = FXMLLoader.load(getClass().getResource("/poiupv/FXML/ProblemaElegido.fxml"));
          
         Scene inicioDeSesion = new Scene(inicioSesionParent);
         
@@ -260,10 +279,12 @@ public class ListaProblemasController implements Initializable {
         }
     }
     
-    private Problem getProblemaElegido(){
+    public Problem getProblemaElegido(){
         return problemaElegido;
     }
-    
+    public int getNumProblema(){
+        return numProblema;
+    }
     
     }
     
