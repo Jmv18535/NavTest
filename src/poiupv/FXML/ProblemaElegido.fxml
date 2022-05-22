@@ -101,8 +101,8 @@
                   <Button mnemonicParsing="false" onAction="#pulsarMenos" prefHeight="25.0" prefWidth="26.0" text="-" />
                   <Slider fx:id="zoomSlider" />
                   <Button mnemonicParsing="false" onAction="#pulsarMas" prefHeight="25.0" prefWidth="26.0" text="+" />
-                  <Button fx:id="eliminarBoton" mnemonicParsing="false" onAction="#pulsarEliminar" text="eliminar" />
-                  <Button mnemonicParsing="false" onAction="#transportador" text="transportador" />
+                  <Button fx:id="eliminarBoton" mnemonicParsing="false" onAction="#pulsarEliminar" text="Eliminar" />
+                  <Button mnemonicParsing="false" onAction="#transportador" text="Transportador" />
                   <ColorPicker fx:id="colorPicker">
                      <value>
                         <Color />
