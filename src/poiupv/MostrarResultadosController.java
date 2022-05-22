@@ -24,14 +24,17 @@ import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TableView.ResizeFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Session;
 
 /**
@@ -72,6 +75,10 @@ public class MostrarResultadosController implements Initializable {
     private TableColumn<Session, Integer> tableViewC2;
     @FXML
     private TableColumn<Session, Integer> tableViewC3;
+    @FXML
+    private Label tituloResultados;
+    
+    
     
     
     
@@ -81,7 +88,14 @@ public class MostrarResultadosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        tituloResultados.setId("titulo");
         
+        tableView.setColumnResizePolicy(new Callback<TableView.ResizeFeatures, Boolean>() {
+        @Override
+            public Boolean call(ResizeFeatures p) {
+            return true;
+            }
+        });
         
         //Configurar DatePicker bloqueando hasta hoy la busqueda
         
