@@ -1,6 +1,6 @@
 
 Button { -fx-background-color: #6e6e69;
-         -fx-border-color: #FFFFFF;
+         -fx-border-color: white;
          -fx-border-width: 2;
          -fx-text-fill: #d6d6d0;
          -fx-font-family: "Helvetica";

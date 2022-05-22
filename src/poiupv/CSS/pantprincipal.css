@@ -1,7 +1,7 @@
 .root{ -fx-background-color: #d4cbc3; }
 
 Button { -fx-background-color: #6e6e69;
-         -fx-border-color: #000000;
+         -fx-border-color: white;
          -fx-border-width: 1.5;
          -fx-text-fill: #d6d6d0;
          -fx-font-family: "Helvetica";
