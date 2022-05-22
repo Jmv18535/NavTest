@@ -22,6 +22,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
@@ -146,6 +147,8 @@ public class ProblemaElegidoController implements Initializable {
     private Button problemaSiguiente;
     @FXML
     private TextField tamañoLetra;
+    @FXML
+    private Button corregir;
     /**
      * Initializes the controller class.
      */
@@ -217,7 +220,10 @@ public class ProblemaElegidoController implements Initializable {
         zoomGrupo.getChildren().add(scrollPane.getContent());
         scrollPane.setContent(contentGroup);
         
-        
+        salirPrincipio.setId("labelRedonda");
+        corregir.setId("labelRedonda");
+        problemaAnterior.setId("labelRedonda");
+        problemaSiguiente.setId("labelRedonda");
         
     }    
     
@@ -706,5 +712,18 @@ public class ProblemaElegidoController implements Initializable {
             if(proActual==17){problemaSiguiente.setDisable(true);}
             if(proActual==1){problemaAnterior.setDisable(false);}
             
+    }
+
+    @FXML
+    private void pulsadoInfo(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+        alert.setHeaderText("Información");
+         alert.setTitle("Info");
+        alert.setContentText("Para borrar:"
+                + " Haz click derecho en el objeto y selecciona 'Borrar' \n"
+                + "Para cambiar el color:"
+                + " Cambia el campo 'Color', haz click derecho en el objeto y selecciona 'Cambiar color'");
+        alert.showAndWait();
     }
 }

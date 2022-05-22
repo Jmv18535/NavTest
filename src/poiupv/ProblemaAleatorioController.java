@@ -22,6 +22,8 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
@@ -137,8 +139,11 @@ public class ProblemaAleatorioController implements Initializable {
     private ImageView transportador;
     @FXML
     private TextField tamañoLetra;
-    @FXML
     private Tooltip info;
+    @FXML
+    private Button corregir;
+    @FXML
+    private Button nuevoProblema;
     /**
      * Initializes the controller class.
      */
@@ -205,7 +210,9 @@ public class ProblemaAleatorioController implements Initializable {
         zoomGrupo.getChildren().add(scrollPane.getContent());
         scrollPane.setContent(contentGroup);
         
-        info.setText("HOla");
+        salirPrincipio.setId("labelRedonda");
+        corregir.setId("labelRedonda");
+        nuevoProblema.setId("labelRedonda");
         
     }    
     
@@ -570,7 +577,7 @@ public class ProblemaAleatorioController implements Initializable {
         if(zoomGrupo.getChildren().size()-1 >=1){
         zoomGrupo.getChildren().remove(zoomGrupo.getChildren().size()-1);}
     else{
-    eliminarBoton.setDisable(true);
+    
 
 }
 }
@@ -642,4 +649,17 @@ public class ProblemaAleatorioController implements Initializable {
             
             
         }
+
+    @FXML
+    private void pulsadoInfo(ActionEvent event) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+
+        alert.setHeaderText("Información");
+         alert.setTitle("Info");
+        alert.setContentText("Para borrar:"
+                + " Haz click derecho en el objeto y selecciona 'Borrar' \n"
+                + "Para cambiar el color:"
+                + " Cambia el campo 'Color', haz click derecho en el objeto y selecciona 'Cambiar color'");
+        alert.showAndWait();
+    }
 }
