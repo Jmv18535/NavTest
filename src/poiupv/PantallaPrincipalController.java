@@ -64,8 +64,6 @@ public class PantallaPrincipalController implements Initializable {
     
     User usuario;
     @FXML
-    private BorderPane borderPanePrincipal;
-    @FXML
     private HBox boxCierreMod;
     @FXML
     private VBox boxMenus;

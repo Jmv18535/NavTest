@@ -27,7 +27,7 @@ public class PoiUPVApp extends Application {
         
         Scene scene = new Scene(root);
        
-        stage.setTitle("AppNavegacion");
+        stage.setTitle("NavTest");
         stage.getIcons().add(new Image("/resources/barquito.png"));
         
         stage.setScene(scene);

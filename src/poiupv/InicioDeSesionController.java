@@ -69,7 +69,7 @@ public class InicioDeSesionController implements Initializable {
         aciertos=0;
         fallos=0;
         
-        titulo.setId("titulo");
+        
     }    
 
     @FXML

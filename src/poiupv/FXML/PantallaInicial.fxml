@@ -5,7 +5,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -16,40 +15,34 @@
             <Image url="@../../resources/mapamarron.png" />
          </image>
       </ImageView>
-      <BorderPane layoutX="9.0" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="400.0" prefWidth="450.0" stylesheets="@../CSS/pantallainicial.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="0.0">
-         <center>
-            <VBox alignment="CENTER" prefHeight="86.0" prefWidth="446.0" spacing="30.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" stylesheets="@../CSS/pantallainicial.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="192.0" prefWidth="750.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="300.0" prefWidth="300.0">
-                     <children>
-                        <Button fx:id="botonInicio" maxHeight="65.0" maxWidth="275.0" minHeight="65.0" minWidth="275.0" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" prefHeight="65.0" prefWidth="275.0" text="Iniciar Sesión" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER">
-                     <children>
-                        <Button fx:id="botonRegistro" maxHeight="65.0" maxWidth="275.0" minHeight="65.0" minWidth="275.0" mnemonicParsing="false" onAction="#pulsadoRegistrarse" prefHeight="65.0" prefWidth="275.0" text="Registrarse" />
-                     </children>
-                  </HBox>
-               </children>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <padding>
-                  <Insets bottom="150.0" left="100.0" right="100.0" top="100.0" />
-               </padding>
-            </VBox>
-         </center>
-         <top>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="161.0" fitWidth="533.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="250.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../src/resources/Titulo.png" />
+                        <Image url="@../../resources/tituloF.png" />
                      </image>
                   </ImageView>
                </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </HBox>
-         </top>
-      </BorderPane>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="botonInicio" maxHeight="65.0" maxWidth="275.0" minHeight="65.0" minWidth="275.0" mnemonicParsing="false" onAction="#pulsadoIniciarSesion" prefHeight="65.0" prefWidth="275.0" text="Iniciar Sesión" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="botonRegistro" maxHeight="65.0" maxWidth="275.0" minHeight="65.0" minWidth="275.0" mnemonicParsing="false" onAction="#pulsadoRegistrarse" prefHeight="65.0" prefWidth="275.0" text="Registrarse" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
