@@ -290,6 +290,6 @@ public class ListaProblemasController implements Initializable {
         return numProblema;
     }
     
-    }
+}
     
 
