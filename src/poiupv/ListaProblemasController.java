@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
@@ -59,12 +60,20 @@ public class ListaProblemasController implements Initializable {
     private Label errorNoSeleccionado;
    
     private Problem problemaElegido=null;
+    @FXML
+    private Button hacerProblema;
+    @FXML
+    private Button volverMenu;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hacerProblema.setId("hacerProblema");
+        volverMenu.setId("volverMenu");
+        errorNoSeleccionado.setId("error");
+        
         enunciadoLista.setWrapText​(true);
          Navegacion navegacion = null;
         try {

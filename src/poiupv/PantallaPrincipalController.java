@@ -112,6 +112,8 @@ public class PantallaPrincipalController implements Initializable {
                     Logger.getLogger(PantallaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             });
+        ventana.setResizable(false);
+        ventana.centerOnScreen();
         ventana.show();
     }
 

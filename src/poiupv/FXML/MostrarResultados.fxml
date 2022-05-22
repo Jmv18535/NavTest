@@ -84,7 +84,7 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#salirALaPantallaPrincipalDesdeResultados" text="Salir a la pantalla principal" />
+                  <Button mnemonicParsing="false" onAction="#salirALaPantallaPrincipalDesdeResultados" text="Volver al menu" />
                </children>
                <padding>
                   <Insets right="30.0" />
