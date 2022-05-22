@@ -225,9 +225,10 @@ public class ProblemaAleatorioController implements Initializable {
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
-        ventana.setResizable(true);
-        ventana.centerOnScreen();
         ventana.setMaximized(false);
+        ventana.setResizable(true);
+        
+        ventana.centerOnScreen();
         ventana.show();
     }
 
@@ -363,7 +364,7 @@ public class ProblemaAleatorioController implements Initializable {
             punto.setCenterY(event.getY());
             punto.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
-                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem borrarItem = new MenuItem("Borrar");
                 MenuItem colorItem = new MenuItem("Cambio Color");
                 menuContext.getItems().add(borrarItem);
                 menuContext.getItems().add(colorItem);
@@ -405,7 +406,7 @@ public class ProblemaAleatorioController implements Initializable {
             zoomGrupo.getChildren().add(lineaEx2);
             lineaEx2.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
-                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem borrarItem = new MenuItem("Borrar");
                 MenuItem colorItem = new MenuItem("Cambio Color");
                 menuContext.getItems().add(borrarItem);
                 menuContext.getItems().add(colorItem);
@@ -423,7 +424,7 @@ public class ProblemaAleatorioController implements Initializable {
             });
             lineaEx1.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
-                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem borrarItem = new MenuItem("Borrar");
                 MenuItem colorItem = new MenuItem("Cambio Color");
                 menuContext.getItems().add(borrarItem);
                 menuContext.getItems().add(colorItem);
@@ -465,7 +466,7 @@ public class ProblemaAleatorioController implements Initializable {
             
             circlePainting.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
-                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem borrarItem = new MenuItem("Borrar");
                 MenuItem colorItem = new MenuItem("Cambio Color");
                 menuContext.getItems().add(borrarItem);
                 menuContext.getItems().add(colorItem);
@@ -491,7 +492,7 @@ public class ProblemaAleatorioController implements Initializable {
             zoomGrupo.getChildren().add(linea);
             linea.setOnContextMenuRequested(e -> {
                 ContextMenu menuContext = new ContextMenu();
-                MenuItem borrarItem = new MenuItem("eliminar");
+                MenuItem borrarItem = new MenuItem("Borrar");
                 MenuItem colorItem = new MenuItem("Cambio Color");
                 menuContext.getItems().add(borrarItem);
                 menuContext.getItems().add(colorItem);
@@ -527,7 +528,7 @@ public class ProblemaAleatorioController implements Initializable {
                 
                 textoT.setOnContextMenuRequested(ea -> {
                     ContextMenu menuContext = new ContextMenu();
-                    MenuItem borrarItem = new MenuItem("eliminar");
+                    MenuItem borrarItem = new MenuItem("Borrar");
                     MenuItem colorItem = new MenuItem("Cambio Color");
                     menuContext.getItems().add(borrarItem);
                     menuContext.getItems().add(colorItem);
@@ -659,7 +660,7 @@ public class ProblemaAleatorioController implements Initializable {
         alert.setContentText("Para borrar:"
                 + " Haz click derecho en el objeto y selecciona 'Borrar' \n"
                 + "Para cambiar el color:"
-                + " Cambia el campo 'Color', haz click derecho en el objeto y selecciona 'Cambiar color'");
+                + " Cambia el campo 'Color', haz click derecho en el objeto y selecciona 'Cambio color'");
         alert.showAndWait();
     }
 }

@@ -58,7 +58,7 @@
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
                   <TextArea fx:id="textoError" editable="false" maxHeight="60.0" maxWidth="400.0" minHeight="60.0" minWidth="400.0" prefHeight="60.0" prefWidth="400.0" visible="false" />
-                  <Button mnemonicParsing="false" onAction="#PulsadoCancelar" prefHeight="40.0" prefWidth="120.0" text="Cancelar" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#PulsadoCancelar" prefHeight="40.0" prefWidth="120.0" text="Cancelar" />
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#PulsadoEntrar" prefHeight="40.0" prefWidth="120.0" text="Entrar" />
                </children>
                <padding>

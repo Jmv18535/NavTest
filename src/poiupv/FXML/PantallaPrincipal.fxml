@@ -42,7 +42,7 @@
                <children>
                   <HBox fx:id="hBox1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Button fx:id="listaDeProblemas" mnemonicParsing="false" onAction="#pulsadoListaDeProblemas" prefHeight="55.0" prefWidth="275.0" text="Lista de problemas">
+                        <Button fx:id="listaDeProblemas" alignment="CENTER" mnemonicParsing="false" onAction="#pulsadoListaDeProblemas" prefHeight="55.0" prefWidth="275.0" text="Lista de problemas">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -68,6 +68,9 @@
                      </children>
                   </HBox>
                </children>
+               <HBox.margin>
+                  <Insets left="240.0" />
+               </HBox.margin>
             </VBox>
             <VBox fx:id="boxImagen" alignment="CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="20.0" HBox.hgrow="ALWAYS">
                <children>

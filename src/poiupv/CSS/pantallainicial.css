@@ -3,8 +3,8 @@ Button { -fx-background-color: #6e6e69;
          -fx-border-color: #FFFFFF;
          -fx-border-width: 2;
          -fx-text-fill: #d6d6d0;
-         -fx-font-family: "Comic Sans MS";
-         -fx-font-style: italic;
+         -fx-font-family: "Helvetica";
+         
          -fx-font-size: 22px;
          -fx-background-radius: 10 10 10 10;
          -fx-border-radius: 10 10 10 10;
