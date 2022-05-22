@@ -197,7 +197,7 @@ public class RegistroController implements Initializable {
         String password = contraUsuario.getText();
             if (!checkPassword(password)) {
                 falloPassword.visibleProperty().set(true);
-                mensajeError.setText("La contraseña debe tener de 8 a 20 caracteres con un@: \n"
+                mensajeError.setText("La contraseña debe tener de 8 a 20 caracteres con un/a: \n"
                         + "Mayuscula, miniscula, digito, caracter especial(!@#~€)");
                 mensajeError.visibleProperty().set(true);
                 return;

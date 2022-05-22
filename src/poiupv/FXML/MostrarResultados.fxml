@@ -66,15 +66,6 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fallos:" />
-                  <Text fx:id="numeroFallos" strokeType="OUTSIDE" strokeWidth="0.0" />
-               </children>
-               <padding>
-                  <Insets left="30.0" />
-               </padding>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
-               <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Aciertos:" />
                   <Text fx:id="numeroAciertos" strokeType="OUTSIDE" strokeWidth="0.0" />
                </children>
@@ -82,9 +73,18 @@
                   <Insets left="30.0" />
                </padding>
             </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fallos:" />
+                  <Text fx:id="numeroFallos" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#salirALaPantallaPrincipalDesdeResultados" text="Volver al menu" />
+                  <Button mnemonicParsing="false" onAction="#salirALaPantallaPrincipalDesdeResultados" text="Volver al menú" />
                </children>
                <padding>
                   <Insets right="30.0" />
