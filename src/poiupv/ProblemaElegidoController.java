@@ -79,6 +79,8 @@ public class ProblemaElegidoController implements Initializable {
     private int respuestaAleatoria2=1;
     private int respuestaAleatoria3=1;
     
+    private int proActual;
+    
     private List<Problem> listaProblemas;
     private Problem problemaElegido;
     @FXML
@@ -138,6 +140,10 @@ public class ProblemaElegidoController implements Initializable {
     private ImageView transportador;
     
     private int problemaActual;
+    @FXML
+    private Button problemaAnterior;
+    @FXML
+    private Button problemaSiguiente;
     /**
      * Initializes the controller class.
      */
@@ -151,9 +157,11 @@ public class ProblemaElegidoController implements Initializable {
             problemaAleatorio = (int) (Math.random()*listaProblemas.size());
             
             
+            proActual=lista.getNumProblema();
             
+            if(proActual==0){problemaAnterior.setDisable(true);}
             
-            problemaElegido=lista.getProblemaElegido();
+            problemaElegido=listaProblemas.get(proActual);
             
             
             enunciadoProblema.setText(problemaElegido.getText());
@@ -603,7 +611,7 @@ public class ProblemaElegidoController implements Initializable {
     }
 
     @FXML
-    private void nuevoProblemaAleatorio(ActionEvent event) {
+    private void nuevoProblemaAnterior(ActionEvent event) {
             aciertoFalloA.setVisible(false);
             aciertoFalloB.setVisible(false);
             aciertoFalloC.setVisible(false);
@@ -613,10 +621,12 @@ public class ProblemaElegidoController implements Initializable {
             cSolucion.setSelected(false);
             dSolucion.setSelected(false);
             
+            if(proActual==0){problemaAnterior.setDisable(true);}
             
-            problemaAleatorio = (int) (Math.random()*listaProblemas.size());
+            proActual--;
+            
            
-            problemaElegido=listaProblemas.get(problemaAleatorio);
+            problemaElegido=listaProblemas.get(proActual);
             
             enunciadoProblema.setText(problemaElegido.getText());
             enunciadoProblema.setWrapText​(true);
@@ -644,7 +654,58 @@ public class ProblemaElegidoController implements Initializable {
             enunciadoB.setText(b.getText());
             enunciadoC.setText(c.getText());
             enunciadoD.setText(d.getText());
+            if(proActual==16){problemaSiguiente.setDisable(false);}
+            if(proActual==0){problemaAnterior.setDisable(true);}
+            
+        
+    }
+
+    @FXML
+    private void nuevoProblemaSiguiente(ActionEvent event) {
+        aciertoFalloA.setVisible(false);
+            aciertoFalloB.setVisible(false);
+            aciertoFalloC.setVisible(false);
+            aciertoFalloD.setVisible(false);
+            aSolucion.setSelected(false);
+            bSolucion.setSelected(false);
+            cSolucion.setSelected(false);
+            dSolucion.setSelected(false);
             
             
-        }
+            
+            proActual++;
+            
+           
+            problemaElegido=listaProblemas.get(proActual);
+            
+            enunciadoProblema.setText(problemaElegido.getText());
+            enunciadoProblema.setWrapText​(true);
+            List<Answer> respuestas = problemaElegido.getAnswers();
+            List<Answer> respuestas1 = new ArrayList<>(respuestas);
+
+            
+            respuestaAleatoria = (int) (Math.random()*respuestas1.size());
+            a = respuestas1.get(respuestaAleatoria);
+            respuestas1.remove(respuestaAleatoria);
+                       
+            respuestaAleatoria1 = (int) (Math.random()*respuestas1.size());
+            b = respuestas1.get(respuestaAleatoria1);
+            respuestas1.remove(respuestaAleatoria1);
+            
+            respuestaAleatoria2 = (int) (Math.random()*respuestas1.size());
+            c = respuestas1.get(respuestaAleatoria2);
+            respuestas1.remove(respuestaAleatoria2);
+            
+            respuestaAleatoria3 = (int) (Math.random()*respuestas1.size());
+            d = respuestas1.get(respuestaAleatoria3);
+            respuestas1.remove(respuestaAleatoria3);           
+            
+            enunciadoA.setText(a.getText());
+            enunciadoB.setText(b.getText());
+            enunciadoC.setText(c.getText());
+            enunciadoD.setText(d.getText());
+            if(proActual==17){problemaSiguiente.setDisable(true);}
+            if(proActual==1){problemaAnterior.setDisable(false);}
+            
+    }
 }

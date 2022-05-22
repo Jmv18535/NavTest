@@ -88,7 +88,8 @@
                <children>
                   <Button fx:id="salirPrincipio" mnemonicParsing="false" onAction="#pulsarSalirprincipio" text="Salir " />
                   <Button mnemonicParsing="false" onAction="#corregirRespuestas" text="Corregir" />
-                  <Button mnemonicParsing="false" onAction="#nuevoProblemaAleatorio" text="Nuevo problema aleatorio" />
+                  <Button fx:id="problemaAnterior" mnemonicParsing="false" onAction="#nuevoProblemaAnterior" text="Anterior" />
+                  <Button fx:id="problemaSiguiente" mnemonicParsing="false" onAction="#nuevoProblemaSiguiente" text="Siguiente" />
                </children>
             </HBox>
          </children>
