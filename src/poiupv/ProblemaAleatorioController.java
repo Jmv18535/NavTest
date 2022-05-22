@@ -185,7 +185,7 @@ public class ProblemaAleatorioController implements Initializable {
         choiceBox.getItems().add("Texto");
         choiceBox.getItems().add("Extremos");
         choiceBox.getItems().add("Mover");
-        
+        choiceBox.setValue("Mover");
         
         grosor.setText("15");
         

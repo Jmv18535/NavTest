@@ -5,16 +5,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox focusTraversable="true" prefHeight="450.0" prefWidth="750.0" spacing="20.0" stylesheets="@../CSS/pantprincipal.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaPrincipalController">
+<GridPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../CSS/pantprincipal.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaPrincipalController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="250.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="250.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <image>
                   <Image url="@../../resources/tituloF.png" />
                </image>
@@ -24,11 +36,11 @@
             <Insets top="20.0" />
          </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="300.0" prefWidth="750.0" spacing="100.0">
+      <HBox alignment="CENTER" prefHeight="300.0" prefWidth="750.0" spacing="100.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
          <children>
-            <VBox fx:id="boxMenus" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="502.0" spacing="20.0">
+            <VBox fx:id="boxMenus" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="502.0" spacing="20.0" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox fx:id="hBox1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox fx:id="hBox1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Button fx:id="listaDeProblemas" mnemonicParsing="false" onAction="#pulsadoListaDeProblemas" prefHeight="55.0" prefWidth="275.0" text="Lista de problemas">
                            <font>
@@ -37,7 +49,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox fx:id="hBox2" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Button fx:id="problemaAleatorio" mnemonicParsing="false" onAction="#pulsadoProblemaAleatorio" prefHeight="55.0" prefWidth="275.0" text="Problema aleatorio">
                            <font>
@@ -46,7 +58,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox fx:id="hBox3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox fx:id="hBox3" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Button fx:id="mostrarResultados" mnemonicParsing="false" onAction="#pulsadoMostrarResultados" prefHeight="55.0" prefWidth="275.0" text="Mostrar resultados">
                            <font>
@@ -57,55 +69,59 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox fx:id="boxImagen" alignment="CENTER_RIGHT" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="20.0">
+            <VBox fx:id="boxImagen" alignment="CENTER" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" spacing="20.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="fotoUsuario" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <VBox fx:id="vBoxAvatar" alignment="CENTER" maxHeight="175.0" maxWidth="175.0" minHeight="175.0" minWidth="175.0" prefHeight="175.0" prefWidth="175.0">
+                     <VBox.margin>
+                        <Insets right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fx:id="fotoUsuario" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
                   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="nomUsuario" contentDisplay="CENTER" />
+                        <HBox alignment="CENTER">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label fx:id="nomUsuario" alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" textAlignment="CENTER" />
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                </children>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
             </VBox>
          </children>
       </HBox>
-      <HBox fx:id="boxCierreMod" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+      <VBox alignment="BOTTOM_RIGHT" fillWidth="false" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
-            <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../resources/brujulapantallaprincipal.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets left="20.0" />
-                     </VBox.margin>
-                  </ImageView>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" left="20.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="BOTTOM_RIGHT" fillWidth="false" prefHeight="100.0" prefWidth="200.0" spacing="15.0" HBox.hgrow="ALWAYS">
-               <HBox.margin>
+            <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" prefHeight="35.0" prefWidth="200.0" text="Modificar Perfil" />
+            <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="35.0" prefWidth="200.0" text="Cerrar Sesión">
+               <VBox.margin>
                   <Insets />
-               </HBox.margin>
-               <children>
-                  <Button fx:id="modPerfil" mnemonicParsing="false" onAction="#pulsadoModPerfil" prefHeight="35.0" prefWidth="200.0" stylesheets="@../CSS/pantprincipal.css" text="Modificar Perfil" />
-                  <Button fx:id="cerrarSesion" mnemonicParsing="false" onAction="#pulsadoCerrarSesion" prefHeight="35.0" prefWidth="200.0" stylesheets="@../CSS/pantprincipal.css" text="Cerrar Sesión">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Button>
-               </children>
-               <padding>
-                  <Insets bottom="20.0" right="20.0" />
-               </padding>
-            </VBox>
+               </VBox.margin>
+            </Button>
          </children>
-      </HBox>
+         <padding>
+            <Insets bottom="20.0" right="20.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="BOTTOM_LEFT" prefHeight="150.0" prefWidth="250.0" GridPane.rowIndex="2">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/brujulapantallaprincipal.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" />
+         </padding>
+      </VBox>
    </children>
-</VBox>
+</GridPane>

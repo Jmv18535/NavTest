@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane focusTraversable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="450.0" minWidth="900.0" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../CSS/listaproblemas.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.ListaProblemasController">
    <children>
@@ -152,6 +153,9 @@
                            <HBox.margin>
                               <Insets bottom="30.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
                         </TextArea>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" spacing="20.0">
                            <children>

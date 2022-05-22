@@ -1,3 +1,5 @@
+.root{ -fx-background-color: #d4cbc3; }
+
 Button { -fx-background-color: #6e6e69;
          -fx-border-color: #000000;
          -fx-border-width: 1.5;
@@ -17,4 +19,20 @@ Button:pressed { -fx-background-color: #c2c2be;
 	-fx-text-fill: #000000;
         -fx-font-size: 20px;
 	-fx-font-weight: bold;
+}
+#nomUsuario{
+    
+        -fx-text-fill: black;
+         -fx-font-family: "Helvetica";        
+         -fx-font-size: 16px; 
+         -fx-text-alignment: center;
+         -fx-background-color: #d4cbc3;
+         -fx-border-color: #000000;
+         -fx-border-width: 1.5;
+}
+
+#Avatar{
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    
 }

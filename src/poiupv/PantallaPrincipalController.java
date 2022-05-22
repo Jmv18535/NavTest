@@ -64,8 +64,6 @@ public class PantallaPrincipalController implements Initializable {
     
     User usuario;
     @FXML
-    private HBox boxCierreMod;
-    @FXML
     private VBox boxMenus;
     @FXML
     private VBox boxImagen;
@@ -75,6 +73,8 @@ public class PantallaPrincipalController implements Initializable {
     private HBox hBox2;
     @FXML
     private HBox hBox3;
+    @FXML
+    private VBox vBoxAvatar;
    
 
     /**
@@ -87,8 +87,8 @@ public class PantallaPrincipalController implements Initializable {
         nomUsuario.setText(usuario.getNickName());
         fotoUsuario.setImage(usuario.getAvatar());
         
-        
-        
+        nomUsuario.setId("nomUsuario");
+        vBoxAvatar.setId("Avatar");
     }    
 
     @FXML
