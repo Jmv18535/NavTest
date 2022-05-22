@@ -231,7 +231,7 @@ public class ProblemaElegidoController implements Initializable {
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
-        ventana.setResizable(false);
+        ventana.setResizable(true);
         ventana.centerOnScreen();
         ventana.setMaximized(false);
         ventana.show();

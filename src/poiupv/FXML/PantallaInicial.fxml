@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.PantallaInicialController">
    <children>
-      <ImageView fitHeight="450.0" fitWidth="750.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="450.0" fitWidth="750.0" opacity="0.67" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../resources/mapamarron.png" />
          </image>
@@ -32,13 +32,24 @@
                   </HBox>
                </children>
                <BorderPane.margin>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                  <Insets />
                </BorderPane.margin>
                <padding>
-                  <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                  <Insets bottom="150.0" left="100.0" right="100.0" top="100.0" />
                </padding>
             </VBox>
          </center>
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="161.0" fitWidth="533.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../src/resources/Titulo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

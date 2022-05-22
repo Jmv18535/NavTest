@@ -103,7 +103,7 @@ public class PantallaPrincipalController implements Initializable {
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
       
-        ventana.setResizable(false);
+        ventana.setResizable(true);
         ventana.setOnCloseRequest(event1 -> {
             
                 Session session= new Session(LocalDateTime.now(),inicio.getAciertos(),inicio.getFallos());
@@ -150,7 +150,7 @@ public class PantallaPrincipalController implements Initializable {
        // loader.setController(new inicioDeSesion("/poiupv/FXML/MostrarResultados.fxml"));
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
-        ventana.setResizable(false);
+        ventana.setResizable(true);
         ventana.setOnCloseRequest(event1 -> {
             
                 Session session= new Session(LocalDateTime.now(),inicio.getAciertos(),inicio.getFallos());
@@ -173,6 +173,7 @@ public class PantallaPrincipalController implements Initializable {
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
         ventana.setResizable(false);
+        ventana.centerOnScreen();
         ventana.show();
     }
 

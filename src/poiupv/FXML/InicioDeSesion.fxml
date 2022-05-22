@@ -7,6 +7,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -17,11 +18,11 @@
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../CSS/iniciodesesion.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox prefHeight="400.0" prefWidth="184.0" spacing="30.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="184.0" spacing="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" prefHeight="108.0" prefWidth="600.0" spacing="20.0">
+                  <HBox alignment="CENTER" prefHeight="112.0" prefWidth="660.0" spacing="20.0">
                      <children>
-                        <Label fx:id="titulo" alignment="CENTER" maxHeight="70.0" maxWidth="400.0" minHeight="70.0" minWidth="400.0" prefHeight="70.0" prefWidth="400.0" text="INICIAR SESIÓN" textAlignment="CENTER" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">

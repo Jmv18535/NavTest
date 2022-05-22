@@ -53,7 +53,6 @@ public class InicioDeSesionController implements Initializable {
     private static int fallos;
     
     public static User user;
-    @FXML
     private Label titulo;
     /**
      * Initializes the controller class.
@@ -125,7 +124,7 @@ public class InicioDeSesionController implements Initializable {
         
         Stage ventana= (Stage)((Node)event.getSource()).getScene().getWindow();
         ventana.setScene(inicioDeSesion);
-        ventana.setResizable(false);
+        ventana.setResizable(true);
         ventana.setOnCloseRequest(event1 -> {
         System.out.println("me cago  en todo");
         // Save file
