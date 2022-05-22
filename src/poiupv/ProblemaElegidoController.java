@@ -150,8 +150,10 @@ public class ProblemaElegidoController implements Initializable {
             listaProblemas=navegacion.getProblems();
             problemaAleatorio = (int) (Math.random()*listaProblemas.size());
             
-            problemaActual=lista.getNumProblema(); 
-            problemaElegido=listaProblemas.get(problemaActual);
+            
+            
+            
+            problemaElegido=lista.getProblemaElegido();
             
             
             enunciadoProblema.setText(problemaElegido.getText());

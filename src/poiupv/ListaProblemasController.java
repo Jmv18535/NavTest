@@ -51,7 +51,7 @@ public class ListaProblemasController implements Initializable {
     private Problem E17;
     private Problem E18;
 
-    private int numProblema;
+    public int numProblema;
     
     @FXML
     private TextArea enunciadoLista;
@@ -87,13 +87,7 @@ public class ListaProblemasController implements Initializable {
             E15=listaProblemas.get(14);
             E16=listaProblemas.get(15);
             E17=listaProblemas.get(16);
-            E18=listaProblemas.get(17);
-            
-            
-            
-            
-            
-            
+            E18=listaProblemas.get(17);            
             
         } catch (NavegacionDAOException ex) {
             Logger.getLogger(ListaProblemasController.class.getName()).log(Level.SEVERE, null, ex);
