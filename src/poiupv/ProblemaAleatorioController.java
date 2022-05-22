@@ -35,6 +35,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -136,6 +137,8 @@ public class ProblemaAleatorioController implements Initializable {
     private ImageView transportador;
     @FXML
     private TextField tamañoLetra;
+    @FXML
+    private Tooltip info;
     /**
      * Initializes the controller class.
      */
@@ -202,7 +205,7 @@ public class ProblemaAleatorioController implements Initializable {
         zoomGrupo.getChildren().add(scrollPane.getContent());
         scrollPane.setContent(contentGroup);
         
-        
+        info.setText("HOla");
         
     }    
     
