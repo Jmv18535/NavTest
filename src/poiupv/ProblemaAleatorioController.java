@@ -134,6 +134,8 @@ public class ProblemaAleatorioController implements Initializable {
     private Button eliminarBoton;
     @FXML
     private ImageView transportador;
+    @FXML
+    private TextField tamañoLetra;
     /**
      * Initializes the controller class.
      */
@@ -186,9 +188,7 @@ public class ProblemaAleatorioController implements Initializable {
         choiceBox.getItems().add("Extremos");
         choiceBox.getItems().add("Mover");
         choiceBox.setValue("Mover");
-        
-        grosor.setText("15");
-        
+                
 
         
         zoomSlider.setMin(0.5);
@@ -509,7 +509,7 @@ public class ProblemaAleatorioController implements Initializable {
                 textoT.setX(texto.getLayoutX());
                 textoT.setY(texto.getLayoutY());
                 textoT.setFill(colorPicker.getValue());
-                String textoTam = grosor.getText();
+                String textoTam = tamañoLetra.getText();
                 Font fuente= new Font(Integer.valueOf(textoTam));
                 textoT.setFont(fuente);
                 zoomGrupo.getChildren().add(textoT);

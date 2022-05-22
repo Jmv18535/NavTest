@@ -110,6 +110,8 @@
                   <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
                   <Label text="Tamaño:" />
                   <TextField fx:id="grosor" prefHeight="25.0" prefWidth="32.0" text="2" />
+                  <Label text="Tamaño letra:" />
+                  <TextField fx:id="tamañoLetra" prefHeight="26.0" prefWidth="30.0" text="20" />
                   <Button mnemonicParsing="false" onAction="#limpiar" text="Limpiar" />
                </children>
             </HBox>

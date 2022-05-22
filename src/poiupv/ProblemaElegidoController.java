@@ -144,6 +144,8 @@ public class ProblemaElegidoController implements Initializable {
     private Button problemaAnterior;
     @FXML
     private Button problemaSiguiente;
+    @FXML
+    private TextField tamañoLetra;
     /**
      * Initializes the controller class.
      */
@@ -202,10 +204,7 @@ public class ProblemaElegidoController implements Initializable {
         choiceBox.getItems().add("Extremos");
         choiceBox.getItems().add("Mover");
         choiceBox.setValue("Mover");
-        
-        grosor.setText("15");
-        
-
+                
         
         zoomSlider.setMin(0.5);
         zoomSlider.setMax(1.5);
@@ -525,7 +524,7 @@ public class ProblemaElegidoController implements Initializable {
                 textoT.setX(texto.getLayoutX());
                 textoT.setY(texto.getLayoutY());
                 textoT.setFill(colorPicker.getValue());
-                String textoTam = grosor.getText();
+                String textoTam = tamañoLetra.getText();
                 Font fuente= new Font(Integer.valueOf(textoTam));
                 textoT.setFont(fuente);
                 zoomGrupo.getChildren().add(textoT);
