@@ -20,9 +20,7 @@ La aplicación NavTest se especializa en la facilitación de exámenes de navega
 
 ## Guia de uso
 
-A la hora de utilizar lo desarrollado se comprime el proyecto en un ".war" que es guardado en el directorio "/ruta/de/tu/tomcat/webapps/" donde una vez iniciado Apache Tomcat con "startup.sh" desde bin se puede comprobar la disponibilidad de la web en "http://localhost:8080/nol"
-
-En el repositorio se incluyen los dos ficheros html iniciales y una carpeta con los avatares de los usuarios. El código java desarrollado se encuentra en la carpeta classes de WEB-INF.
+Para ejecutar este programa se ha hecho uso de netbeans y de la biblioteca javafx11.
 
 ## Capturas
 Aqui se adjuntan una serie de capturas de los distintos apartados del proyecto.
