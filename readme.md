@@ -23,7 +23,7 @@ La aplicación NavTest se especializa en la facilitación de exámenes de navega
 Para ejecutar este programa se ha hecho uso de netbeans y de la biblioteca javafx11.
 
 ## Capturas
-Aqui se adjuntan una serie de capturas de los distintos apartados del proyecto.
+Aqui se adjuntan una serie de capturas de los distintos apartados del proyecto
 
 ### Menu Inicial
 
